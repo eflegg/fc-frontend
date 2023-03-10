@@ -10,7 +10,7 @@ import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
 
 const TestStyle = styled.div`
-  background: hotpink;
+  background: slateblue;
 `
 
 export default function Index({ allPosts: { edges }, preview }) {
@@ -24,7 +24,6 @@ export default function Index({ allPosts: { edges }, preview }) {
       </Head>
       <Container>
         <TestStyle>
-
         <Intro />
         </TestStyle>
         {heroPost && (
