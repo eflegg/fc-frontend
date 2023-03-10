@@ -4,21 +4,29 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
-import Layout from '../components/layout'
+import PageWrapper from '../components/pagewrapper'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import styled from 'styled-components'
+
+const TestStyle = styled.div`
+  background: hotpink;
+`
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
   return (
-    <Layout preview={preview}>
+    <PageWrapper preview={preview}>
       <Head>
         <title>Flegg Creative</title>
       </Head>
       <Container>
+        <TestStyle>
+
         <Intro />
+        </TestStyle>
         {heroPost && (
           <HeroPost
             title={heroPost.title}
@@ -31,7 +39,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         )}
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-    </Layout>
+    </PageWrapper>
   )
 }
 

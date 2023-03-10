@@ -8,7 +8,7 @@ import MoreStories from '../../components/more-stories'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
-import Layout from '../../components/layout'
+import PageWrapper from '../../components/pagewrapper'
 import PostTitle from '../../components/post-title'
 import Tags from '../../components/tags'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
@@ -23,7 +23,7 @@ export default function Post({ post, posts, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
+    <PageWrapper preview={preview}>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -58,7 +58,7 @@ export default function Post({ post, posts, preview }) {
           </>
         )}
       </Container>
-    </Layout>
+    </PageWrapper>
   )
 }
 
