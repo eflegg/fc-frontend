@@ -25,7 +25,7 @@ export default function Index({ allPosts: { edges }, preview }) {
       <Container>
         <TestStyle>
 
-        <Intro />
+          <Intro />
         </TestStyle>
         {heroPost && (
           <HeroPost
