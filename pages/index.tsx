@@ -10,7 +10,7 @@ import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
 
 const TestStyle = styled.div`
-  background: slateblue;
+  background: mediumseagreen;
 `
 
 export default function Index({ allPosts: { edges }, preview }) {
