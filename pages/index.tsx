@@ -8,10 +8,9 @@ import PageWrapper from '../components/pagewrapper'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
+import theme from '../components/Theme'
 
-const TestStyle = styled.div`
-  background: mediumseagreen;
-`
+
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
@@ -23,9 +22,10 @@ export default function Index({ allPosts: { edges }, preview }) {
         <title>Flegg Creative</title>
       </Head>
       <Container>
-        <TestStyle>
+
+
         <Intro />
-        </TestStyle>
+
         {heroPost && (
           <HeroPost
             title={heroPost.title}
