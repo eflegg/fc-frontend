@@ -6,6 +6,8 @@ import theme from '../components/Theme'
 
 const OuterContainer = styled.div`
 background: ${theme.colours.green};
+position: relative;
+z-index: 1;
 `
 
 export default function PageWrapper({ preview, children }) {
@@ -14,7 +16,7 @@ export default function PageWrapper({ preview, children }) {
       <Meta />
       <OuterContainer>
         <div className="min-h-screen">
-          <Alert preview={preview} />
+          {/* <Alert preview={preview} /> */}
           <main>{children}</main>
         </div>
         <Footer />
