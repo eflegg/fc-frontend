@@ -1,79 +1,79 @@
-import Container from './container'
+// import Container from './container'
 import { EXAMPLE_PATH } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
+import NewsLetter from '../components/signup'
 
 const OuterContainer = styled.div`
 background: ${theme.colours.orange};
 border: solid 2px yellow;
+display: flex;
+flex-direction: row;
 
-signup {
-  border: solid 2px green;
+
+.footer-container {
+  border: solid 3px green;
+  display: flex;
+  flex-grow: 2;
+  padding: 80px;
 }
 
-div {
-  border: solid 2px pink;
-}
+.hire-us {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  border solid 2px blue;
+  align-items: flex-end;
+  justify-content: flex-end;
 
-h3 {
-  color: ${theme.colours.cream};
-}
+  h1 {
+    font-family: ${theme.type.logoType};
+    font-size: 4.5rem;
+    color: ${theme.colours.cream};
+    text-align: right;
+    line-height: auto;
+  }
 
-input {
-  margin: 10px;
-}
+  h2 {
+    font-family: ${theme.type.body};
+    font-weight: 900;
+    font-size: 4rem;
+    color: ${theme.colours.cream};
+  }
 
-  h1 { 
-  font-family: 'Abril Fatface', cursive;
-  font-size: 4.8rem;
-  color: ${theme.colours.cream};
+  button {
+    background: ${theme.colours.pink};
+    font-family: ${theme.type.body};
+    color: ${theme.colours.blue};
+    font-size: 2rem;
+    padding: 3px;
+  }
+
+}
 }
 
 
 `
 
+
+
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className="">
       <OuterContainer>
-        <Container>
-          <div className="flex flex-row">
-            <div className="signup py-28 flex lg:flex-col items-center">
-              <h3 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-                Sign up for our e-mail newsletter
-              </h3>
-              <input>
+        <div className="footer-container">
+          <NewsLetter />
+        </div>
+        <div className='hire-us flex flex-col'>
+          <h2>
+            Hire us
+          </h2>
+          <button>
+            contact
+          </button>
+          <h1>Flegg Creative</h1>
+        </div>
 
-              </input>
-
-              <input>
-
-              </input>
-
-              <button>
-                Sign up
-              </button>
-
-
-            </div>
-            <div className="flex flex-col items-center lg:pl-4 lg:w-1/2">
-              <div className='hire-us flex flex-col items-center lg:pl-4 lg:w-1/2'>
-                <a
-                  href="https://nextjs.org/docs/basic-features/pages"
-                  className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-                >
-                  contact
-                </a>
-                <h3>
-                  Hire us
-                </h3>
-              </div>
-              <div className='logo'>
-                <h1>Flegg Creative</h1>
-              </div>
-            </div>
-          </div>
-        </Container>
       </OuterContainer>
     </footer>
   )
