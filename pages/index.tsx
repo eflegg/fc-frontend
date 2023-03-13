@@ -9,11 +9,21 @@ import SignUp from '../components/signup'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
+import LargeOrangeShape from '../components/shapes/large-orange'
+
+import SmallPinkShape from '../components/shapes/small-pink'
 import theme from '../components/Theme'
 import Services from '../components/services'
 
 
 
+
+const ShapeContainer = styled.div`
+background: seagreen;
+width: 100%;
+
+
+`
 
 
 export default function Index({ allPosts: { edges }, preview }) {
@@ -25,8 +35,12 @@ export default function Index({ allPosts: { edges }, preview }) {
       <Head>
         <title>Flegg Creative</title>
       </Head>
+      < ShapeContainer className="shape-container">
+     <SmallPinkShape  customClass="shape-pink"/>
+         <LargeOrangeShape customClass='shape-orange' />
+         </ShapeContainer>
+ 
       <Container>
-
 
         <Intro />
 

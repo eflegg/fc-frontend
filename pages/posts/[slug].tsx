@@ -20,14 +20,8 @@ import SmallPinkShape from '../../components/shapes/small-pink'
 const ShapeContainer = styled.div`
 background: seagreen;
 width: 100%;
-border: 2px solid yellow;
-.shape-orange {
 
-}
-.shape-pink {
- 
-}
-`
+ `
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -39,7 +33,7 @@ export default function Post({ post, posts, preview }) {
 
   return (
     <PageWrapper preview={preview}>
-     < ShapeContainer>
+     < ShapeContainer className="shape-container">
      <SmallPinkShape  customClass="shape-pink"/>
          <LargeOrangeShape customClass='shape-orange' />
          </ShapeContainer>
