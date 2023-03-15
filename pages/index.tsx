@@ -10,7 +10,7 @@ import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
 import LargeOrangeShape from '../components/shapes/large-orange'
-
+import Services from '../components/services'
 import SmallPinkShape from '../components/shapes/small-pink'
 import theme from '../components/Theme'
 const ShapeContainer = styled.div`

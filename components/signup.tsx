@@ -12,17 +12,19 @@ h3 {
     color: ${theme.colours.cream};
     font-family: ${theme.type.body};
     font-size: 2rem;
-    font-weight: 200;
+    font-weight: 400;
 }
 input {
     margin: 10px 0px 10px 0px;
 }
 
-button {
+.btn-sign-up {
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
     background-color: ${theme.colours.pink};
-    width: 50%;
+    padding: 5px 10px;
+    border-radius: 40px;
+    width: 40%;
 }
 `
 
@@ -34,8 +36,8 @@ export default function SignUp() {
             </h3>
             <input></input>
             <input></input>
-            <button>
-                sign up
+            <button className='btn-sign-up'>
+                Sign up
             </button>
         </NewsLetter>
     )

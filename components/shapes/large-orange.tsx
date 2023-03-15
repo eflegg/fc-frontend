@@ -10,17 +10,18 @@ const ShapeBackground = styled.div`
 `;
 const OrangeContainer = styled.img`
 	position: relative;
+	top: -80px;
 	z-index: -1;
 `;
 
-export default function LargeOrangeShape({ customClass}){
-    return (
+export default function LargeOrangeShape({ customClass }) {
+	return (
 
-<ShapeBackground className={customClass}>
-  <OrangeContainer src="/large-orange.svg" alt="decorative orange shape" />
-</ShapeBackground>
+		<ShapeBackground className={customClass}>
+			<OrangeContainer src="/large-orange.svg" alt="decorative orange shape" />
+		</ShapeBackground>
 
-    )
+	)
 }
 
 
