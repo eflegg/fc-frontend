@@ -13,6 +13,11 @@ import LargeOrangeShape from '../components/shapes/large-orange'
 import Services from '../components/services'
 import SmallPinkShape from '../components/shapes/small-pink'
 import theme from '../components/Theme'
+import Services from '../components/services'
+
+
+
+
 const ShapeContainer = styled.div`
 background: seagreen;
 width: 100%;
