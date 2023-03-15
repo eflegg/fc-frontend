@@ -57,7 +57,7 @@ export default function Intro() {
         Flegg Creative
       </h1>
       <h2 className="tagline">
-        We support small businesses every step of the way
+        Building accessible brands at a human pace.
       </h2>
       <div className='cta'>
         <div className='newscontainer'>

@@ -12,40 +12,76 @@ p {
     font-weight: 300;
 }
 
-.images {
-    border: solid 3px white;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
+.services {
+    // border: solid 3px white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
 
 .photography, .branding, .websites {
-    border: solid 1px pink;
-    width: 33%;
+    // border: solid 1px pink;
     margin: 20px;
+    height: 300px;
+    width: auto;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 }
+
+.label {
+    // border: solid 2px yellow;
+    margin: 0 20px 0 20px;
+    text-align: center;
+    }
+
+.image-container {
+    // border: solid 2px blue;
+    max-width: 33%;
+    }
+}
+
+
+
 .blerb {
     width: 70%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 `
 
 export default function Services() {
     return (
         <StyledServices>
-            <div className='images'>
-                <div className='photography'>
-                    <img src="painter1.jpg" alt=""></img>
-                    <p>Photography</p>
+            <div className='services'>
+                <div className='image-container'>
+                    <div className='photography'>
+                        <img src="charcuterie.jpg" alt=""></img>
+                    </div>
+                    <div className='label'>
+                        <p>Photography</p>
+                    </div>
                 </div>
-                <div className='branding'>
-                    <img src="ps-portfolio.svg" alt=""></img>
-                    <p>Branding</p>
+                <div className='image-container'>
+                    <div className='websites'>
+                        <img src="asparagus.png" alt=""></img>
+                    </div>
+                    <div className='label'>
+                        <p>Accessible Websites</p>
+                    </div>
                 </div>
-                <div className='websites'>
-                    <img src="am-portfolio.png" alt=""></img>
-                    <p>Accessible Websites</p>
+                <div className='image-container'>
+                    <div className='branding'>
+                        <img src="lemonpeel.jpg" alt=""></img>
+                    </div>
+                    <div className='label'>
+                        <p>Branding</p>
+                    </div>
                 </div>
+
+
             </div>
             <div className='blerb'>
                 <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.
