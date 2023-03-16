@@ -8,6 +8,7 @@ const OuterContainer = styled.div`
 background: ${theme.colours.green};
 position: relative;
 z-index: 1;
+overflow: hidden;
 `
 
 export default function PageWrapper({ preview, children }) {
