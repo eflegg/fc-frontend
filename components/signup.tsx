@@ -21,6 +21,7 @@ input {
 .btn-sign-up {
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
+    font-size: 1.8rem;
     background-color: ${theme.colours.pink};
     padding: 5px 10px;
     border-radius: 40px;

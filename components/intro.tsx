@@ -7,34 +7,66 @@ const StyledIntro = styled.section`
 h2 {
   font-family: 'Source sans', sans-serif;
   color: ${theme.colours.cream};
-  font-size: 5rem;
-  font-weight: 900;
+  font-size: 3rem;
+  font-weight: 800;
   text-align: center;
   width: 80%;
-  margin: 140px auto 0;
+  margin: 80px auto 0;
+  @media ${theme.devices.small} {
+  font-size: 4rem;
+  font-weight: 900;
+  }
+  @media ${theme.devices.medium} {
+    font-size: 5rem;
+    margin: 140px auto 0;
+    }
 }
 
 h1 {
   font-family: 'Abril fatface', cursive;
-  font-size: 3.5rem;
+  font-size: 2.4rem;
   color: ${theme.colours.blue};
-  margin-left: 80px;
+  margin-left: 60px;
   position: relative;
+  top: 10px;
+  @media ${theme.devices.small} {
+  font-size: 3.5rem;
+  // position: relative;
   top: 30px;
+  }
 }
 
 .cta {
-  margin: 40px 80px;
-  display: flex;
+  margin: 50px;
+  @media ${theme.devices.small}{ 
+     display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 50px 80px 200px 80px;
-
+    }
+  }
+ 
+.hire-us {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media ${theme.devices.small} {
+    margin-top: 0px;
+  }
+  p {
+    text-align: center;
+  }
+}
   p {
     font-family: ${theme.type.body};;
     color: ${theme.colours.cream};
-    font-weight: 900;
-    font-size: 3rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    @media ${theme.devices.small}{
+       font-weight: 900;
+      font-size: 3rem;
+    }
   }
 
   .btn-contact {
@@ -42,8 +74,13 @@ h1 {
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
     font-size: 1.8rem;
-    padding: 10px 40px;
-    border-radius: 60px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    @media ${theme.devices.small} {
+      font-size: 1.8rem;
+      padding: 10px 40px;
+      border-radius: 60px;
+    }
   }
 }
 `

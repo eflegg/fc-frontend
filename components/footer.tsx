@@ -7,8 +7,11 @@ import NewsLetter from '../components/signup'
 const OuterContainer = styled.div`
 background: ${theme.colours.orange};
 border: solid 2px yellow;
-display: flex;
+@media ${theme.devices.small}{
+  display: flex;
 flex-direction: row;
+}
+
 
 
 .footer-container {
