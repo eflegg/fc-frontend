@@ -1,6 +1,7 @@
 import { CMS_NAME, CMS_URL } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
+import ServiceCard from '../components/service-card'
 
 
 const StyledServices = styled.section`
@@ -14,22 +15,27 @@ p {
 
 .services {
     // border: solid 3px white;
-    display: flex;
+    
+    margin-bottom: 100px;
+    @media ${theme.devices.small} {
+         display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 100px;
-
-.photography, .branding, .websites {
-    // border: solid 1px pink;
-    margin: 20px;
-    height: 300px;
-    width: auto;
-
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
     }
+   
+    
+
+// .photography, .branding, .websites {
+//     border: solid 1px pink;
+//     margin: 20px;
+//     height: 300px;
+//     width: auto;
+
+//     img {
+//         height: 100%;
+//         width: 100%;
+//         object-fit: cover;
+//     }
 }
 
 .label {
@@ -38,9 +44,14 @@ p {
     text-align: center;
     }
 
-.image-container {
+.card-holder {
+    padding: 20px;
+    @media ${theme.devices.small} {
+        padding: 0px;
+    }
+    
     // border: solid 2px blue;
-    max-width: 33%;
+    // max-width: 33%;
     }
 }
 
@@ -56,29 +67,32 @@ export default function Services() {
     return (
         <StyledServices>
             <div className='services'>
-                <div className='image-container'>
-                    <div className='photography'>
+                <div className='card-holder'>
+                    <ServiceCard />
+                    {/* <div className='photography'>
                         <img src="charcuterie.jpg" alt=""></img>
                     </div>
                     <div className='label'>
                         <p>Photography</p>
-                    </div>
+                    </div> */}
                 </div>
-                <div className='image-container'>
-                    <div className='websites'>
+                <div className='card-holder'>
+                    <ServiceCard />
+                    {/* <div className='websites'>
                         <img src="asparagus.png" alt=""></img>
                     </div>
                     <div className='label'>
                         <p>Accessible Websites</p>
-                    </div>
+                    </div> */}
                 </div>
-                <div className='image-container'>
-                    <div className='branding'>
+                <div className='card-holder'>
+                    <ServiceCard />
+                    {/* <div className='branding'>
                         <img src="lemonpeel.jpg" alt=""></img>
                     </div>
                     <div className='label'>
                         <p>Branding</p>
-                    </div>
+                    </div> */}
                 </div>
 
 
@@ -88,6 +102,7 @@ export default function Services() {
 
                     We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace. Whether you’re reimagining your branding, upgrading your website or starting from scratch, we’re here to help! </p>
             </div>
+
         </StyledServices>
     )
 }
