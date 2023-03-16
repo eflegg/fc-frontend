@@ -22,21 +22,6 @@ p {
     flex-direction: row;
     justify-content: space-evenly;
     }
-   
-    
-
-// .photography, .branding, .websites {
-//     border: solid 1px pink;
-//     margin: 20px;
-//     height: 300px;
-//     width: auto;
-
-//     img {
-//         height: 100%;
-//         width: 100%;
-//         object-fit: cover;
-//     }
-}
 
 .label {
     // border: solid 2px yellow;
@@ -51,7 +36,6 @@ p {
     }
     
     // border: solid 2px blue;
-    // max-width: 33%;
     }
 }
 
@@ -69,30 +53,12 @@ export default function Services() {
             <div className='services'>
                 <div className='card-holder'>
                     <ServiceCard />
-                    {/* <div className='photography'>
-                        <img src="charcuterie.jpg" alt=""></img>
-                    </div>
-                    <div className='label'>
-                        <p>Photography</p>
-                    </div> */}
                 </div>
                 <div className='card-holder'>
                     <ServiceCard />
-                    {/* <div className='websites'>
-                        <img src="asparagus.png" alt=""></img>
-                    </div>
-                    <div className='label'>
-                        <p>Accessible Websites</p>
-                    </div> */}
                 </div>
                 <div className='card-holder'>
                     <ServiceCard />
-                    {/* <div className='branding'>
-                        <img src="lemonpeel.jpg" alt=""></img>
-                    </div>
-                    <div className='label'>
-                        <p>Branding</p>
-                    </div> */}
                 </div>
 
 
