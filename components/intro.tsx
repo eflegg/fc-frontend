@@ -77,7 +77,7 @@ h1 {
     padding: 10px 20px;
     border-radius: 40px;
     @media ${theme.devices.small} {
-      font-size: 1.8rem;
+      font-size: 2rem;
       padding: 10px 40px;
       border-radius: 60px;
     }

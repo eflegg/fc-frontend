@@ -7,12 +7,22 @@ const NewsLetter = styled.div`
 // margin: 80px;
 display: flex;
 flex-direction: column;
+// align-items: center;
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
 
 h3 {
     color: ${theme.colours.cream};
     font-family: ${theme.type.body};
-    font-size: 2rem;
+    font-size: 2.2rem;
+    @media ${theme.devices.small}{
+        font-size: 2.6rem;
     font-weight: 400;
+    }
+    
 }
 input {
     margin: 10px 0px 10px 0px;
@@ -21,11 +31,12 @@ input {
 .btn-sign-up {
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
-    font-size: 1.8rem;
+    font-size: 2rem;
     background-color: ${theme.colours.pink};
-    padding: 5px 10px;
+    padding: 10px 40px;
     border-radius: 40px;
-    width: 40%;
+   width: fit-content;
+    
 }
 `
 
@@ -33,12 +44,20 @@ export default function SignUp() {
     return (
         <NewsLetter>
             <h3>
-                Sign up for our e-mail newsletter
+                Find out why we put accessibility first
             </h3>
-            <input></input>
-            <input></input>
+            {/* <div className='input'>
+                <label> */}
+            {/* Name */}
+            <input type="name" />
+            {/* </label>
+                <label> */}
+            {/* Email */}
+            <input type="email" />
+            {/* </label> */}
+
             <button className='btn-sign-up'>
-                Sign up
+                Find Out
             </button>
         </NewsLetter>
     )

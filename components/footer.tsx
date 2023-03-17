@@ -6,50 +6,74 @@ import NewsLetter from '../components/signup'
 
 const OuterContainer = styled.div`
 background: ${theme.colours.orange};
-border: solid 2px yellow;
-@media ${theme.devices.small}{
+// border: solid 2px yellow;
+@media ${theme.devices.medium}{
   display: flex;
 flex-direction: row;
 }
 
-
-
 .footer-container {
-  border: solid 3px green;
+  // border: solid 3px green;
   display: flex;
   flex-grow: 2;
-  padding: 80px;
+  padding: 40px;
+  @media ${theme.devices.small} {
+    padding: 80px;
+  }
+  
 }
 
 .hire-us {
-  padding: 80px;
   display: flex;
   flex-direction: column;
-  border solid 2px blue;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  @media ${theme.devices.small}{
+  padding: 80px;
+  // border solid 2px blue;
   align-items: flex-end;
   justify-content: flex-end;
+  
+  }
+ 
 
   h1 {
     font-family: ${theme.type.logoType};
-    font-size: 4.5rem;
+    font-size: 2rem;
+    margin-top: 20px;
     color: ${theme.colours.cream};
-    text-align: right;
     line-height: auto;
+    text-align: right;
+    @media ${theme.devices.small}{
+      font-size: 3rem;
+    }
+    @media ${theme.devices.medium}{
+      font-size: 3.8rem;
+    }
   }
 
   h2 {
     font-family: ${theme.type.body};
-    font-weight: 900;
-    font-size: 4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: ${theme.colours.cream};
+    @media ${theme.devices.small}{
+      font-weight: 900;
+    font-size: 3rem;
+    }
   }
 
   button {
+    width: fit-content;
     background: ${theme.colours.pink};
     font-family: ${theme.type.body};
     color: ${theme.colours.blue};
     font-size: 2rem;
-    padding: 3px;
+    padding: 10px 40px;
+    border-radius: 60px;
+    @media ${theme.devices.small}{
+    }
   }
 
 }
