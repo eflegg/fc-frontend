@@ -52,6 +52,7 @@ export const colours = {
   grey: '#707070',
   white: '#fff',
   black: '#000',
+  red: 'darksalmon',
 }
 
 const theme = {
