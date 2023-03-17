@@ -46,19 +46,28 @@ p {
     margin: 50px auto;
 }
 `
+const services = [{ title: "photography", image: "cheese.jpg" }, { title: "branding", image: "lemonpeel.jpg" }, { title: "accesible webites", image: "asparagus.png" }]
 
-export default function Services() {
+export default function Offerings({ services, images, titles }) {
+    console.log("images: ", images);
+    console.log("titles: ", titles);
     return (
         <StyledServices>
             <div className='services'>
                 <div className='card-holder'>
-                    <ServiceCard />
+                    {services.map((service, index) => {
+                        return (
+                            <ServiceCard title={service.title} image={service.image} />
+
+                        );
+                    })}
+
                 </div>
                 <div className='card-holder'>
-                    <ServiceCard />
+                    {/* <ServiceCard /> */}
                 </div>
                 <div className='card-holder'>
-                    <ServiceCard />
+                    {/* <ServiceCard /> */}
                 </div>
 
 

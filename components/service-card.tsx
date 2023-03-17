@@ -45,15 +45,15 @@ const ServiceCard = styled.div`
 }
 `
 
-export default function Services() {
+export default function Services({ title }, { image }) {
     return (
         <ServiceCard>
             <div className='outercard'>
                 <div className='image-container'>
-                    <img src='charcuterie.jpg' alt=''></img>
+                    <img src={image}></img>
                 </div>
                 <div className='label'>
-                    <p>Photography</p>
+                    <p> {title}</p>
                 </div>
             </div>
         </ServiceCard>
