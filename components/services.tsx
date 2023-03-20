@@ -77,7 +77,7 @@ p {
   
 }
 `
-const services = [{ title: "Business strategy", image: "/cheese.jpg" }, { title: "Brand design", image: "/lemonpeel.jpg" }, { title: "Accessible websites", image: "/asparagus.png" }]
+const services = [{ title: "Brand strategy", image: "/cheese.jpg" }, { title: "Design", image: "/lemonpeel.jpg" }, { title: "Accessible websites", image: "/asparagus.png" }]
 
 export default function Services() {
 

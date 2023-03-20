@@ -17,8 +17,8 @@ const ServiceCardContainer = styled.div`
  
 .image-container {
     width: 95%;
-    height: 80%;
-    // border: solid 2px black;
+    height: 73%;
+
     border-radius: 20px;
     
     img {
