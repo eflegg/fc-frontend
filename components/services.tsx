@@ -15,13 +15,7 @@ p {
 
 .services {
     // border: solid 3px white;
-    
     margin-bottom: 100px;
-    @media ${theme.devices.small} {
-         display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    }
 
 .label {
     // border: solid 2px yellow;
@@ -30,16 +24,19 @@ p {
     }
 
 .card-holder {
-    padding: 20px;
-    @media ${theme.devices.small} {
-        padding: 0px;
-    }
-    
     // border: solid 2px blue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media ${theme.devices.small} {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0px;
+         }
     }
 }
-
-
 
 .blerb {
     width: 70%;
@@ -48,7 +45,7 @@ p {
 `
 const services = [{ title: "photography", image: "/cheese.jpg" }, { title: "branding", image: "/lemonpeel.jpg" }, { title: "accesible webites", image: "/asparagus.png" }]
 
-export default function Offerings() {
+export default function Services() {
 
     return (
         <StyledServices>
