@@ -10,7 +10,7 @@ h2 {
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
-  line-height: 110%;
+  line-height: 105%;
   width: 80%;
   margin: 80px auto 0;
   @media ${theme.devices.small} {
