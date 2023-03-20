@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import theme from '../components/Theme'
 import NewsLetter from '../components/signup'
 
+
 const StyledIntro = styled.section`
 h2 {
   font-family: 'Source sans', sans-serif;

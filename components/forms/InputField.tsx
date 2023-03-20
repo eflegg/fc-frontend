@@ -13,7 +13,14 @@ name: string;
     isRequired: boolean; 
 }
 const InputContainer = styled.div`
-    
+    display: flex;
+	flex-direction: column;
+	color: ${theme.colours.cream};
+	font-family: ${theme.type.body};
+	font-size: 1.4rem;
+	input, textarea {
+		padding-left: 10px;
+	}
 `
 
 const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name }) => 

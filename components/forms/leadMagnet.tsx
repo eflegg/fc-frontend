@@ -3,18 +3,30 @@ import theme from '../Theme'
 import React, {useState, useEffect} from 'react';
 import InputField from "./InputField";
 
-const LeadMagnet = ({ status, message, onValidated }) => {
+const SubmitButton = styled.button`
+    color: ${theme.colours.blue};
+    font-family: ${theme.type.body};
+    font-size: 1.8rem;
+    background-color: ${theme.colours.pink};
+    margin: 15px 0px 15px 0px;
+    padding: 10px 40px;
+    border-radius: 40px;
+   width: fit-content;
+
+`
+
+const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
 
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+  
     useEffect(() => {
         if(status === "success") clearFields();
       }, [status])
     
       const clearFields = () => {
         setFirstName('');
-        setLastName('');
+     
         setEmail('');
       }
     
@@ -23,12 +35,12 @@ const LeadMagnet = ({ status, message, onValidated }) => {
         e.preventDefault();
         email &&
         firstName &&
-        lastName &&
+     
         email.indexOf("@") > -1 &&
         onValidated({
             EMAIL: email,
             MERGE1: firstName,
-            MERGE2: lastName,
+           
         });
     }
 
@@ -37,7 +49,7 @@ const LeadMagnet = ({ status, message, onValidated }) => {
           <h3 className="mc__title">
           {status === "success" 
             ? "Success!" 
-            : "Join our email list for future updates."
+            : text
           }
         </h3>
         {status === "sending" && (
@@ -66,25 +78,17 @@ const LeadMagnet = ({ status, message, onValidated }) => {
                   onChangeHandler={setFirstName}
                   type="text"
                   value={firstName}
-                  placeholder="Jane"
+                  placeholder="Name"
                   isRequired
                   name="firstName"
                 />
       
-                <InputField
-                  label="Last Name"
-                  onChangeHandler={setLastName}
-                  type="text"
-                  value={lastName}
-                  placeholder="Doe"
-                  isRequired
-                  name="lastName"
-                />
+            
       
                 <InputField
                   label="Email"
                   onChangeHandler={setEmail}
-                  type="email"
+                  type="text"
                   value={email}
                   placeholder="your@email.com"
                   isRequired
@@ -98,12 +102,12 @@ const LeadMagnet = ({ status, message, onValidated }) => {
        
 
 {
-          status === 'success' ? <button
+          status === 'success' ? <SubmitButton
           
-            className="g__justify-self-center">Check your inbox!</button> :  <button
+            className="g__justify-self-center btn-sign-up">Check your inbox!</SubmitButton> :  <SubmitButton
             type="submit"
            
-          >Get the post</button>
+          >{buttonText}</SubmitButton>
         }
       </form>
     );

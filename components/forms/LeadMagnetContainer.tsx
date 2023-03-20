@@ -15,6 +15,8 @@ const LeadMagnetContainer = props => {
                         status={status} 
                         message={message}
                         onValidated={formData => subscribe(formData)}
+                        text={props.text}
+                        buttonText={props.buttonText}
                     />
                 )}
             />

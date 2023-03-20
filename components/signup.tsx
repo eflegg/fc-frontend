@@ -1,6 +1,7 @@
 import { CMS_NAME, CMS_URL } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
+import LeadMagnetContainer from '../components/forms/LeadMagnetContainer'
 
 const NewsLetter = styled.div`
 // width: 30%;
@@ -27,9 +28,7 @@ h3 {
     }
     
 }
-input {
-    margin: 10px 0px 10px 0px;
-}
+
 
 .btn-sign-up {
     color: ${theme.colours.blue};
@@ -47,22 +46,7 @@ input {
 export default function SignUp({text, buttonText}) {
     return (
         <NewsLetter>
-            <h3>
-               {text}
-            </h3>
-            {/* <div className='input'>
-                <label> */}
-            {/* Name */}
-            <input type="name" />
-            {/* </label>
-                <label> */}
-            {/* Email */}
-            <input type="email" />
-            {/* </label> */}
-
-            <button className='btn-sign-up'>
-               {buttonText}
-            </button>
+            <LeadMagnetContainer text={text} buttonText={buttonText} />
         </NewsLetter>
     )
 }
