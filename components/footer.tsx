@@ -5,62 +5,84 @@ import theme from '../components/Theme'
 import NewsLetter from '../components/signup'
 
 const OuterContainer = styled.div`
-background: ${theme.colours.orange};
-// border: solid 2px yellow;
+display: flex;
+flex-direction: column;
 @media ${theme.devices.medium}{
-  display: flex;
+
 flex-direction: row;
 }
+position: relative;
+  .copyright {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 1.2rem;
+    font-family: ${theme.type.body};
+    
+color: ${theme.colours.cream};
+  
+  }
+background: ${theme.colours.orange};
+
 
 .footer-container {
-  // border: solid 3px green;
-  display: flex;
-  flex-grow: 2;
+ /* border: solid 3px green; */
+  /* display: flex;
+  flex-grow: 2; */
   padding: 40px;
-  @media ${theme.devices.small} {
+  @media ${theme.devices.medium} {
     padding: 80px;
   }
   
 }
 
 .hire-us {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 40px;
+
+  /* border: 3px solid yellow; */
   @media ${theme.devices.small}{
-  padding: 80px;
-  // border solid 2px blue;
+ 
   align-items: flex-end;
   justify-content: flex-end;
-  
+  }
+  @media ${theme.devices.medium}{
+  padding: 80px 60px;
+  max-width: 60%;
+ 
   }
  
 
-  h1 {
+  .h1 {
     font-family: ${theme.type.logoType};
-    font-size: 2rem;
-    margin-top: 20px;
+    font-size: 2.6rem;
+    margin: 20px 0;
     color: ${theme.colours.cream};
-    line-height: auto;
+    line-height: 100%;
     text-align: right;
     @media ${theme.devices.small}{
-      font-size: 3rem;
+      font-size: 3.2rem;
     }
     @media ${theme.devices.medium}{
       font-size: 3.8rem;
     }
   }
 
-  h2 {
+  h3 {
     font-family: ${theme.type.body};
     font-size: 2.4rem;
+    line-height: 110%;
     font-weight: 700;
+    margin-bottom: 20px;
     color: ${theme.colours.cream};
     @media ${theme.devices.small}{
-      font-weight: 900;
-    font-size: 3rem;
+      /* font-weight: 700;
+    font-size: 3rem; */
+    text-align: right;
     }
   }
 
@@ -77,7 +99,7 @@ flex-direction: row;
   }
 
 }
-}
+
 
 
 `
@@ -88,17 +110,21 @@ export default function Footer() {
   return (
     <footer className="">
       <OuterContainer>
+      <div className="copyright">
+            Flegg Creative {(new Date().getFullYear())}
+          </div>
         <div className="footer-container">
-          <NewsLetter />
+          <NewsLetter text="Get our newsletter" buttonText="Sign up" />
         </div>
         <div className='hire-us flex flex-col'>
-          <h2>
-            Hire us
-          </h2>
+        
+          <h3>
+           Got questions? Wondering if we're a good fit? Just give us a shout.
+          </h3>
           <button>
-            contact
+            Contact
           </button>
-          <h1>Flegg Creative</h1>
+          <h4 className="h1">Flegg Creative</h4>
         </div>
 
       </OuterContainer>

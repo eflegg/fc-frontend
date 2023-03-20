@@ -18,9 +18,12 @@ h3 {
     color: ${theme.colours.cream};
     font-family: ${theme.type.body};
     font-size: 2.2rem;
+    line-height: 2.4rem;
+    margin-bottom: 10px;
     @media ${theme.devices.small}{
         font-size: 2.6rem;
     font-weight: 400;
+    line-height: 2.8rem;
     }
     
 }
@@ -33,6 +36,7 @@ input {
     font-family: ${theme.type.body};
     font-size: 2rem;
     background-color: ${theme.colours.pink};
+    margin-top: 15px;
     padding: 10px 40px;
     border-radius: 40px;
    width: fit-content;
@@ -40,11 +44,11 @@ input {
 }
 `
 
-export default function SignUp() {
+export default function SignUp({text, buttonText}) {
     return (
         <NewsLetter>
             <h3>
-                Find out why we put accessibility first
+               {text}
             </h3>
             {/* <div className='input'>
                 <label> */}
@@ -57,7 +61,7 @@ export default function SignUp() {
             {/* </label> */}
 
             <button className='btn-sign-up'>
-                Find Out
+               {buttonText}
             </button>
         </NewsLetter>
     )

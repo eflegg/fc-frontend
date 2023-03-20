@@ -11,6 +11,7 @@ p {
     color: ${theme.colours.cream};
     font-size: 1.8rem;
     font-weight: 300;
+    margin: 15px 0px;
 }
 
 .services {
@@ -42,8 +43,13 @@ p {
 
 
 .blerb {
-    width: 70%;
+    width: 85%;
+    margin: 30px auto;
+    @media ${theme.devices.small} {
+        width: 70%;
     margin: 50px auto;
+    }
+  
 }
 `
 
@@ -64,9 +70,9 @@ export default function Services() {
 
             </div>
             <div className='blerb'>
-                <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.
+                <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.</p>
 
-                    We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace. Whether you’re reimagining your branding, upgrading your website or starting from scratch, we’re here to help! </p>
+                   <p> We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace. Whether you’re reimagining your branding, upgrading your website or starting from scratch, we’re here to help! </p>
             </div>
 
         </StyledServices>
