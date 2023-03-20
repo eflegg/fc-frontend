@@ -5,7 +5,7 @@ import theme from '../components/Theme'
 const ServiceCardContainer = styled.div`
 .outercard {
     margin: 10px;
-   height: 450px;
+   height: 375px;
    /* width: 380px; */
 //    border: solid 3px seagreen;
    border-radius: 20px;

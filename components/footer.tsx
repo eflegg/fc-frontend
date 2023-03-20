@@ -91,7 +91,7 @@ background: ${theme.colours.orange};
     background: ${theme.colours.pink};
     font-family: ${theme.type.body};
     color: ${theme.colours.blue};
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: 10px 40px;
     border-radius: 60px;
     @media ${theme.devices.small}{

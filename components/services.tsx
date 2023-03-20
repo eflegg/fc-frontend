@@ -7,11 +7,13 @@ import ServiceCard from '../components/service-card'
 const StyledServices = styled.section`
 .services-title{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
     h3 {
         font-family: ${theme.type.body};
-        font-size: 4.4rem;
+        font-size: 3.4rem;
+        text-align: left;
         line-height: 110%;
         font-weight: 700;
         margin-bottom: 20px;
@@ -60,7 +62,8 @@ p {
   width: 90%;
   margin: 0 auto;
   list-style: none;
-  /* max-width: 1200px; */
+  max-width: 1000px;
+
 }
 }
 
@@ -74,7 +77,7 @@ p {
   
 }
 `
-const services = [{ title: "Strategy", image: "/cheese.jpg" }, { title: "Branding", image: "/lemonpeel.jpg" }, { title: "Accessible webites", image: "/asparagus.png" }]
+const services = [{ title: "Business strategy", image: "/cheese.jpg" }, { title: "Brand design", image: "/lemonpeel.jpg" }, { title: "Accessible websites", image: "/asparagus.png" }]
 
 export default function Services() {
 
@@ -85,6 +88,7 @@ export default function Services() {
                     <div className="services-title">
 
                     <h3>What we offer</h3>
+                    <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.</p>
                     </div>
                     {services.map((service, index) => {
                         return (
@@ -92,14 +96,15 @@ export default function Services() {
 
                         );
                     })}
-
+  
                 </div>
-            </div>
-            <div className='blerb'>
-                <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.</p>
+                <div className='blerb'>
+               
 
-                   <p> We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace.</p>
+               <p> We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace.</p>
+        </div>
             </div>
+         
 
         </StyledServices>
     )
