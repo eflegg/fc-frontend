@@ -6,7 +6,7 @@ const ServiceCardContainer = styled.div`
 .outercard {
     margin: 10px;
    height: 450px;
-   width: 380px;
+   /* width: 380px; */
 //    border: solid 3px seagreen;
    border-radius: 20px;
    background: rgba(231, 165, 186, .7);
