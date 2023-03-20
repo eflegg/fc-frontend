@@ -45,7 +45,7 @@ const ServiceCard = styled.div`
 }
 `
 
-export default function Services({ title }, { image }) {
+export default function Services({ title, image }) {
     return (
         <ServiceCard>
             <div className='outercard'>

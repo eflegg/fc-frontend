@@ -46,11 +46,10 @@ p {
     margin: 50px auto;
 }
 `
-const services = [{ title: "photography", image: "cheese.jpg" }, { title: "branding", image: "lemonpeel.jpg" }, { title: "accesible webites", image: "asparagus.png" }]
+const services = [{ title: "photography", image: "/cheese.jpg" }, { title: "branding", image: "/lemonpeel.jpg" }, { title: "accesible webites", image: "/asparagus.png" }]
 
-export default function Offerings({ services, images, titles }) {
-    console.log("images: ", images);
-    console.log("titles: ", titles);
+export default function Offerings() {
+
     return (
         <StyledServices>
             <div className='services'>
@@ -63,14 +62,6 @@ export default function Offerings({ services, images, titles }) {
                     })}
 
                 </div>
-                <div className='card-holder'>
-                    {/* <ServiceCard /> */}
-                </div>
-                <div className='card-holder'>
-                    {/* <ServiceCard /> */}
-                </div>
-
-
             </div>
             <div className='blerb'>
                 <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.
