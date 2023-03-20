@@ -10,6 +10,7 @@ h2 {
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
+  line-height: 105%;
   width: 80%;
   margin: 80px auto 0;
   @media ${theme.devices.small} {
@@ -68,7 +69,12 @@ h1 {
       font-size: 3rem;
     }
   }
-
+.newscontainer{
+  @media ${theme.devices.small} {
+    max-width: 60%;
+    }
+  
+}
   .btn-contact {
     background: ${theme.colours.pink};
     color: ${theme.colours.blue};
@@ -77,12 +83,12 @@ h1 {
     padding: 10px 20px;
     border-radius: 40px;
     @media ${theme.devices.small} {
-      font-size: 1.8rem;
+      font-size: 2rem;
       padding: 10px 40px;
       border-radius: 60px;
     }
   }
-}
+
 `
 
 
@@ -94,11 +100,11 @@ export default function Intro() {
         Flegg Creative
       </h1>
       <h2 className="tagline">
-        Building accessible brands at a human pace.
+        Building accessible brands at a more human pace.
       </h2>
       <div className='cta'>
         <div className='newscontainer'>
-          <NewsLetter />
+          <NewsLetter text="Find out why we put accessibility first" buttonText="Get the story"/>
         </div>
         <div className='hire-us'>
           <p>Hire Us</p>

@@ -2,22 +2,23 @@ import { CMS_NAME, CMS_URL } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 
-const ServiceCard = styled.div`
+const ServiceCardContainer = styled.div`
 .outercard {
-   height: 360px;
-//    border: solid 3px yellow;
+    margin: 10px;
+   height: 375px;
+   /* width: 380px; */
+//    border: solid 3px seagreen;
    border-radius: 20px;
    background: rgba(231, 165, 186, .7);
-    // background: ${theme.colours.pink};
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: space-evenly;
+   justify-content: space-around;
  
 .image-container {
-    height: 280px;
-    padding: 0px 12px 10px 12px;
-    // border: solid 2px black;
+    width: 95%;
+    height: 73%;
+
     border-radius: 20px;
     
     img {
@@ -29,7 +30,7 @@ const ServiceCard = styled.div`
 
 }
 .label {
-    // border: solid 1px green;
+    // border: solid 1px purple;
     border-radius: 40px;
     width: 300px;
     text-align: center;
@@ -37,7 +38,7 @@ const ServiceCard = styled.div`
         font-family: ${theme.type.body};
         color: ${theme.colours.blue};
         font-size: 1.8rem;
-        font-weight: 300;
+        font-weight: 500;
     }
 }
 
@@ -45,17 +46,17 @@ const ServiceCard = styled.div`
 }
 `
 
-export default function Services() {
+export default function ServiceCard({ title, image }) {
     return (
-        <ServiceCard>
+        <ServiceCardContainer>
             <div className='outercard'>
                 <div className='image-container'>
-                    <img src='charcuterie.jpg' alt=''></img>
+                    <img src={image}></img>
                 </div>
                 <div className='label'>
-                    <p>Photography</p>
+                    <p> {title}</p>
                 </div>
             </div>
-        </ServiceCard>
+        </ServiceCardContainer>
     )
 }
