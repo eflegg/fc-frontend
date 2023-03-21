@@ -14,6 +14,9 @@ const SubmitButton = styled.button`
    width: fit-content;
 
 `
+const CustomForm = styled.form`
+  
+`
 
 const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
 
@@ -44,7 +47,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
     }
 
     return (
-      <form    onSubmit={(e) => handleSubmit(e)} className="mc__form">
+      <CustomForm    onSubmit={(e) => handleSubmit(e)} className="mc__form">
           <h3 className="mc__title">
           {status === "success" 
             ? "Success!" 
@@ -62,12 +65,12 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
             dangerouslySetInnerHTML={{ __html: message }}
           />
         )}
-        {status === "success" && (
+        {/* {status === "success" && (
           <div
             className="mc__alert mc__alert--success"
             dangerouslySetInnerHTML={{ __html: message }}
           />
-        )}
+        )} */}
 
 {status !== "success" ? (
                 <div className="mc__field-container">
@@ -113,7 +116,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
            
           >{buttonText}</SubmitButton>
         }
-      </form>
+      </CustomForm>
     );
 };
 

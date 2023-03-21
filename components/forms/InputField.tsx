@@ -22,6 +22,9 @@ const InputContainer = styled.div`
 		padding-left: 10px;
 		background: ${theme.colours.cream};
 	}
+	label {
+		color: ${theme.colours.pink};
+	}
 `
 
 const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name }) => 
