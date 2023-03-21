@@ -77,7 +77,7 @@ p {
   
 }
 `
-const services = [{ title: "Brand strategy", image: "/cheese.jpg" }, { title: "Design", image: "/lemonpeel.jpg" }, { title: "Accessible websites", image: "/asparagus.png" }]
+const services = [{ title: "Brand strategy", image: "/cheese.jpg" }, { title: "Design", image: "/gustaboat.jpeg" }, { title: "Accessible websites", image: "/asparagus.png" }]
 
 export default function Services() {
 
@@ -87,8 +87,8 @@ export default function Services() {
                 <div className='card--grid'>
                     <div className="services-title">
 
-                    <h3>What we offer</h3>
-                    <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.</p>
+                        <h3>What we offer</h3>
+                        <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.</p>
                     </div>
                     {services.map((service, index) => {
                         return (
@@ -96,15 +96,15 @@ export default function Services() {
 
                         );
                     })}
-  
+
                 </div>
                 <div className='blerb'>
-               
 
-               <p> We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace.</p>
-        </div>
+
+                    <p> We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace.</p>
+                </div>
             </div>
-         
+
 
         </StyledServices>
     )

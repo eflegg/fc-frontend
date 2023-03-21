@@ -33,7 +33,7 @@ h3 {
 .btn-sign-up {
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
-    font-size: 2rem;
+    font-size: 1.6rem;
     background-color: ${theme.colours.pink};
     margin-top: 15px;
     padding: 10px 40px;
@@ -43,7 +43,7 @@ h3 {
 }
 `
 
-export default function SignUp({text, buttonText}) {
+export default function SignUp({ text, buttonText }) {
     return (
         <NewsLetter>
             <LeadMagnetContainer text={text} buttonText={buttonText} />

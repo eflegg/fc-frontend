@@ -80,7 +80,7 @@ h1 {
     background: ${theme.colours.pink};
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 10px 20px;
     border-radius: 40px;
     @media ${theme.devices.small} {
@@ -105,7 +105,7 @@ export default function Intro() {
       </h2>
       <div className='cta'>
         <div className='newscontainer'>
-          <NewsLetter text="Find out why we put accessibility first" buttonText="Get the story"/>
+          <NewsLetter text="Find out why we put accessibility first" buttonText="Get the story" />
         </div>
         <div className='hire-us'>
           <p>Hire Us</p>
