@@ -18,12 +18,14 @@ const InputContainer = styled.div`
 	color: ${theme.colours.blue};
 	font-family: ${theme.type.body};
 	font-size: 1.4rem;
+	
 	input, textarea {
 		padding-left: 10px;
 		background: ${theme.colours.cream};
 	}
 	label {
-		color: ${theme.colours.pink};
+		color: ${theme.colours.cream};
+		font-weight: 300;
 	}
 `
 
