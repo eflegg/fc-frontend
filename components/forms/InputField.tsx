@@ -7,19 +7,20 @@ type InputProps= {
 
 	className?: string;
 	type: string;
-onChangeHandler:any;
-name: string;
+	onChangeHandler:any;
+	name: string;
     value: string;
     isRequired: boolean; 
 }
 const InputContainer = styled.div`
     display: flex;
 	flex-direction: column;
-	color: ${theme.colours.cream};
+	color: ${theme.colours.blue};
 	font-family: ${theme.type.body};
 	font-size: 1.4rem;
 	input, textarea {
 		padding-left: 10px;
+		background: ${theme.colours.cream};
 	}
 `
 
@@ -43,7 +44,6 @@ const InputField: React.FC<InputProps> = ({ label, placeholder, className, type,
         type="text"
         name={name}
         onChange={onChangeHandler}
-     
         placeholder={placeholder}
         value={value}
        

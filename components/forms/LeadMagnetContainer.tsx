@@ -4,7 +4,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const LeadMagnetContainer = props => {
 
-    const postUrl = `https://genhybridsystems.us1.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
+    const postUrl = `https://fleggcreative.us10.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
 
     return (
         <div className="mc__form-container">

@@ -26,7 +26,6 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
     
       const clearFields = () => {
         setFirstName('');
-     
         setEmail('');
       }
     
@@ -75,10 +74,13 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
                 <InputField
                 className="lead-magnet__input"
                   label="First Name"
-                  onChangeHandler={setFirstName}
+                
+                  onChangeHandler={(e:any) =>
+										setFirstName(e.target.value )
+									}
                   type="text"
                   value={firstName}
-                  placeholder="Name"
+                  placeholder=""
                   isRequired
                   name="firstName"
                 />
@@ -87,10 +89,12 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
       
                 <InputField
                   label="Email"
-                  onChangeHandler={setEmail}
+                  onChangeHandler={(e:any) =>
+										setEmail(e.target.value )
+									}
                   type="text"
                   value={email}
-                  placeholder="your@email.com"
+                  placeholder=""
                   isRequired
                   name="email"
                 />
