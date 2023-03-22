@@ -105,7 +105,7 @@ export default function Services() {
                 <h3>Who we are</h3>
                <p>We’re Erin and Elizabeth Flegg, a sister duo design and branding studio based in Montreal, and Vancouver Island. We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. </p>
                 
-                <p>In the age of internet overwhelm, it’s how we move at a more human pace.</p>
+                <p>In the age of internet overwhelm, it’s one of the ways we move at a more human pace.</p>
         </div>
             </div>
          
