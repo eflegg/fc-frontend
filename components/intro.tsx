@@ -44,7 +44,7 @@ h1 {
      display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 50px 80px 200px 80px;
+  margin: 50px 80px 150px 80px;
     }
   }
  
