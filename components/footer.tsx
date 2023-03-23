@@ -131,11 +131,11 @@ export default function Footer() {
 
         <div className="copyright">
 
-          <a href="https://www.instagram.com/fleggcreative/">
+          <a href="https://www.instagram.com/fleggcreative/" target='_blank'>
             <img className="insta" src="/instagram.svg" />
           </a>
-          <p>hellofleggcreative.ca</p>
-          Flegg Creative {(new Date().getFullYear())}
+          <p>hello@fleggcreative.ca</p>
+          &copy; Flegg Creative {(new Date().getFullYear())}
         </div>
         <div className="footer-container">
           <NewsLetter text="Get our newsletter" buttonText="Sign up" />
