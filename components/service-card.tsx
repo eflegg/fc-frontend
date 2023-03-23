@@ -6,8 +6,9 @@ const ServiceCardContainer = styled.div`
   @media ${theme.devices.medium} {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-align-items: flex-end;
+    justify-content: center;
+    align-items: flex-end;
+    height: 500px;
     }
 
 .outercard {
@@ -73,8 +74,8 @@ export default function ServiceCard({ title, image, description }) {
                 <div className='label'>
                     <p> {title}</p>
                 </div>
-            
-            <div className='description'>
+
+                <div className='description'>
                     <p>{description}</p>
                 </div>
             </div>

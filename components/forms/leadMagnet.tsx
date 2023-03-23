@@ -14,6 +14,10 @@ const SubmitButton = styled.button`
    width: fit-content;
    @media ${theme.devices.small}{
     font-size: 2.4rem;
+    :hover {
+      background: ${theme.colours.green};
+      color: ${theme.colours.cream};
+    }
    }
 
 `

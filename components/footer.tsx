@@ -87,6 +87,10 @@ background: ${theme.colours.orange};
   }
 
   button {
+    :hover {
+      background: ${theme.colours.green};
+      color: ${theme.colours.cream};
+    }
     width: fit-content;
     background: ${theme.colours.pink};
     font-family: ${theme.type.body};
@@ -121,9 +125,11 @@ export default function Footer() {
           <h3>
             Got questions? Wondering if we're a good fit? Just give us a shout.
           </h3>
-          <button>
-            Contact
-          </button>
+          <a href="mailto:hello@fleggcreative.ca">
+            <button>
+              Contact
+            </button>
+          </a>
           <h4 className="h1">Flegg Creative</h4>
         </div>
 

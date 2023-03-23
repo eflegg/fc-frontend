@@ -88,6 +88,10 @@ h1 {
       padding: 10px 40px;
       border-radius: 60px;
     }
+    :hover {
+      background: ${theme.colours.orange};
+      color: ${theme.colours.cream};
+    }
   }
 
 `
@@ -109,7 +113,9 @@ export default function Intro() {
         </div>
         <div className='hire-us'>
           <p>Hire Us</p>
-          <button className='btn-contact'>Contact</button>
+          <a href="mailto:hello@fleggcreative.ca">
+            <button className='btn-contact'>Contact</button>
+          </a>
         </div>
       </div>
     </StyledIntro>

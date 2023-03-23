@@ -31,6 +31,10 @@ h3 {
 
 
 .btn-sign-up {
+    :hover {
+        background: ${theme.colours.green};
+        color: ${theme.colours.cream};
+      }
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
     font-size: 2.6rem;
@@ -43,7 +47,7 @@ h3 {
 }
 button, input {
   &:focus {
-    border: 4px dotted #18172B;
+    // border: 4px dotted #18172B;
   }
 }
 `
