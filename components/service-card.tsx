@@ -10,7 +10,8 @@ align-items: flex-end;
 
 .outercard {
     margin: 10px;
-   height: 375px;
+   height: 600px;
+   padding: 12px;
    /* width: 380px; */
 //    border: solid 3px seagreen;
    border-radius: 20px;
@@ -42,7 +43,16 @@ align-items: flex-end;
     p {
         font-family: ${theme.type.body};
         color: ${theme.colours.blue};
-        font-size: 1.8rem;
+        font-size: 2.8rem;
+        font-weight: 500;
+    }
+}
+
+.description {
+    p {
+        font-family: ${theme.type.body};
+        color: ${theme.colours.blue};
+        font-size: 2.4rem;
         font-weight: 500;
     }
 }
@@ -51,7 +61,7 @@ align-items: flex-end;
 }
 `
 
-export default function ServiceCard({ title, image }) {
+export default function ServiceCard({ title, image, description }) {
     return (
         <ServiceCardContainer>
             <div className='outercard'>
@@ -60,6 +70,9 @@ export default function ServiceCard({ title, image }) {
                 </div>
                 <div className='label'>
                     <p> {title}</p>
+                </div>
+                <div className='description'>
+                    <p>{description}</p>
                 </div>
             </div>
         </ServiceCardContainer>

@@ -13,7 +13,7 @@ const StyledServices = styled.section`
   
     h3 {
         font-family: ${theme.type.body};
-        font-size: 3.4rem;
+        font-size: 5.4rem;
         text-align: left;
         line-height: 110%;
         font-weight: 700;
@@ -25,8 +25,8 @@ const StyledServices = styled.section`
 p {
     font-family: ${theme.type.body};
     color: ${theme.colours.cream};
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
     font-weight: 300;
     margin: 15px 0px;
 }
@@ -57,7 +57,7 @@ p {
     .card--grid {
        
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(20.5rem, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(38.5rem, 100%), 1fr));
   grid-row-gap: 30px;
   grid-column-gap: 30px;
   justify-content: center;
@@ -79,7 +79,7 @@ p {
   
 }
 `
-const services = [{ title: "Brand strategy", image: "/cheese.jpg" }, { title: "Design", image: "/gustaboat.jpeg" }, { title: "Accessible websites", image: "/asparagus.png" }]
+const services = [{ title: "Brand strategy", image: "/cheese.jpg", description: "We begin by identifying goals and creating a plan to meet them" }, { title: "Design", image: "/gustaboat.jpeg", description: "Then we bring it to life, translating strategy into a visual identity with brand photography, print media and web design" }, { title: "Accessible websites", image: "/asparagus.png", description: "Finally, we give a home, building a beautiful, accessible website to invite your community into" }]
 
 export default function Services() {
 
@@ -94,7 +94,7 @@ export default function Services() {
                     </div>
                     {services.map((service, index) => {
                         return (
-                            <ServiceCard title={service.title} image={service.image} />
+                            <ServiceCard title={service.title} image={service.image} description={service.description} />
 
                         );
                     })}

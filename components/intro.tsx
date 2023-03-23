@@ -8,31 +8,31 @@ const StyledIntro = styled.section`
 h2 {
   font-family: 'Source sans', sans-serif;
   color: ${theme.colours.cream};
-  font-size: 3rem;
+  font-size: 4.8rem;
   font-weight: 800;
   text-align: center;
   line-height: 105%;
   width: 80%;
   margin: 80px auto 0;
   @media ${theme.devices.small} {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 900;
   }
   @media ${theme.devices.medium} {
-    font-size: 5rem;
+    font-size: 8rem;
     margin: 140px auto 0;
     }
 }
 
 h1 {
   font-family: 'Abril fatface', cursive;
-  font-size: 2.4rem;
+  font-size: 3.8rem;
   color: ${theme.colours.blue};
   margin-left: 60px;
   position: relative;
   top: 10px;
   @media ${theme.devices.small} {
-  font-size: 3.5rem;
+  font-size: 5.6rem;
   // position: relative;
   top: 30px;
   }
@@ -63,11 +63,11 @@ h1 {
   p {
     font-family: ${theme.type.body};;
     color: ${theme.colours.cream};
-    font-size: 2.4rem;
+    font-size: 3.8rem;
     font-weight: 700;
     @media ${theme.devices.small}{
        font-weight: 900;
-      font-size: 3rem;
+      font-size: 4.8rem;
     }
   }
 .newscontainer{
@@ -80,11 +80,11 @@ h1 {
     background: ${theme.colours.pink};
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     padding: 10px 20px;
     border-radius: 40px;
     @media ${theme.devices.small} {
-      font-size: 2rem;
+      font-size: 2.4rem;
       padding: 10px 40px;
       border-radius: 60px;
     }

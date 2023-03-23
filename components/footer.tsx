@@ -16,7 +16,7 @@ position: relative;
     position: absolute;
     left: 10px;
     bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 2.4rem;
     font-family: ${theme.type.body};
     
 color: ${theme.colours.cream};
@@ -59,29 +59,29 @@ background: ${theme.colours.orange};
 
   .h1 {
     font-family: ${theme.type.logoType};
-    font-size: 2.6rem;
-    margin: 20px 0;
+    font-size: 4.6rem;
+    margin: 25px 0;
     color: ${theme.colours.cream};
     line-height: 100%;
     text-align: right;
     @media ${theme.devices.small}{
-      font-size: 3.2rem;
+      font-size: 5.4rem;
     }
     @media ${theme.devices.medium}{
-      font-size: 3.8rem;
+      font-size: 6rem;
     }
   }
 
   h3 {
     font-family: ${theme.type.body};
-    font-size: 2.4rem;
+    font-size: 3.4rem;
     line-height: 110%;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
     color: ${theme.colours.cream};
     @media ${theme.devices.small}{
-      /* font-weight: 700;
-    font-size: 3rem; */
+    font-weight: 700;
+    font-size: 4.4rem;
     text-align: right;
     }
   }
@@ -91,7 +91,7 @@ background: ${theme.colours.orange};
     background: ${theme.colours.pink};
     font-family: ${theme.type.body};
     color: ${theme.colours.blue};
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     padding: 10px 40px;
     border-radius: 60px;
     @media ${theme.devices.small}{
@@ -110,16 +110,16 @@ export default function Footer() {
   return (
     <footer className="">
       <OuterContainer>
-      <div className="copyright">
-            Flegg Creative {(new Date().getFullYear())}
-          </div>
+        <div className="copyright">
+          Flegg Creative {(new Date().getFullYear())}
+        </div>
         <div className="footer-container">
           <NewsLetter text="Get our newsletter" buttonText="Sign up" />
         </div>
         <div className='hire-us flex flex-col'>
-        
+
           <h3>
-           Got questions? Wondering if we're a good fit? Just give us a shout.
+            Got questions? Wondering if we're a good fit? Just give us a shout.
           </h3>
           <button>
             Contact

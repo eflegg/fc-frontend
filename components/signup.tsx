@@ -19,12 +19,12 @@ h3 {
     color: ${theme.colours.cream};
     font-family: ${theme.type.body};
     font-size: 2.2rem;
-    line-height: 2.4rem;
+    line-height: 110%;
     margin-bottom: 10px;
     @media ${theme.devices.small}{
-        font-size: 2.6rem;
+        font-size: 3.6rem;
     font-weight: 400;
-    line-height: 2.8rem;
+    line-height: 110%rem;
     }
     
 }
@@ -33,7 +33,7 @@ h3 {
 .btn-sign-up {
     color: ${theme.colours.blue};
     font-family: ${theme.type.body};
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     background-color: ${theme.colours.pink};
     margin-top: 15px;
     padding: 10px 40px;

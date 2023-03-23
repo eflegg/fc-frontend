@@ -1,23 +1,23 @@
 import styled from 'styled-components'
 import theme from '../Theme'
 
-type InputProps= {
-    label: string;
+type InputProps = {
+	label: string;
 	placeholder: string;
 
 	className?: string;
 	type: string;
-	onChangeHandler:any;
+	onChangeHandler: any;
 	name: string;
-    value: string;
-    isRequired: boolean; 
+	value: string;
+	isRequired: boolean;
 }
 const InputContainer = styled.div`
     display: flex;
 	flex-direction: column;
 	color: ${theme.colours.blue};
 	font-family: ${theme.type.body};
-	font-size: 1.4rem;
+	font-size: 2.4rem;
 	
 	input, textarea {
 		padding-left: 10px;
@@ -34,49 +34,46 @@ const InputContainer = styled.div`
 	}
 `
 
-const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name }) => 
-
- {
-    return (
-<InputContainer
-			className={` ${
-				className ? className : ''
-			}`}
+const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name }) => {
+	return (
+		<InputContainer
+			className={` ${className ? className : ''
+				}`}
 		>
 
-<label htmlFor={name} className="input--default">
+			<label htmlFor={name} className="input--default">
 				{isRequired ? '*' : null}
 				{label}
 			</label>
-            {type === "text" ? (
-	<>
-    <input
-        type="text"
-        name={name}
-        onChange={onChangeHandler}
-        placeholder={placeholder}
-        value={value}
-       
-    
-    />
-</>
-            ) : (
+			{type === "text" ? (
 				<>
-					
-							<textarea
-								name={name}
-                             
-								placeholder={placeholder}
-                                onChange={onChangeHandler}
-                                value={value}
-								
-							/>
-                            
+					<input
+						type="text"
+						name={name}
+						onChange={onChangeHandler}
+						placeholder={placeholder}
+						value={value}
+
+
+					/>
+				</>
+			) : (
+				<>
+
+					<textarea
+						name={name}
+
+						placeholder={placeholder}
+						onChange={onChangeHandler}
+						value={value}
+
+					/>
+
 				</>
 			)}
-		
-        </InputContainer>
-    )
+
+		</InputContainer>
+	)
 }
 
 export default InputField;
