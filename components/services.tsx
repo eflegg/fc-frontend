@@ -94,7 +94,7 @@ export default function Services() {
                     </div>
                     {services.map((service, index) => {
                         return (
-                            <ServiceCard title={service.title} image={service.image} description={service.description} />
+                            <ServiceCard key={index} title={service.title} image={service.image} description={service.description} />
 
                         );
                     })}

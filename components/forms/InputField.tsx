@@ -4,7 +4,7 @@ import theme from '../Theme'
 type InputProps = {
 	label: string;
 	placeholder: string;
-
+onBlur: any;
 	className?: string;
 	type: string;
 	onChangeHandler: any;
@@ -34,30 +34,33 @@ const InputContainer = styled.div`
 	}
 `
 
-const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name }) => {
-	return (
-		<InputContainer
-			className={` ${className ? className : ''
-				}`}
+const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name, onBlur }) => 
+
+ {
+    return (
+<InputContainer
+			className={` ${
+				className ? className : ''
+			}`}
 		>
 
 			<label htmlFor={name} className="input--default">
 				{isRequired ? '*' : null}
 				{label}
 			</label>
-			{type === "text" ? (
-				<>
-					<input
-						type="text"
-						name={name}
-						onChange={onChangeHandler}
-						placeholder={placeholder}
-						value={value}
-
-
-					/>
-				</>
-			) : (
+            {type === "text" ? (
+	<>
+    <input
+        type="text"
+        name={name}
+        onChange={onChangeHandler}
+        placeholder={placeholder}
+        value={value}
+       onBlur={onBlur}
+    
+    />
+</>
+            ) : (
 				<>
 
 					<textarea
