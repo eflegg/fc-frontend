@@ -14,7 +14,7 @@ const SubmitButton = styled.button`
    width: fit-content;
 
 `
-const CustomForm = styled.form`
+const CustomFormContainer = styled.form`
   
 `
 
@@ -22,6 +22,20 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
 
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
+    const [emailError, setEmailError] = useState(false);
+    const [firstNameError, setFirstNameError] = useState(false);
+
+
+    function testEmail() {
+      let validEmail = /\S+@\S+\.\S+/.test(email);
+      validEmail ? setEmailError(false) : setEmailError(true);
+      console.log('valid email? ', validEmail);
+    }
+
+    function testName(){
+    firstName === '' ? setFirstNameError(true) : setFirstNameError(false);
+    }
+
   
     useEffect(() => {
         if(status === "success") clearFields();
@@ -32,22 +46,27 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
         setEmail('');
       }
     
+      console.log('email: ', email);
+      console.log('name: ', firstName);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:any) => {
+      console.log('handle submit clicked');
         e.preventDefault();
+        testEmail();
+        testName();
         email &&
         firstName &&
-     
         email.indexOf("@") > -1 &&
         onValidated({
             EMAIL: email,
-            MERGE1: firstName,
+            FNAME: firstName,
            
         });
     }
+    console.log('status: ', status);
 
     return (
-      <CustomForm    onSubmit={(e) => handleSubmit(e)} className="mc__form">
+      <CustomFormContainer    onSubmit={(e:any) => handleSubmit(e)} className="mc__form">
           <h3 className="mc__title">
           {status === "success" 
             ? "Success!" 
@@ -65,16 +84,17 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
             dangerouslySetInnerHTML={{ __html: message }}
           />
         )}
-        {/* {status === "success" && (
+        {status === "success" && (
           <div
             className="mc__alert mc__alert--success"
             dangerouslySetInnerHTML={{ __html: message }}
           />
-        )} */}
+        )} 
 
 {status !== "success" ? (
                 <div className="mc__field-container">
                 <InputField
+                onBlur={testName}
                 className="lead-magnet__input"
                   label="First Name"
                 
@@ -87,10 +107,13 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
                   isRequired
                   name="firstName"
                 />
-      
+      {firstNameError ? (
+        <p className="error-message">Please enter your name</p>
+      ): null}
             
       
                 <InputField
+                onBlur={testEmail}
                   label="Email"
                   onChangeHandler={(e:any) =>
 										setEmail(e.target.value )
@@ -101,7 +124,9 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
                   isRequired
                   name="email"
                 />
-      
+        {emailError ? (
+        <p className="error-message">Please enter a valid email</p>
+      ): null}
               </div>
         ) : null}
  
@@ -113,10 +138,10 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
           
             className="g__justify-self-center btn-sign-up">Check your inbox!</SubmitButton> :  <SubmitButton
             type="submit"
-           
+           onClick={handleSubmit}
           >{buttonText}</SubmitButton>
         }
-      </CustomForm>
+      </CustomFormContainer>
     );
 };
 

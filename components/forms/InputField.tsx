@@ -4,7 +4,7 @@ import theme from '../Theme'
 type InputProps= {
     label: string;
 	placeholder: string;
-
+onBlur: any;
 	className?: string;
 	type: string;
 	onChangeHandler:any;
@@ -34,7 +34,7 @@ const InputContainer = styled.div`
 	}
 `
 
-const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name }) => 
+const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name, onBlur }) => 
 
  {
     return (
@@ -56,7 +56,7 @@ const InputField: React.FC<InputProps> = ({ label, placeholder, className, type,
         onChange={onChangeHandler}
         placeholder={placeholder}
         value={value}
-       
+       onBlur={onBlur}
     
     />
 </>

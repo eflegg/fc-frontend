@@ -1,5 +1,6 @@
 import React from 'react';
 import LeadMagnet from './leadMagnet';
+
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const LeadMagnetContainer = props => {
@@ -20,6 +21,7 @@ const LeadMagnetContainer = props => {
                     />
                 )}
             />
+      
         </div>
     );
 };
