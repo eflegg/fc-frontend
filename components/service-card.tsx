@@ -3,14 +3,16 @@ import styled from 'styled-components'
 import theme from '../components/Theme'
 
 const ServiceCardContainer = styled.div`
-  @media ${theme.devices.small} {
+  @media ${theme.devices.medium} {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 align-items: flex-end;
     }
 
 .outercard {
     margin: 10px;
-   height: 600px;
+   /* height: 600px; */
    padding: 12px;
    /* width: 380px; */
 //    border: solid 3px seagreen;
@@ -24,9 +26,7 @@ align-items: flex-end;
 .image-container {
     width: 95%;
     height: 73%;
-
     border-radius: 20px;
-    
     img {
         height: 100%;
         width: 100%;
@@ -52,7 +52,9 @@ align-items: flex-end;
     p {
         font-family: ${theme.type.body};
         color: ${theme.colours.blue};
-        font-size: 2.4rem;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 115%;
         font-weight: 500;
     }
 }
@@ -71,7 +73,8 @@ export default function ServiceCard({ title, image, description }) {
                 <div className='label'>
                     <p> {title}</p>
                 </div>
-                <div className='description'>
+            
+            <div className='description'>
                     <p>{description}</p>
                 </div>
             </div>
