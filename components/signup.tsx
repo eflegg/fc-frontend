@@ -47,7 +47,7 @@ h3 {
 }
 button, input {
   &:focus {
-    // border: 4px dotted #18172B;
+    border: 4px dotted #18172B;
   }
 }
 `
