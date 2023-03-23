@@ -15,7 +15,7 @@ const SubmitButton = styled.button`
    @media ${theme.devices.small}{
     font-size: 2.4rem;
     :hover {
-      background: ${theme.colours.green};
+      background: ${theme.colours.blue};
       color: ${theme.colours.cream};
     }
    }

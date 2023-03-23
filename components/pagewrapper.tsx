@@ -11,7 +11,7 @@ z-index: 1;
 overflow: hidden;
 
   button, input {
-  &:focus {
+  &:focus-within {
     border: 4px dotted #18172B;
   }
 

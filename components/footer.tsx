@@ -14,15 +14,28 @@ flex-direction: row;
 position: relative;
   .copyright {
     position: absolute;
-    left: 10px;
     bottom: 10px;
+    left: 10px;
     font-size: 2.4rem;
     font-family: ${theme.type.body};
-    
-color: ${theme.colours.cream};
-  
+    color: ${theme.colours.cream};
+  @media ${theme.devices.small}{
+    position: absolute;
+    left: 80px;
+    bottom: 10px;
+  }
   }
 background: ${theme.colours.orange};
+
+.insta {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 250px;
+  bottom: 10px;
+  
+  
+}
 
 
 .footer-container {
@@ -60,7 +73,7 @@ background: ${theme.colours.orange};
   .h1 {
     font-family: ${theme.type.logoType};
     font-size: 4.6rem;
-    margin: 25px 0;
+    margin: 80px 0;
     color: ${theme.colours.cream};
     line-height: 100%;
     text-align: right;
@@ -114,7 +127,14 @@ export default function Footer() {
   return (
     <footer className="">
       <OuterContainer>
+
+
         <div className="copyright">
+
+          <a href="https://www.instagram.com/fleggcreative/">
+            <img className="insta" src="/instagram.svg" />
+          </a>
+          <p>hellofleggcreative.ca</p>
           Flegg Creative {(new Date().getFullYear())}
         </div>
         <div className="footer-container">

@@ -46,7 +46,7 @@ h3 {
     
 }
 button, input {
-  &:focus {
+  &:focus-within {
     border: 4px dotted #18172B;
   }
 }
