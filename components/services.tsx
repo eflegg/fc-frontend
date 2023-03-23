@@ -9,7 +9,8 @@ const StyledServices = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+  
     h3 {
         font-family: ${theme.type.body};
         font-size: 3.4rem;
@@ -31,7 +32,7 @@ p {
 }
 
 .services {
-    // border: solid 3px white;
+
     margin-bottom: 100px;
 
 .label {
@@ -54,13 +55,14 @@ p {
          }
     }
     .card--grid {
+       
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(20.5rem, 100%), 1fr));
   grid-row-gap: 30px;
   grid-column-gap: 30px;
   justify-content: center;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 75px;
   list-style: none;
   max-width: 1000px;
 
@@ -88,7 +90,7 @@ export default function Services() {
                     <div className="services-title">
 
                         <h3>What we offer</h3>
-                        <p>We’re Erin and Elizabeth Flegg, a sister duo  design and branding studio based in Montreal, and Vancouver Island. We work with small businesses and orgs, supporting them in building strong foundations.</p>
+                        <p>From first meeting to final product, we believe it all starts with accessibility. That means our client processes are approachable and flexible, our designs are human-centred and our websites can be used by as many people as possible, regardless of ability.</p>
                     </div>
                     {services.map((service, index) => {
                         return (
@@ -100,8 +102,10 @@ export default function Services() {
                 </div>
                 <div className='blerb'>
 
+                    <h3>Who we are</h3>
+                    <p>We’re Erin and Elizabeth Flegg, a sister duo design and branding studio based in Montreal, and Vancouver Island. We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. </p>
 
-                    <p> We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. In the age of internet overwhelm, it’s how we move at a more human pace.</p>
+                    <p>In the age of internet overwhelm, it’s one of the ways we move at a more human pace.</p>
                 </div>
             </div>
 

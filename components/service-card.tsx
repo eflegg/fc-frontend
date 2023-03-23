@@ -3,6 +3,11 @@ import styled from 'styled-components'
 import theme from '../components/Theme'
 
 const ServiceCardContainer = styled.div`
+  @media ${theme.devices.small} {
+    display: flex;
+align-items: flex-end;
+    }
+
 .outercard {
     margin: 10px;
    height: 375px;

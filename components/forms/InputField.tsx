@@ -22,7 +22,12 @@ const InputContainer = styled.div`
 	input, textarea {
 		padding-left: 10px;
 		background: ${theme.colours.cream};
+		&:focus {
+			border:3px dotted ${theme.colours.blue};
+			
+		}
 	}
+	
 	label {
 		color: ${theme.colours.cream};
 		font-weight: 300;

@@ -41,6 +41,11 @@ h3 {
    width: fit-content;
     
 }
+button, input {
+  &:focus {
+    border: 4px dotted #18172B;
+  }
+}
 `
 
 export default function SignUp({ text, buttonText }) {

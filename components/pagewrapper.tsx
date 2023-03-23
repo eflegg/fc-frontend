@@ -9,6 +9,13 @@ background: ${theme.colours.green};
 position: relative;
 z-index: 1;
 overflow: hidden;
+
+  button, input {
+  &:focus {
+    border: 4px dotted #18172B;
+  }
+
+}
 `
 
 export default function PageWrapper({ preview, children }) {
