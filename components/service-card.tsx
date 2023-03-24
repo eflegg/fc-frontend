@@ -1,6 +1,7 @@
 import { CMS_NAME, CMS_URL } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
+import Image from 'next/image';
 
 const ServiceCardContainer = styled.div`
   @media ${theme.devices.medium} {
@@ -13,7 +14,6 @@ const ServiceCardContainer = styled.div`
 
 .outercard {
     margin: 10px;
-  
    padding: 12px;
    border-radius: 20px;
    background: rgba(231, 165, 186, .7);
@@ -69,7 +69,8 @@ export default function ServiceCard({ title, image, description, alt }) {
         <ServiceCardContainer>
             <div className='outercard'>
                 <div className='image-container'>
-                    <img src={image} alt={alt}></img>
+                    <Image src={image} alt={alt} width={720} height={1080}/>
+                    {/* <img src={image} alt={alt}></img> */}
                 </div>
                 <div className='label'>
                     <p> {title}</p>

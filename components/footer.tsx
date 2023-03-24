@@ -3,6 +3,7 @@ import { EXAMPLE_PATH } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 import NewsLetter from '../components/signup'
+import Image from 'next/image';
 
 const OuterContainer = styled.div`
 display: flex;
@@ -131,8 +132,9 @@ export default function Footer() {
 
         <div className="copyright">
 
-          <a aria-label="Link to Flegg Creative Instgram account" href="https://www.instagram.com/fleggcreative/" target='_blank'>
-            <img className="insta" src="/instagram.svg" alt="Instagram link"/>
+          <a className="insta" aria-label="Link to Flegg Creative Instgram account" href="https://www.instagram.com/fleggcreative/" target='_blank'>
+            <Image  src="/instagram.svg" alt="Instagram link" width={40} height={40}/>
+            {/* <img className="insta" src="/instagram.svg" alt="Instagram link"/> */}
           </a>
           <p>hello@fleggcreative.ca</p>
           &copy; Flegg Creative {(new Date().getFullYear())}
