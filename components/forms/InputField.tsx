@@ -53,6 +53,7 @@ const InputField: React.FC<InputProps> = ({ label, placeholder, className, type,
     <input
         type="text"
         name={name}
+		id={name}
         onChange={onChangeHandler}
         placeholder={placeholder}
         value={value}
