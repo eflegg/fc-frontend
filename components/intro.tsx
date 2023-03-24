@@ -67,7 +67,7 @@ margin-left: 45px;
   @media ${theme.devices.small} {
     margin-top: 0px;
   }
-  p {
+  h3 {
     text-align: center;
   }
 }
@@ -123,7 +123,7 @@ export default function Intro() {
           <LeadMagnetContainer text="Find out why we put accessibility first" buttonText="Get the story" />
         </div>
         <div className='hire-us'>
-          <p>Hire Us</p>
+          <h3>Hire Us</h3>
           <a href="mailto:hello@fleggcreative.ca">
             <button className='btn-contact'>Contact</button>
           </a>

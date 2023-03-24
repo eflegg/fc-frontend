@@ -137,7 +137,7 @@ export default function Footer() {
             <Image  src="/instagram.svg" alt="Instagram link" width={40} height={40}/>
             {/* <img className="insta" src="/instagram.svg" alt="Instagram link"/> */}
           </a>
-          <p>hello@fleggcreative.ca</p>
+          <h5>hello@fleggcreative.ca</h5>
           &copy; Flegg Creative {(new Date().getFullYear())}
         </div>
         <div className="footer-container">

@@ -41,7 +41,7 @@ const ServiceCardContainer = styled.div`
     border-radius: 40px;
     width: 300px;
     text-align: center;
-    p {
+    h4 {
         font-family: ${theme.type.body};
         color: ${theme.colours.blue};
         font-size: 2.8rem;
@@ -73,7 +73,7 @@ export default function ServiceCard({ title, image, description, alt }) {
                     {/* <img src={image} alt={alt}></img> */}
                 </div>
                 <div className='label'>
-                    <p> {title}</p>
+                    <h4> {title}</h4>
                 </div>
 
                 <div className='description'>
