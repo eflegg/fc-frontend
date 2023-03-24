@@ -13,17 +13,17 @@ const ServiceCardContainer = styled.div`
 
 .outercard {
     margin: 10px;
-   height: 500px;
+  
    padding: 12px;
-   /* width: 380px; */
-//    border: solid 3px seagreen;
    border-radius: 20px;
    background: rgba(231, 165, 186, .7);
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: space-around;
- 
+   @media ${theme.devices.medium} {
+    height: 500px;
+    }
 .image-container {
     width: 95%;
     height: 73%;
