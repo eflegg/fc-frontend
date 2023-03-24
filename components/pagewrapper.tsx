@@ -16,6 +16,15 @@ overflow: hidden;
   }
 
 }
+.inner-container{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  background: ${theme.colours.pink};
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
 `
 
 export default function PageWrapper({ preview, children }) {
@@ -23,7 +32,10 @@ export default function PageWrapper({ preview, children }) {
     <>
       <Meta />
       <OuterContainer>
-        <div className="min-h-screen">
+        <div className="inner-container">
+
+        </div>
+        <div className="min-h-screen ">
           {/* <Alert preview={preview} /> */}
           <main>{children}</main>
         </div>

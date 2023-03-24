@@ -34,7 +34,7 @@ export default function LargeOrangeShape({ customClass }) {
 	return (
 
 		<ShapeBackground className={customClass}>
-			<Image src="/large-orange.svg" alt="decorative orange shape" width={1106} height={938} />
+			<Image priority src="/large-orange.svg" alt="decorative orange shape" width={1106} height={938} />
 		</ShapeBackground>
 
 	)

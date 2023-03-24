@@ -22,7 +22,7 @@ export default function SmallPinkShape({ customClass}){
     return (
 
 <ShapeBackground className={customClass}>
-	<Image src="/small-pink.svg" alt="decorative pink shape" width={546} height={320} />
+	<Image priority src="/small-pink.svg" alt="decorative pink shape" width={546} height={320} />
  
 </ShapeBackground>
 
