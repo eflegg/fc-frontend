@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import theme from '../components/Theme'
 import NewsLetter from '../components/signup'
 import Image from 'next/image';
+import SignUpContainer from './forms/SignUpContainer';
 
 const OuterContainer = styled.div`
 display: flex;
@@ -140,7 +141,7 @@ export default function Footer() {
           &copy; Flegg Creative {(new Date().getFullYear())}
         </div>
         <div className="footer-container">
-          <NewsLetter text="Get our newsletter" buttonText="Sign up" />
+          <SignUpContainer text="Get our newsletter" buttonText="Sign up" />
         </div>
         <div className='hire-us flex flex-col'>
 

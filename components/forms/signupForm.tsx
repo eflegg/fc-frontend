@@ -25,7 +25,7 @@ const CustomFormContainer = styled.form`
   
 `
 
-const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
+const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
 
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -101,11 +101,10 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
 {status !== "success" ? (
                 <div className="mc__field-container">
                 <InputField
-                id="lead_name"
                 onBlur={testName}
                 className="lead-magnet__input"
                   label="First Name"
-                
+                id="signup_name"
                   onChangeHandler={(e:any) =>
 										setFirstName(e.target.value )
 									}
@@ -121,7 +120,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
             
       
                 <InputField
-                 id="lead_email"
+                id="signup_email"
                 onBlur={testEmail}
                   label="Email"
                   onChangeHandler={(e:any) =>
@@ -154,4 +153,4 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
     );
 };
 
-export default LeadMagnet;
+export default SignUpForm;

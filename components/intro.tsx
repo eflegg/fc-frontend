@@ -2,6 +2,7 @@ import { CMS_NAME, CMS_URL } from '../lib/constants'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 import NewsLetter from '../components/signup'
+import LeadMagnetContainer from './forms/LeadMagnetContainer'
 
 
 const StyledIntro = styled.section`
@@ -109,7 +110,7 @@ export default function Intro() {
       </h2>
       <div className='cta'>
         <div className='newscontainer'>
-          <NewsLetter text="Find out why we put accessibility first" buttonText="Get the story" />
+          <LeadMagnetContainer text="Find out why we put accessibility first" buttonText="Get the story" />
         </div>
         <div className='hire-us'>
           <p>Hire Us</p>

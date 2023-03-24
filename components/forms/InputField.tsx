@@ -11,6 +11,7 @@ onBlur: any;
 	name: string;
 	value: string;
 	isRequired: boolean;
+	id: string;
 }
 const InputContainer = styled.div`
     display: flex;
@@ -34,7 +35,7 @@ const InputContainer = styled.div`
 	}
 `
 
-const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name, onBlur }) => 
+const InputField: React.FC<InputProps> = ({ label, placeholder, className, type, onChangeHandler, value, isRequired, name, onBlur, id }) => 
 
  {
     return (
@@ -44,7 +45,7 @@ const InputField: React.FC<InputProps> = ({ label, placeholder, className, type,
 			}`}
 		>
 
-			<label htmlFor={name} className="input--default">
+			<label htmlFor={id} className="input--default">
 				{isRequired ? '*' : null}
 				{label}
 			</label>
@@ -53,7 +54,7 @@ const InputField: React.FC<InputProps> = ({ label, placeholder, className, type,
     <input
         type="text"
         name={name}
-		id={name}
+		id={id}
         onChange={onChangeHandler}
         placeholder={placeholder}
         value={value}
