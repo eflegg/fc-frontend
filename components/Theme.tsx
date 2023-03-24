@@ -14,6 +14,7 @@ export const type = {
 export const breakpoints = {
   xs: '400px',
   sm: '768px',
+  ipad: '820px',
   md: '1000px',
   lg: '1250px',
   xl: '1800px',
@@ -23,6 +24,7 @@ export const breakpoints = {
 export const devices = {
   extraSmall: `(min-width: ${breakpoints.xs})`,
   small: `(min-width: ${breakpoints.sm})`,
+  ipad: `(min-width: ${breakpoints.ipad})`,
   medium: `(min-width: ${breakpoints.md})`,
   large: `(min-width: ${breakpoints.lg})`,
   extraLarge: `(min-width: ${breakpoints.xl})`,

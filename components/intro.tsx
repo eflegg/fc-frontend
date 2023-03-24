@@ -26,16 +26,26 @@ h2 {
 }
 
 h1 {
+  /* border: 1px solid yellow; */
   font-family: 'Abril fatface', cursive;
   font-size: 3.8rem;
   color: ${theme.colours.blue};
+  display: table;
+  line-height: 1;
+  background: ${theme.colours.pink};
   margin-left: 60px;
   position: relative;
-  top: 10px;
-  @media ${theme.devices.small} {
+  top: 15px;
+  border-radius: 60%;
+  @media ${theme.devices.ipad} {
+  font-size: 4rem;
+margin-left: 45px;
+  top: 15px;
+  }
+  @media ${theme.devices.medium} {
   font-size: 5.6rem;
-  // position: relative;
-  top: 30px;
+  margin-left: 60px;
+  top: 20px;
   }
 }
 

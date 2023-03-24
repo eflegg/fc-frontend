@@ -18,17 +18,12 @@ const ShapeBackground = styled.div`
 		@media ${theme.devices.small}{
 		top: -80px;
 		}
+		@media ${theme.devices.ipad}{
+		top: -80px;
+		}
 	}
 `;
-const OrangeContainer = styled.img`
-position: relative;
-	top: -50px;
-	z-index: -1;
-@media ${theme.devices.small}{
-	top: -80px;
-}
-	
-`;
+
 
 export default function LargeOrangeShape({ customClass }) {
 	return (
