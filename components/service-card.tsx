@@ -8,12 +8,12 @@ const ServiceCardContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    height: 500px;
+    /* height: 500px; */
     }
 
 .outercard {
     margin: 10px;
-   /* height: 600px; */
+   height: 500px;
    padding: 12px;
    /* width: 380px; */
 //    border: solid 3px seagreen;
@@ -64,12 +64,12 @@ const ServiceCardContainer = styled.div`
 }
 `
 
-export default function ServiceCard({ title, image, description }) {
+export default function ServiceCard({ title, image, description, alt }) {
     return (
         <ServiceCardContainer>
             <div className='outercard'>
                 <div className='image-container'>
-                    <img src={image}></img>
+                    <img src={image} alt={alt}></img>
                 </div>
                 <div className='label'>
                     <p> {title}</p>

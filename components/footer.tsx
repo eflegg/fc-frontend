@@ -33,7 +33,7 @@ background: ${theme.colours.orange};
   position: absolute;
   left: 250px;
   bottom: 10px;
-  
+  z-index: 10;
   
 }
 
@@ -131,8 +131,8 @@ export default function Footer() {
 
         <div className="copyright">
 
-          <a href="https://www.instagram.com/fleggcreative/" target='_blank'>
-            <img className="insta" src="/instagram.svg" />
+          <a aria-label="Link to Flegg Creative Instgram account" href="https://www.instagram.com/fleggcreative/" target='_blank'>
+            <img className="insta" src="/instagram.svg" alt="Instagram link"/>
           </a>
           <p>hello@fleggcreative.ca</p>
           &copy; Flegg Creative {(new Date().getFullYear())}

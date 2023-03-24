@@ -79,7 +79,7 @@ p {
   
 }
 `
-const services = [{ title: "Brand strategy", image: "/cheese.jpg", description: "We begin by identifying goals and creating a plan to meet them" }, { title: "Design", image: "/gustaboat.jpeg", description: "Then we bring it to life, translating strategy into a visual identity with brand photography, print media and web design" }, { title: "Accessible websites", image: "/asparagus.png", description: "Finally, we give a home, building a beautiful, accessible website to invite your community into" }]
+const services = [{ title: "Brand strategy", image: "/Youbou-23.jpg", description: "We begin by identifying goals and creating a plan to meet them", alt: "Image of the chef at Youbou Bar & Grill pouring wine into a bowl of ingredients" }, { title: "Design", image: "/gustaboat.jpeg", description: "Then we bring it to life, translating strategy into a visual identity with brand photography, print media and web design", alt: "Image of a sailboat on the water displaying a custom-designed sail for Gusta" }, { title: "Accessible websites", image: "/asparagus-small.png", description: "Finally, we give a home, building a beautiful, accessible website to invite your community into", alt: "Image of three web mockups, mobile, tablet and desktop, displaying Asparagus Magazine's website" }]
 
 export default function Services() {
 
@@ -94,7 +94,7 @@ export default function Services() {
                     </div>
                     {services.map((service, index) => {
                         return (
-                            <ServiceCard key={index} title={service.title} image={service.image} description={service.description} />
+                            <ServiceCard alt={service.alt} key={index} title={service.title} image={service.image} description={service.description} />
 
                         );
                     })}
