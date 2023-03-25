@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import theme from '../Theme'
 import React, { useState, useEffect } from 'react';
 import InputField from "./InputField";
-
+import { event } from "nextjs-google-analytics";
 
 const SubmitButton = styled.button`
     color: ${theme.colours.blue};
@@ -58,7 +58,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
       console.log('name: ', firstName);
 
     const handleSubmit = (e:any) => {
-      console.log('handle submit clicked');
+      console.log('footer submit clicked');
         e.preventDefault();
         testEmail();
         testName();
@@ -69,6 +69,10 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
             EMAIL: email,
             FNAME: firstName,
            
+        });
+        event("submit_form", {
+          category: "Signup",
+          label: email,
         });
     }
     console.log('status: ', status);
