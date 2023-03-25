@@ -81,18 +81,18 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
           }
         </h3>
         {status === "sending" && (
-          <div className="mc__alert mc__alert--sending">
+          <h3 className="mc__alert mc__alert--sending">
             sending...
-          </div>
+          </h3>
         )}
         {status === "error" && (
-          <div 
+          <h3 
             className="mc__alert mc__alert--error"
             dangerouslySetInnerHTML={{ __html: message }}
           />
         )}
         {status === "success" && (
-          <div
+          <h3
             className="mc__alert mc__alert--success"
             dangerouslySetInnerHTML={{ __html: message }}
           />
