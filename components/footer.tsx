@@ -54,7 +54,7 @@ background: ${theme.colours.orange};
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  // text-align: center;
   padding: 40px;
 
   /* border: 3px solid yellow; */
@@ -64,7 +64,7 @@ background: ${theme.colours.orange};
   justify-content: flex-end;
   }
   @media ${theme.devices.medium}{
-  padding: 80px 60px;
+  // padding: 80px 60px;
   max-width: 60%;
  
   }
@@ -132,8 +132,8 @@ export default function Footer() {
         <div className="copyright">
 
           <a className="insta" aria-label="Link to Flegg Creative Instgram account" href="https://www.instagram.com/fleggcreative/" target='_blank'>
-            <Image  src="/instagram.svg" alt="Instagram link" width={40} height={40}/>
-          
+            <Image src="/instagram.svg" alt="Instagram link" width={40} height={40} />
+
           </a>
           <p>hello@fleggcreative.ca</p>
           &copy; Flegg Creative {(new Date().getFullYear())}

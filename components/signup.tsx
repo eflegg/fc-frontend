@@ -24,7 +24,7 @@ h3 {
     @media ${theme.devices.small}{
         font-size: 3.6rem;
     font-weight: 400;
-    line-height: 110%rem;
+    line-height: 110%;
     }
     
 }

@@ -80,7 +80,7 @@ p {
   
 }
 `
-const services = [{ title: "Brand strategy", image: "/Youbou-23.jpg", description: "We begin by identifying goals and creating a plan to meet them", alt: "The chef at Youbou Bar & Grill pouring wine into a bowl of ingredients" }, { title: "Design", image: "/gustaboat.jpeg", description: "Then we bring it to life, translating strategy into a visual identity with brand photography, print media and web design", alt: "A sailboat on the water displaying a custom-designed sail for Gusta" }, { title: "Accessible websites", image: "/asparagus-small.png", description: "Finally, we give a home, building a beautiful, accessible website to invite your community into", alt: "Three web mockups, mobile, tablet and desktop, displaying Asparagus Magazine's website" }]
+const services = [{ title: "Brand strategy", image: "/Youbou-23.jpg", description: "We begin by identifying goals and creating a plan to meet them", alt: "The chef at Youbou Bar & Grill pouring wine into a bowl of ingredients" }, { title: "Design", image: "/gustaboat.jpeg", description: "Then we bring it to life, translating strategy into a visual identity with brand photography, print media and web design", alt: "A sailboat on the water displaying a custom-designed sail for Gusta" }, { title: "Accessible websites", image: "/asparagus-small.png", description: "Finally, we give it all a home, building a beautiful, accessible website to welcome your community", alt: "Three web mockups, mobile, tablet and desktop, displaying Asparagus Magazine's website" }]
 
 export default function Services() {
 

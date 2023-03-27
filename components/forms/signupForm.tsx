@@ -23,126 +23,131 @@ const SubmitButton = styled.button`
 
 `
 const CustomFormContainer = styled.form`
-  
+h3 {
+  font-size: 2.6rem;
+  @media ${theme.devices.small}{
+    font-size: 3.6rem;
+  }
+}
 `
 
 const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
 
-    const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [emailError, setEmailError] = useState(false);
-    const [firstNameError, setFirstNameError] = useState(false);
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  const [firstNameError, setFirstNameError] = useState(false);
 
 
-    function testEmail() {
-      let validEmail = /\S+@\S+\.\S+/.test(email);
-      validEmail ? setEmailError(false) : setEmailError(true);
-      console.log('valid email? ', validEmail);
-    }
+  function testEmail() {
+    let validEmail = /\S+@\S+\.\S+/.test(email);
+    validEmail ? setEmailError(false) : setEmailError(true);
+    console.log('valid email? ', validEmail);
+  }
 
-    function testName(){
+  function testName() {
     firstName === '' ? setFirstNameError(true) : setFirstNameError(false);
-    }
+  }
 
-  
-    useEffect(() => {
-        if(status === "success") clearFields();
-      }, [status])
-    
-      const clearFields = () => {
-        setFirstName('');
-        setEmail('');
-      }
-    
-      console.log('email: ', email);
-      console.log('name: ', firstName);
 
-    const handleSubmit = (e:any) => {
-      console.log('footer submit clicked');
-        e.preventDefault();
-        testEmail();
-        testName();
-        email &&
-        firstName &&
-        email.indexOf("@") > -1 &&
-        onValidated({
-            EMAIL: email,
-            FNAME: firstName,
-           
-        });
-        event("submit_form", {
-          category: "Signup",
-          label: email,
-        });
-    }
-    console.log('status: ', status);
+  useEffect(() => {
+    if (status === "success") clearFields();
+  }, [status])
 
-    return (
-      <CustomFormContainer    onSubmit={(e:any) => handleSubmit(e)} className="mc__form">
-          <h3 className="mc__title">
-          {status === "success" 
-            ? "Success!" 
-            : text
-          }
+  const clearFields = () => {
+    setFirstName('');
+    setEmail('');
+  }
+
+  console.log('email: ', email);
+  console.log('name: ', firstName);
+
+  const handleSubmit = (e: any) => {
+    console.log('footer submit clicked');
+    e.preventDefault();
+    testEmail();
+    testName();
+    email &&
+      firstName &&
+      email.indexOf("@") > -1 &&
+      onValidated({
+        EMAIL: email,
+        FNAME: firstName,
+
+      });
+    event("submit_form", {
+      category: "Signup",
+      label: email,
+    });
+  }
+  console.log('status: ', status);
+
+  return (
+    <CustomFormContainer onSubmit={(e: any) => handleSubmit(e)} className="mc__form">
+      <h3 className="mc__title">
+        {status === "success"
+          ? "Success!"
+          : text
+        }
+      </h3>
+      {status === "sending" && (
+        <h3 className="mc__alert mc__alert--sending">
+          sending...
         </h3>
-        {status === "sending" && (
-          <h3 className="mc__alert mc__alert--sending">
-            sending...
-          </h3>
-        )}
-        {status === "error" && (
-          <h3 
-            className="mc__alert mc__alert--error"
-            dangerouslySetInnerHTML={{ __html: message }}
-          />
-        )}
-        {status === "success" && (
-          <h3
-            className="mc__alert mc__alert--success"
-            dangerouslySetInnerHTML={{ __html: message }}
-          />
-        )} 
+      )}
+      {status === "error" && (
+        <h3
+          className="mc__alert mc__alert--error"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      {status === "success" && (
+        <h3
+          className="mc__alert mc__alert--success"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
 
-{status !== "success" ? (
-                <div className="mc__field-container">
-                <InputField
-                onBlur={testName}
-                className="lead-magnet__input"
-                  label="First Name"
-                id="signup_name"
-                  onChangeHandler={(e:any) =>
-										setFirstName(e.target.value )
-									}
-                  type="text"
-                  value={firstName}
-                  placeholder=""
-                  isRequired
-                  name="firstName"
-                />
-      {firstNameError ? (
-        <p className="error-message">Please enter your name</p>
-      ): null}
-            
-      
-                <InputField
-                id="signup_email"
-                onBlur={testEmail}
-                  label="Email"
-                  onChangeHandler={(e:any) =>
-										setEmail(e.target.value )
-									}
-                  type="text"
-                  value={email}
-                  placeholder=""
-                  isRequired
-                  name="email"
-                />
-        {emailError ? (
-        <p className="error-message">Please enter a valid email</p>
-      ): null}
-              </div>
-        ) : null}
- 
+      {status !== "success" ? (
+        <div className="mc__field-container">
+          <InputField
+            onBlur={testName}
+            className="lead-magnet__input"
+            label="First Name"
+            id="signup_name"
+            onChangeHandler={(e: any) =>
+              setFirstName(e.target.value)
+            }
+            type="text"
+            value={firstName}
+            placeholder=""
+            isRequired
+            name="firstName"
+          />
+          {firstNameError ? (
+            <p className="error-message">Please enter your name</p>
+          ) : null}
+
+
+          <InputField
+            id="signup_email"
+            onBlur={testEmail}
+            label="Email"
+            onChangeHandler={(e: any) =>
+              setEmail(e.target.value)
+            }
+            type="text"
+            value={email}
+            placeholder=""
+            isRequired
+            name="email"
+          />
+          {emailError ? (
+            <p className="error-message">Please enter a valid email</p>
+          ) : null}
+        </div>
+      ) : null}
+
 
 
 
@@ -151,11 +156,11 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
 
           className="g__justify-self-center btn-sign-up">Check your inbox!</SubmitButton> : <SubmitButton
             type="submit"
-           onClick={handleSubmit}
+            onClick={handleSubmit}
           >{buttonText}</SubmitButton>
-        }
-      </CustomFormContainer>
-    );
+      }
+    </CustomFormContainer>
+  );
 };
 
 export default SignUpForm;
