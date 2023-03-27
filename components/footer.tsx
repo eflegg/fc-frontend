@@ -1,8 +1,8 @@
-// import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+
+
 import styled from 'styled-components'
 import theme from '../components/Theme'
-import NewsLetter from '../components/signup'
+
 import Image from 'next/image';
 import SignUpContainer from './forms/SignUpContainer';
 
@@ -41,9 +41,7 @@ background: ${theme.colours.orange};
 
 
 .footer-container {
- /* border: solid 3px green; */
-  /* display: flex;
-  flex-grow: 2; */
+
   padding: 40px;
   @media ${theme.devices.medium} {
     padding: 80px;
@@ -135,7 +133,7 @@ export default function Footer() {
 
           <a className="insta" aria-label="Link to Flegg Creative Instgram account" href="https://www.instagram.com/fleggcreative/" target='_blank'>
             <Image  src="/instagram.svg" alt="Instagram link" width={40} height={40}/>
-            {/* <img className="insta" src="/instagram.svg" alt="Instagram link"/> */}
+          
           </a>
           <p>hello@fleggcreative.ca</p>
           &copy; Flegg Creative {(new Date().getFullYear())}
