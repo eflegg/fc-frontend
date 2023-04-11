@@ -26,35 +26,28 @@ width: 100%;
 `
 
 
-export default function Index({ allPosts: { edges }, preview }) {
+export default function Index({ allPosts: { edges }, preview, languageChoice }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
+  console.log('language choice: ', languageChoice);
+
   return (
-    <PageWrapper preview={preview}>
+    <PageWrapper  preview={preview}>
       <Head>
         <title>Flegg Creative</title>
       </Head>
-      < ShapeContainer className="shape-container">
+  
+      <ShapeContainer className="shape-container">
         <SmallPinkShape customClass="shape-pink" />
         <LargeOrangeShape customClass='shape-orange' />
       </ShapeContainer>
 
       <Container>
 
-        <Intro />
+        <Intro languageChoice={languageChoice} />
 
-        {/* {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.featuredImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+    
         <Services />
       </Container>
     </PageWrapper>

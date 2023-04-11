@@ -109,15 +109,21 @@ margin-left: 45px;
 
 
 
-export default function Intro() {
+export default function Intro({languageChoice}) {
   return (
     <StyledIntro className="flex-col">
       <h1 className="logo">
         Flegg Creative
       </h1>
-      <h2 className="tagline">
-        Building accessible brands at a more human pace.
-      </h2>
+      {languageChoice === "English" ? (
+  <h2 className="tagline">
+  Building accessible brands at a more human pace.
+</h2>
+      ): (
+        <h2>
+        Construire des marques accessibles sur une voie plus humaine</h2>
+      )}
+    
       <div className='cta'>
         <div className='newscontainer'>
           <LeadMagnetContainer text="Find out why we put accessibility first" buttonText="Get the story" />

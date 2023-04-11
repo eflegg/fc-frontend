@@ -43,7 +43,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
   function testEmail() {
     let validEmail = /\S+@\S+\.\S+/.test(email);
     validEmail ? setEmailError(false) : setEmailError(true);
-    console.log('valid email? ', validEmail);
+    // console.log('valid email? ', validEmail);
   }
 
   function testName() {
@@ -60,8 +60,8 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
     setEmail('');
   }
 
-  console.log('email: ', email);
-  console.log('name: ', firstName);
+  // console.log('email: ', email);
+  // console.log('name: ', firstName);
 
   const handleSubmit = (e: any) => {
     console.log('lead magnet submit clicked');

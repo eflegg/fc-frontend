@@ -42,7 +42,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
   function testEmail() {
     let validEmail = /\S+@\S+\.\S+/.test(email);
     validEmail ? setEmailError(false) : setEmailError(true);
-    console.log('valid email? ', validEmail);
+    // console.log('valid email? ', validEmail);
   }
 
   function testName() {
@@ -59,11 +59,10 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
     setEmail('');
   }
 
-  console.log('email: ', email);
-  console.log('name: ', firstName);
+
 
   const handleSubmit = (e: any) => {
-    console.log('footer submit clicked');
+    // console.log('footer submit clicked');
     e.preventDefault();
     testEmail();
     testName();
@@ -80,7 +79,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
       label: email,
     });
   }
-  console.log('status: ', status);
+ 
 
   return (
     <CustomFormContainer onSubmit={(e: any) => handleSubmit(e)} className="mc__form">
