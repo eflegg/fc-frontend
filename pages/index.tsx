@@ -6,7 +6,7 @@ import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import PageWrapper from '../components/pagewrapper'
 import SignUp from '../components/signup'
-import { getAllPostsForHome } from '../lib/api'
+import { getAllPostsForHome, getHomeData } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
 import LargeOrangeShape from '../components/shapes/large-orange'
@@ -26,11 +26,12 @@ width: 100%;
 `
 
 
-export default function Index({ allPosts: { edges }, preview, languageChoice }) {
+export default function Index({ allPosts: { edges }, preview, languageChoice, homePage }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
   console.log('language choice: ', languageChoice);
+  console.log('home page: ', homePage);
 
   return (
     <PageWrapper  preview={preview}>
@@ -45,7 +46,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice }) 
 
       <Container>
 
-        <Intro languageChoice={languageChoice} />
+        <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     
         <Services />
@@ -56,9 +57,10 @@ export default function Index({ allPosts: { edges }, preview, languageChoice }) 
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview)
+ const homePage = await getHomeData()
 
   return {
-    props: { allPosts, preview },
+    props: { allPosts, preview, homePage },
     revalidate: 10,
   }
 }

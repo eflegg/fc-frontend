@@ -27,10 +27,28 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   return json.data
 }
 
+
+export async function getHomeData(){
+  const data = await fetchAPI(
+    `query HeroQuery {
+      page(id: "14", idType: DATABASE_ID){
+        homeHero {
+          heroTextEnglish
+          heroTextFrench
+        }
+      }
+    }
+    `,
+  
+  )
+  return data.page
+  
+}
+
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {
   const data = await fetchAPI(
     `
-    query PreviewPost($id: ID!, $idType: PostIdType!) {
+    query PreviewPost($id) {
       post(id: $id, idType: $idType) {
         databaseId
         slug
@@ -41,7 +59,7 @@ export async function getPreviewPost(id, idType = 'DATABASE_ID') {
       variables: { id, idType },
     }
   )
-  return data.post
+  return data?.post
 }
 
 export async function getAllPostsWithSlug() {

@@ -109,7 +109,8 @@ margin-left: 45px;
 
 
 
-export default function Intro({languageChoice}) {
+export default function Intro({languageChoice, heroText}) {
+  console.log('hero text: ', heroText);
   return (
     <StyledIntro className="flex-col">
       <h1 className="logo">
@@ -117,11 +118,11 @@ export default function Intro({languageChoice}) {
       </h1>
       {languageChoice === "English" ? (
   <h2 className="tagline">
-  Building accessible brands at a more human pace.
+ {heroText.heroTextEnglish}
 </h2>
       ): (
         <h2>
-        Construire des marques accessibles sur une voie plus humaine</h2>
+        {heroText.heroTextFrench}</h2>
       )}
     
       <div className='cta'>
