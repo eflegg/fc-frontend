@@ -81,7 +81,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
       label: email,
     });
   }
-  console.log('status: ', status);
+ 
 
   return (
     <CustomFormContainer onSubmit={(e: any) => handleSubmit(e)} className="mc__form">

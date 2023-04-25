@@ -35,6 +35,8 @@ export async function getHomeData(){
         homeHero {
           heroTextEnglish
           heroTextFrench
+          leadMagnetFrench
+          leadMagnetEnglish
         }
       }
     }
