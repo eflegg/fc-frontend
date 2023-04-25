@@ -82,20 +82,20 @@ p {
 `
 const services = [{ title: "Brand strategy", image: "/Youbou-23.jpg", description: "We begin by identifying goals and creating a plan to meet them", alt: "The chef at Youbou Bar & Grill pouring wine into a bowl of ingredients" }, { title: "Design", image: "/gustaboat.jpeg", description: "Then we bring it to life, translating strategy into a visual identity with brand photography, print media and web design", alt: "A sailboat on the water displaying a custom-designed sail for Gusta" }, { title: "Accessible websites", image: "/asparagus-small.png", description: "Finally, we give it all a home, building a beautiful, accessible website to welcome your community", alt: "Three web mockups, mobile, tablet and desktop, displaying Asparagus Magazine's website" }]
 
-export default function Services() {
-
+export default function Services({serviceData, languageChoice, aboutData}) {
+// console.log('serviceData service single: ', serviceData.services);
     return (
         <StyledServices>
             <div className='services'>
                 <div className='card--grid'>
                     <div className="services-title">
 
-                        <h3>What we offer</h3>
-                        <p>From first meeting to final product, we believe it all starts with accessibility. That means our client processes are approachable and flexible, our designs are human-centred and our websites can be used by as many people as possible, regardless of ability.</p>
+                        <h3>{languageChoice === "English" ? serviceData.homeServiceIntro.titleEnglish : serviceData.homeServiceIntro.titleFrench }</h3>
+                        <p>{languageChoice === "English" ? serviceData.homeServiceIntro.textEnglish : serviceData.homeServiceIntro.textFrench }</p>
                     </div>
-                    {services.map((service, index) => {
+                    {serviceData.singleServices.map((service:any, index:any) => {
                         return (
-                            <ServiceCard alt={service.alt} key={index} title={service.title} image={service.image} description={service.description} />
+                            <ServiceCard  singleService={service} languageChoice={languageChoice} />
 
                         );
                     })}
@@ -103,10 +103,11 @@ export default function Services() {
                 </div>
                 <div className='blerb'>
 
-                    <h3>Who we are</h3>
-                    <p>We’re Erin and Elizabeth Flegg, a sister duo design and branding studio based in Montreal, and Vancouver Island. We have a shared love of analog processes, combining film photography and print media with digital design and modern web technologies. </p>
+                    <h3>{languageChoice === "English" ? aboutData.aboutTitleEnglish : aboutData.aboutTitleFrench}</h3>
+                    <p>{languageChoice === "English" ? aboutData.aboutTextEnglish : aboutData.aboutTextFrench}</p>
+                    
 
-                    <p>In the age of internet overwhelm, it’s one of the ways we move at a more human pace.</p>
+                    {/* <p>In the age of internet overwhelm, it’s one of the ways we move at a more human pace.</p> */}
                 </div>
             </div>
 

@@ -42,6 +42,35 @@ export async function getHomeData(){
           hireUsEnglish
           hireUsFrench
         }
+        homeAbout {
+          aboutTitleEnglish
+          aboutTitleFrench
+          aboutTextEnglish
+          aboutTextFrench
+        }
+        homeServices {
+          homeServiceIntro {
+            textEnglish
+            textFrench
+            titleEnglish
+            titleFrench
+          }
+          
+            singleServices {
+              altEnglish
+              altFrench
+              descriptionEnglish
+              descriptionFrench
+              image {
+                uri
+                sourceUrl
+              }
+              titleEnglish
+              titleFrench
+            }
+          
+        }
+       
       }
     }
     `,

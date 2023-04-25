@@ -64,20 +64,21 @@ const ServiceCardContainer = styled.div`
 }
 `
 
-export default function ServiceCard({ title, image, description, alt }) {
+export default function ServiceCard({ singleService, languageChoice }) {
+    console.log('single service on card: ', singleService);
     return (
         <ServiceCardContainer>
             <div className='outercard'>
                 <div className='image-container'>
-                    <Image src={image} alt={alt} width={720} height={1080}/>
+                    <Image src={singleService.image.sourceUrl} alt={languageChoice === "English" ? singleService.altEnglish : singleService.altFrench} width={720} height={1080}/>
                     {/* <img src={image} alt={alt}></img> */}
                 </div>
                 <div className='label'>
-                    <h4> {title}</h4>
+                    <h4> {languageChoice === "English" ? singleService.titleEnglish : singleService.titleFrench}</h4>
                 </div>
 
                 <div className='description'>
-                    <p>{description}</p>
+                    <p>{languageChoice === "English" ? singleService.descriptionEnglish : singleService.descriptionFrench}</p>
                 </div>
             </div>
         </ServiceCardContainer>

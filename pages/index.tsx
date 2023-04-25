@@ -49,7 +49,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     
-        <Services />
+        <Services aboutData={homePage.homeAbout} serviceData={homePage.homeServices} languageChoice={languageChoice} />
       </Container>
     </PageWrapper>
   )
