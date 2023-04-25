@@ -37,6 +37,10 @@ export async function getHomeData(){
           heroTextFrench
           leadMagnetFrench
           leadMagnetEnglish
+          buttonTextEnglish
+          buttonTextFrench
+          hireUsEnglish
+          hireUsFrench
         }
       }
     }

@@ -127,10 +127,10 @@ export default function Intro({languageChoice, heroText}) {
     
       <div className='cta'>
         <div className='newscontainer'>
-          <LeadMagnetContainer text="Find out why we put accessibility first" buttonText="Get the story" />
+          <LeadMagnetContainer languageChoice={languageChoice} text={`${languageChoice === "English" ? heroText.leadMagnetEnglish : heroText.leadMagnetFrench}`} buttonText={`${languageChoice === "English" ? heroText.buttonTextEnglish : heroText.buttonTextFrench}`} />
         </div>
         <div className='hire-us'>
-          <h3>Hire Us</h3>
+          <h3>{`${languageChoice === "English" ? heroText.hireUsEnglish : heroText.hireUsFrench}`}</h3>
           <a href="mailto:hello@fleggcreative.ca">
             <button className='btn-contact'>Contact</button>
           </a>

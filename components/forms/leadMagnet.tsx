@@ -32,7 +32,7 @@ h3 {
   
 `
 
-const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
+const LeadMagnet = ({ status, message, onValidated, text, buttonText, languageChoice }) => {
 
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -62,6 +62,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
 
   // console.log('email: ', email);
   // console.log('name: ', firstName);
+  
 
   const handleSubmit = (e: any) => {
     console.log('lead magnet submit clicked');
@@ -99,15 +100,15 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
       {status === "error" && (
         <h3
           className="mc__alert mc__alert--error"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
+          // dangerouslySetInnerHTML={{ __html: message }}
+        >{`${languageChoice === "English" ? "Sorry! It looks like something's gone wrong on our end. Please refresh and try again." : "Désolée! On dirait que quelque chose s'est mal passé de notre côté. Veuillez actualiser et réessayer."}`}</h3>
       )}
-      {status === "success" && (
+      {/* {status === "success" && (
         <h3
           className="mc__alert mc__alert--success"
           dangerouslySetInnerHTML={{ __html: message }}
         />
-      )}
+      )} */}
 
       {status !== "success" ? (
         <div className="mc__field-container">
@@ -115,7 +116,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
             id="lead_name"
             onBlur={testName}
             className="lead-magnet__input"
-            label="First Name"
+            label={`${languageChoice === "English" ? "First Name" : "Nom"}`}
 
             onChangeHandler={(e: any) =>
               setFirstName(e.target.value)
@@ -127,14 +128,14 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
             name="firstName"
           />
           {firstNameError ? (
-            <p className="error-message">Please enter your name</p>
+            <p className="error-message">{`${languageChoice === "English"? "Please enter your name" : "Veuillez indiquer votre nom"}`}</p>
           ) : null}
 
 
           <InputField
             id="lead_email"
             onBlur={testEmail}
-            label="Email"
+            label={`${languageChoice === "English" ? "Email" : "Courriel"}`}
             onChangeHandler={(e: any) =>
               setEmail(e.target.value)
             }
@@ -145,7 +146,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
             name="email"
           />
           {emailError ? (
-            <p className="error-message">Please enter a valid email</p>
+            <p className="error-message">{`${languageChoice === "English"? "Please enter a valid email" : "Merci d’entrer un courriel valide"}`}</p>
           ) : null}
         </div>
       ) : null}
@@ -156,7 +157,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText }) => {
       {
         status === 'success' ? <SubmitButton
 
-          className="g__justify-self-center btn-sign-up">Check your inbox!</SubmitButton> : <SubmitButton
+          className="g__justify-self-center btn-sign-up">{`${languageChoice === "English"? "Check your inbox!" : "vérifier votre boîte de réception!"}`}</SubmitButton> : <SubmitButton
             type="submit"
             onClick={handleSubmit}
           >{buttonText}</SubmitButton>

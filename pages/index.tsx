@@ -31,7 +31,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
   const morePosts = edges.slice(1)
 
   console.log('language choice: ', languageChoice);
-  console.log('home page: ', homePage);
+  
 
   return (
     <PageWrapper  preview={preview}>
