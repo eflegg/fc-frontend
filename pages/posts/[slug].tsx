@@ -23,7 +23,7 @@ width: 100%;
 
  `
 
-export default function Post({ post, posts, preview }) {
+export default function Post({ post, posts, preview, languageChoice }) {
   const router = useRouter()
   const morePosts = posts?.edges
 
@@ -32,7 +32,7 @@ export default function Post({ post, posts, preview }) {
   }
 
   return (
-    <PageWrapper preview={preview}>
+    <PageWrapper preview={preview} languageChoice={languageChoice}>
      < ShapeContainer className="shape-container">
      <SmallPinkShape  customClass="shape-pink"/>
          <LargeOrangeShape customClass='shape-orange' />
