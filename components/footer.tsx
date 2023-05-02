@@ -123,7 +123,7 @@ background: ${theme.colours.orange};
 
 
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <footer className="">
       <OuterContainer>
@@ -139,12 +139,16 @@ export default function Footer() {
           &copy; Flegg Creative {(new Date().getFullYear())}
         </div>
         <div className="footer-container">
-          <SignUpContainer text="Get our newsletter" buttonText="Sign up" />
+          <SignUpContainer languageChoice={props.languageChoice} text={`${props.languageChoice === "English" ? "Get our newsletter" : "Recevoir notre infolettre" }`} buttonText={`${props.languageChoice === "English" ? "Sign up" : "Abonnez-vous" }`} />
         </div>
         <div className='hire-us flex flex-col'>
 
+      
+
+
           <h3>
-            Got questions? Wondering if we're a good fit? Just give us a shout.
+          {`${props.languageChoice === "English" ? " Got questions? Wondering if we're a good fit? Just give us a shout." : " Avez-vous des questions? Vous vous demandez si nous sommes le duo qu'il vous faut? Ecrivez-nous." }`}
+           
           </h3>
           <a href="mailto:hello@fleggcreative.ca">
             <button>

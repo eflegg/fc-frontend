@@ -31,7 +31,7 @@ h3 {
 }
 `
 
-const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
+const SignUpForm = ({ status, message, onValidated, text, buttonText, languageChoice }) => {
 
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -94,17 +94,12 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
           sending...
         </h3>
       )}
-      {status === "error" && (
+   
+     {status === "error" && ( 
         <h3
           className="mc__alert mc__alert--error"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <h3
-          className="mc__alert mc__alert--success"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
+          // dangerouslySetInnerHTML={{ __html: message }}
+        >{`${languageChoice === "English" ? "Sorry! It looks like something's gone wrong on our end. Please refresh and try again." : "Désolée! On dirait que quelque chose s'est mal passé de notre côté. Veuillez actualiser et réessayer."}`}</h3>
       )}
 
       {status !== "success" ? (
@@ -112,7 +107,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
           <InputField
             onBlur={testName}
             className="lead-magnet__input"
-            label="First Name"
+            label={`${languageChoice === "English" ? "First Name" : "Nom"}`}
             id="signup_name"
             onChangeHandler={(e: any) =>
               setFirstName(e.target.value)
@@ -123,15 +118,15 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
             isRequired
             name="firstName"
           />
-          {firstNameError ? (
-            <p className="error-message">Please enter your name</p>
+           {firstNameError ? (
+            <p className="error-message">{`${languageChoice === "English"? "Please enter your name" : "Veuillez indiquer votre nom"}`}</p>
           ) : null}
 
 
           <InputField
             id="signup_email"
             onBlur={testEmail}
-            label="Email"
+            label={`${languageChoice === "English" ? "Email" : "Courriel"}`}
             onChangeHandler={(e: any) =>
               setEmail(e.target.value)
             }
@@ -141,8 +136,8 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
             isRequired
             name="email"
           />
-          {emailError ? (
-            <p className="error-message">Please enter a valid email</p>
+         {emailError ? (
+            <p className="error-message">{`${languageChoice === "English"? "Please enter a valid email" : "Merci d’entrer un courriel valide"}`}</p>
           ) : null}
         </div>
       ) : null}
@@ -150,10 +145,10 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText }) => {
 
 
 
-      {
+{
         status === 'success' ? <SubmitButton
 
-          className="g__justify-self-center btn-sign-up">Check your inbox!</SubmitButton> : <SubmitButton
+          className="g__justify-self-center btn-sign-up">{`${languageChoice === "English"? "Check your inbox!" : "vérifier votre boîte de réception!"}`}</SubmitButton> : <SubmitButton
             type="submit"
             onClick={handleSubmit}
           >{buttonText}</SubmitButton>

@@ -19,7 +19,7 @@ overflow: hidden;
 
 `
 
-export default function PageWrapper({ preview, children }) {
+export default function PageWrapper({ preview, children, languageChoice }) {
   
   return (
     <>
@@ -30,7 +30,7 @@ export default function PageWrapper({ preview, children }) {
           {/* <Alert preview={preview} /> */}
           <main>{children}</main>
         </div>
-        <Footer />
+        <Footer languageChoice={languageChoice} />
       </OuterContainer>
     </>
   )
