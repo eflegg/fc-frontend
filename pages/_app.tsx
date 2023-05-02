@@ -28,7 +28,7 @@ type CustomPageProps = {
     <GoogleAnalytics trackPageViews />
   <Button
           colour={`${theme.colours.blue}`}
-          value={language == "English" ? "En Français" : "In English"}
+          value={language == "English" ? "Français" : "English"}
           className="language--btn"
           onClick={toggleTheme}
           dark
