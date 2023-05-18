@@ -18,7 +18,7 @@ h3 {
 }
 
 .error-message {
-    color:#CC9900!important;
+    color: #CC9900 !important;
     font-family: "Source Sans Pro";
     font-size: 2.4rem !important;
     text-align: left !important;
@@ -28,6 +28,6 @@ h3 {
 .language--btn {
     position: fixed;
     right: 10px;
-    top: 10px;
+    top: 60px;
     z-index: 10;
 }
