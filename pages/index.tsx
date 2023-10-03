@@ -46,7 +46,8 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
       </ShapeContainer>
 
       <Container>
-<Link href="/test">Test Page</Link>
+<Link href="/about">About Page</Link>
+<Link href="/case-studies">Case Studies Page</Link>
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     

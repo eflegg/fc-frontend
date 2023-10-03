@@ -95,6 +95,23 @@ export async function getAboutData(){
   return data.page
 }
 
+export async function getCaseStudies(){
+  const data = await fetchAPI (`
+  query CaseStudiesQuery {
+    caseStudies {
+      edges {
+        node {
+          title
+          content
+        }
+      }
+    }
+  }`,
+  
+  )
+  return data?.caseStudies
+}
+
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {
   const data = await fetchAPI(
     `
@@ -126,6 +143,8 @@ export async function getAllPostsWithSlug() {
   `)
   return data?.posts
 }
+
+
 
 export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
