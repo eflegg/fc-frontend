@@ -9,7 +9,7 @@ const StyledIntro = styled.section`
 h2 {
   font-family: 'Source Sans Pro', sans-serif;
   color: ${theme.colours.cream};
-  font-size: 4.8rem;
+  font-size: 4.2rem;
   font-weight: 800;
   text-align: center;
   line-height: 105%;
@@ -109,7 +109,7 @@ margin-left: 45px;
 
 
 
-export default function Intro({languageChoice, heroText}) {
+export default function Intro({ languageChoice, heroText }) {
   console.log('hero text: ', heroText);
   return (
     <StyledIntro className="flex-col">
@@ -117,14 +117,14 @@ export default function Intro({languageChoice, heroText}) {
         Flegg Creative
       </h1>
       {languageChoice === "English" ? (
-  <h2 className="tagline">
- {heroText.heroTextEnglish}
-</h2>
-      ): (
+        <h2 className="tagline">
+          {heroText.heroTextEnglish}
+        </h2>
+      ) : (
         <h2>
-        {heroText.heroTextFrench}</h2>
+          {heroText.heroTextFrench}</h2>
       )}
-    
+
       <div className='cta'>
         <div className='newscontainer'>
           <LeadMagnetContainer languageChoice={languageChoice} text={`${languageChoice === "English" ? heroText.leadMagnetEnglish : heroText.leadMagnetFrench}`} buttonText={`${languageChoice === "English" ? heroText.buttonTextEnglish : heroText.buttonTextFrench}`} />
