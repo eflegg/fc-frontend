@@ -13,6 +13,7 @@ import LargeOrangeShape from '../components/shapes/large-orange'
 import Services from '../components/services'
 import SmallPinkShape from '../components/shapes/small-pink'
 import theme from '../components/Theme'
+import Link from 'next/link'
 
 
 
@@ -45,7 +46,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
       </ShapeContainer>
 
       <Container>
-
+<Link href="/test">Test Page</Link>
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     

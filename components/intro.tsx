@@ -7,7 +7,7 @@ import LeadMagnetContainer from './forms/LeadMagnetContainer'
 
 const StyledIntro = styled.section`
 h2 {
-  font-family: 'Source sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: ${theme.colours.cream};
   font-size: 4.8rem;
   font-weight: 800;

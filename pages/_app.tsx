@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import '../styles/index.css'
-import '../styles/global.css'
+import '../styles/global.scss'
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import React, { useState } from 'react';
 import Button from '../components/buttons/Button';

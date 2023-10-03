@@ -74,10 +74,25 @@ export async function getHomeData(){
       }
     }
     `,
-  
+   
   )
   return data.page
   
+}
+export async function getAboutData(){
+  const data = await fetchAPI(
+    `query AboutQuery {
+      page(id: "102", idType: DATABASE_ID){
+        aboutPage {
+          teamBio
+          elizabethBio
+          erinBio
+        }
+      }
+    }
+    `,
+  )
+  return data.page
 }
 
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {

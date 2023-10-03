@@ -1,0 +1,89 @@
+/* *{
+    background: yellow!important;
+} */
+
+//Type//
+
+$xs: '400px';
+$sm: '768px';
+$ipad: '820px';
+$md: '1000px';
+$lg: '1250px';
+$xl: '1800px';
+
+$logoType: 'Abril fatface';
+$body: "Source Sans Pro";
+
+$orange: #C9523C;
+$green: #425143;
+$cream: #FFF0DD;
+$pink: #E7A5BA;
+$blue: #18172B;
+$gusYellow: #f8dd8b;
+$gusBlue: #D2EDF2;
+$gusPink: #D91A5D;
+$grey: #707070;
+$white: #fff;
+$black: #000;
+$red: darksalmon;
+
+@mixin media-query-min($value, $operator: "min-width", $query: "screen") {
+    @media #{$query} and (#{$operator}: #{$value}) {
+      @content;
+    }
+  }
+  
+  @mixin media-query-max($value, $operator: "max-width", $query: "screen") {
+    @media #{$query} and (#{$operator}: #{$value}) {
+      @content;
+    }
+  }
+  
+  /* ##usage##
+      @include media-query-min(500px) {
+      }
+    */
+
+html {
+    font-size: 62.5%;
+}
+
+p {
+    font-family: $body;
+    color: $cream;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    font-weight: 300;
+    margin: 15px 0px;
+    // @include media-query-min($sm){
+    //     font-weight: 900;
+    //     font-size: 4.8rem;
+    // }
+   
+  }
+
+h3 {
+
+    font-family: "Source Sans Pro";
+    font-size: 5.4rem;
+    text-align: left;
+    line-height: 110%;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFF0DD;
+}
+
+.error-message {
+    color:#CC9900!important;
+    font-family: "Source Sans Pro";
+    font-size: 2.4rem !important;
+    text-align: left !important;
+    line-height: 105% !important;
+}
+
+.language--btn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
