@@ -42,7 +42,7 @@ type CustomPageProps = {
           onClick={toggleTheme}
           dark
           large={false}
-          link={false}
+        
         ></Button>
            <div
             className={

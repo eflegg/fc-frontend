@@ -24,8 +24,18 @@ import { useState } from "react";
      props.dark ? `${theme.colours.blue}` : `${theme.colours.pink}`};
    }
  `;
+
+ type ButtonProps = {
+   value: string;
+   colour: string;
+   link?: string;
+   large?: boolean;
+   className?: string;
+   dark?: boolean;
+   onClick?: any;
+ }
  
- export default function Button({
+const Button: React.FC<ButtonProps> =({
    value,
    colour,
    link,
@@ -33,7 +43,7 @@ import { useState } from "react";
    className,
    dark,
    onClick,
- } ) {
+ } ) =>{
    return (
      <>
        {link ? (
@@ -59,3 +69,4 @@ import { useState } from "react";
    );
  }
  
+ export default Button;
