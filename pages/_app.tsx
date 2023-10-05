@@ -23,9 +23,18 @@ type CustomPageProps = {
       setLanguage("English" );
     }
   };
+  
   return (
     <>
     <GoogleAnalytics trackPageViews />
+    <Button
+          colour={`${theme.colours.blue}`}
+          value="Skip to main content"
+          className="skip-link"
+          dark
+          large={true}
+          link="#main-content"
+        ></Button>
   <Button
           colour={`${theme.colours.blue}`}
           value={language == "English" ? "Français" : "English"}

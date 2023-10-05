@@ -45,14 +45,14 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
         <LargeOrangeShape customClass='shape-orange' />
       </ShapeContainer>
 
-      <Container>
+      <main className="mx-auto px-5" id="main-content">
 <Link href="/about">About Page</Link>
 <Link href="/case-studies">Case Studies Page</Link>
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     
         <Services aboutData={homePage.homeAbout} serviceData={homePage.homeServices} languageChoice={languageChoice} />
-      </Container>
+      </main>
     </PageWrapper>
   )
 }

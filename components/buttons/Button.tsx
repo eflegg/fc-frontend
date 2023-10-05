@@ -33,21 +33,21 @@ import { useState } from "react";
    className,
    dark,
    onClick,
- }) {
+ } ) {
    return (
      <>
        {link ? (
-         <Link href={`/${link}`}>
-           <a className={`${className ? className : ""} btn--container`}>
-             <ButtonContainer dark={dark} large={large} colour={colour}>
+         <Link href={`${link}`}>
+          
+             <ButtonContainer className={`${className ? className : ""} btn--container`} dark={dark} large={large} colour={colour}>
                {value}
              </ButtonContainer>
-           </a>
+         
          </Link>
        ) : (
          <ButtonContainer
            className={`${className ? className : ""} btn--container`}
-           onClick={onClick}
+           onClick={onClick? onClick : null}
            dark={dark}
            large={large}
            colour={colour}
