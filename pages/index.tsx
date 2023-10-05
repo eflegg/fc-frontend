@@ -31,7 +31,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
-  console.log('language choice: ', languageChoice);
+
   
 
   return (
@@ -45,14 +45,14 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
         <LargeOrangeShape customClass='shape-orange' />
       </ShapeContainer>
 
-      <main className="mx-auto px-5" id="main-content">
-<Link href="/about">About Page</Link>
-<Link href="/case-studies">Case Studies Page</Link>
+      <Container  >
+
+
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     
         <Services aboutData={homePage.homeAbout} serviceData={homePage.homeServices} languageChoice={languageChoice} />
-      </main>
+      </Container>
     </PageWrapper>
   )
 }

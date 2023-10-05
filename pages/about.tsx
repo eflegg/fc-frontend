@@ -10,7 +10,7 @@ const ImageContainer = styled.div`
 
  export default function Test({ aboutPage, preview, languageChoice }){
 
-  console.log('about data: ', aboutPage.aboutPage.teamBio);
+
     return (
         <>
   <PageWrapper languageChoice={languageChoice} preview={preview}>

@@ -65,7 +65,7 @@ const ServiceCardContainer = styled.div`
 `
 
 export default function ServiceCard({ singleService, languageChoice }) {
-    console.log('single service on card: ', singleService);
+  
     return (
         <ServiceCardContainer>
             <div className='outercard'>
