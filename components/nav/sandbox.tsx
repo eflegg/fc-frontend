@@ -2,10 +2,10 @@ import Link from "next/link"
 import { useRef } from "react"
 
 export function SubMenuItem({link, title, srText}){
-    const lastSubItemRef = useRef<any>(null);
+    const ref = useRef<any>(null);
     return (
         <>
-        <li ref={lastSubItemRef} className="submenu-item">
+        <li ref={ref} className="submenu-item">
             <Link href={link}>{title}</Link><span className="sr-only">{srText}</span></li>
         </>
         )

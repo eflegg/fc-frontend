@@ -1,5 +1,15 @@
-{
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.defaultFoldingRangeProvider": "esbenp.prettier-vscode"
-}
+// {
+//     "editor.formatOnSave": true,
+//     "editor.defaultFormatter": "esbenp.prettier-vscode",
+//     "editor.defaultFoldingRangeProvider": "esbenp.prettier-vscode"
+// }
+{"prettier.useTabs": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnPaste": true,
+"prettier.jsxSingleQuote": true,
+"prettier.bracketSameLine": true,
+
+"editor.formatOnSave": true,
+"editor.formatOnSaveMode": "file",
+"editor.defaultFoldingRangeProvider": "esbenp.prettier-vscode" 
+} 
