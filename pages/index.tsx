@@ -21,6 +21,7 @@ import Link from 'next/link'
 
 const ShapeContainer = styled.div`
 background: seagreen;
+border: 2px solid blue;
 width: 100%;
 
 
@@ -45,14 +46,14 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
         <LargeOrangeShape customClass='shape-orange' />
       </ShapeContainer>
 
-      <Container  >
+      <div>
 
 
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     
         <Services aboutData={homePage.homeAbout} serviceData={homePage.homeServices} languageChoice={languageChoice} />
-      </Container>
+      </div>
     </PageWrapper>
   )
 }

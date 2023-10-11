@@ -19,3 +19,19 @@ export const useOutsideClick = (callback: () => void) => {
 
   return ref;
 };
+
+    // useEffect(() => {
+    //   const checkIfClickedOutside = (e: any) => {
+    //     // If the menu is open and the clicked target is not within the menu,
+    //     // then close the menu
+    //     console.log('e: ', e.target);
+    //     if (subnav && ref.current && !ref.current.contains(e.target)) {
+    //       setSubnav(null);
+    //     }
+    //   };
+    //   document.addEventListener("mousedown", checkIfClickedOutside);
+    //   return () => {
+    //     // Cleanup the event listener
+    //     document.removeEventListener("mousedown", checkIfClickedOutside);
+    //   };
+    // }, [subnav]);

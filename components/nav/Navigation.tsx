@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react'
 import NavCarete from './nav-carete';
 
 import SubMenuItem from './SubMenuItem'
-import SubMenuButton from './SubMenuButton'
+
 import { useOutsideClick } from './useOutsideClick';
 
 import uniqid from 'uniqid';
@@ -156,31 +156,19 @@ export default function Navigation(){
 
 
 
-    // const ref = useRef<HTMLButtonElement>(null);
+    const subref = useRef<HTMLLIElement>(null);
     const ref = useOutsideClick(() => {
     setSubnav(null);
   });
-    // useEffect(() => {
-    //   const checkIfClickedOutside = (e: any) => {
-    //     // If the menu is open and the clicked target is not within the menu,
-    //     // then close the menu
-    //     console.log('e: ', e.target);
-    //     if (subnav && ref.current && !ref.current.contains(e.target)) {
-    //       setSubnav(null);
-    //     }
-    //   };
-    //   document.addEventListener("mousedown", checkIfClickedOutside);
-    //   return () => {
-    //     // Cleanup the event listener
-    //     document.removeEventListener("mousedown", checkIfClickedOutside);
-    //   };
-    // }, [subnav]);
+
 
     useEffect(() => {
         const keyDownHandler = (event: any) => {
             const focusedElement = document.activeElement;
-            const lastFocusableElement = ref.current.lastElementChild.querySelector("a");
-    console.log(focusedElement, lastFocusableElement);
+            // console.log('active element: ', document.activeElement);
+            // console.log('subref.current: ', subref.current);
+            const lastFocusableElement = subref.current.lastElementChild.querySelector("a");
+          console.log(focusedElement, lastFocusableElement);
           if (!event.shiftKey && focusedElement === lastFocusableElement) {
             event.preventDefault();
             setSubnav(null);
@@ -226,7 +214,7 @@ export default function Navigation(){
             return (
                 <>
                 {item.submenu ? (
-                    <li key={uniqid()}>
+                    <li tabIndex={1} role="menuitem" key={uniqid()}>
                       <button ref={ref} onClick={()=> handleSubnavClick(item.title)} className="item-with-submenu" aria-expanded={subnav === item.title ? "true" : "false"} aria-label={`Submenu of ${item.title}`}>{item.title}
                       <NavCarete />
                     </button>	
@@ -234,7 +222,7 @@ export default function Navigation(){
                     <ul   className="submenu" aria-hidden={subnav === item.title ? "false" : "true"}>
                         {item.submenu.map((submenuItem, index)=>{
                           return (
-                              <SubMenuItem customKey={uniqid()} link={`${item.link}/${submenuItem.link}`} title={submenuItem.title} srText={submenuItem.srText} />
+                              <SubMenuItem customRef={subref} customKey={uniqid()} link={`${item.link}/${submenuItem.link}`} title={submenuItem.title} srText={submenuItem.srText} />
                           )
                         })}
                     </ul>
