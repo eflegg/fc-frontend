@@ -2,9 +2,14 @@ import styled from 'styled-components'
 import theme from '../../components/Theme'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
-import NavCarete from './nav-carete'
-import SubMenuItem from './SubmenuItem'
-import { useMediaQuery } from "@uidotdev/usehooks";
+import NavCarete from './nav-carete';
+
+import SubMenuItem from './SubMenuItem'
+import SubMenuButton from './SubMenuButton'
+import { useOutsideClick } from './useOutsideClick';
+
+import uniqid from 'uniqid';
+
 
 const DesktopNav = styled.nav`
 &.mobile-nav {
@@ -42,26 +47,36 @@ const DesktopNav = styled.nav`
           display: flex;
           flex-direction: column;
          position: relative;
+      
       }
   }
   .submenu {
     display: flex;
     flex-direction: column;
-position: fixed;
-transform: translateY(80%);
+position: absolute;
+left: 0;
+top: 30px;
 }
 }
  .item-with-submenu {
-          display: flex;
-          align-items: flex-start;
-          svg {
-            width: 15px;
-          }
-      }
-
+  position: relative;
+    display: flex;
+    align-items: flex-start;
+    svg {
+      width: 15px;
+       /* transform: rotate(0deg); */
+    }
+  
+}
+.item-with-submenu[aria-expanded="true"]{
+  svg {
+    transform: rotate(180deg);
+  }
+}
 .submenu[aria-hidden="true"] {
    display: none;
    position: relative;
+  
 }
 
 `
@@ -71,6 +86,7 @@ const items = [
     {title: "About", link: "about"}, 
     {title: "Contact", link: "contact"}, 
     {title: "Case Studies", link: "case-studies", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
+     {title: "Services", link: "services", submenu: [{title: "Websites", srText: "case study", link: "websites"},{title: "Marketing Plans", srText: "case study", link: "marketing-plans"}, {title: "Brand Design", srText: "case study", link: "brand-design"}]}, 
 ]
 
   interface WindowSpecs {
@@ -83,6 +99,9 @@ const items = [
 
 
 export default function Navigation(){
+
+ 
+
  function useWindowSpecs() {
     // Initialize state with undefined width/height so server and client renders match
     // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
@@ -122,34 +141,40 @@ export default function Navigation(){
   const size = useWindowSpecs();
 
     const [subnav, setSubnav] = useState(null);
-    const handleSubnavClick = (menuId: any) => {
+    console.log('subnav: ', subnav);
+
+    function handleSubnavClick(menuId: any){
+
       console.log('menuId ', menuId);
-         console.log('subnav ', subnav);
-         if (subnav === menuId) {
-        setSubnav(null);
-     
-      } else  if (subnav !== menuId) {
+      if (subnav != menuId) {
         setSubnav(menuId);
-      }
+     
+      } else if (subnav === menuId)  {
+        setSubnav(null);
+      } 
     };
 
 
 
-    const ref = useRef<HTMLUListElement>(null);
-    useEffect(() => {
-      const checkIfClickedOutside = (e: any) => {
-        // If the menu is open and the clicked target is not within the menu,
-        // then close the menu
-        if (subnav && ref.current && !ref.current.contains(e.target)) {
-          setSubnav(null);
-        }
-      };
-      document.addEventListener("mousedown", checkIfClickedOutside);
-      return () => {
-        // Cleanup the event listener
-        document.removeEventListener("mousedown", checkIfClickedOutside);
-      };
-    }, [subnav]);
+    // const ref = useRef<HTMLButtonElement>(null);
+    const ref = useOutsideClick(() => {
+    setSubnav(null);
+  });
+    // useEffect(() => {
+    //   const checkIfClickedOutside = (e: any) => {
+    //     // If the menu is open and the clicked target is not within the menu,
+    //     // then close the menu
+    //     console.log('e: ', e.target);
+    //     if (subnav && ref.current && !ref.current.contains(e.target)) {
+    //       setSubnav(null);
+    //     }
+    //   };
+    //   document.addEventListener("mousedown", checkIfClickedOutside);
+    //   return () => {
+    //     // Cleanup the event listener
+    //     document.removeEventListener("mousedown", checkIfClickedOutside);
+    //   };
+    // }, [subnav]);
 
     useEffect(() => {
         const keyDownHandler = (event: any) => {
@@ -201,21 +226,22 @@ export default function Navigation(){
             return (
                 <>
                 {item.submenu ? (
-                    <li>
-                      <button  onClick={()=> handleSubnavClick(item.title)} className="item-with-submenu" aria-expanded={subnav === item.title ? "true" : "false"} aria-label={`Submenu of ${item.title}`}>{item.title}
+                    <li key={uniqid()}>
+                      <button ref={ref} onClick={()=> handleSubnavClick(item.title)} className="item-with-submenu" aria-expanded={subnav === item.title ? "true" : "false"} aria-label={`Submenu of ${item.title}`}>{item.title}
                       <NavCarete />
                     </button>	
-                    <ul  ref={ref} className="submenu" aria-hidden={subnav === item.title ? "false" : "true"}>
+                    {/* <SubMenuButton subnav={subnav} onClick={handleSubnavClick} title={item.title} /> */}
+                    <ul   className="submenu" aria-hidden={subnav === item.title ? "false" : "true"}>
                         {item.submenu.map((submenuItem, index)=>{
                           return (
-                              <SubMenuItem link={`${item.link}/${submenuItem.link}`} title={submenuItem.title} srText={submenuItem.srText} />
+                              <SubMenuItem customKey={uniqid()} link={`${item.link}/${submenuItem.link}`} title={submenuItem.title} srText={submenuItem.srText} />
                           )
                         })}
                     </ul>
                     </li>
                    
                 ):(
-                <li key={index} role="menuitem"><Link href={`/${item.link}`}>{item.title}
+                <li key={uniqid()} role="menuitem"><Link href={`/${item.link}`}>{item.title}
                </Link>
                 </li>
                 )}
