@@ -88,7 +88,7 @@ h2 {
 
 
 export default function Intro({ languageChoice, heroText }) {
-  console.log('hero text: ', heroText);
+ 
   return (
     <StyledIntro className="styled-intro">
   

@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../components/Theme'
+import Navigation from './nav/Navigation'
 
 const HeaderContainer = styled.header`
 position: absolute;
-
 width: 100%;
 top: 0;
 left: 0;
@@ -34,6 +34,9 @@ left: 0;
   margin-left: 60px;
   top: 20px;
   }
+}
+.header--inner{
+  display: flex;
 }
 `
 const SkipLink = styled.a`
@@ -67,12 +70,18 @@ transition: all .25s ease-in;
 export default function Header() {
   return (
   <HeaderContainer>
-      <SkipLink className="language--btn" href="#main-content">Skip to main content</SkipLink>
-      <a href="/">
+      <SkipLink tabIndex={0} className="language--btn" href="#main-content">Skip to main content</SkipLink>
+      <div className="header--inner">
+<div>
+
+      <a tabIndex={0} href="/">
       <h1 className="logo">
         Flegg Creative
       </h1>
       </a>
+</div>
+      <Navigation />
+      </div>
   </HeaderContainer>
   )
 }

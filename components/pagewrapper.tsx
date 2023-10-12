@@ -12,10 +12,10 @@ z-index: 1;
 overflow: hidden;
 
 
-  button, input, li {
+  /* button, input, li {
   &:focus-within {
     border: 4px dotted #18172B;
-  }
+  } */
 }
 
 
