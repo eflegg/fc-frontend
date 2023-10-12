@@ -19,7 +19,8 @@ import theme from '../components/Theme'
 
 
 const ShapeContainer = styled.div`
-background: seagreen;
+background: transparent;
+border: .25px solid transparent;
 width: 100%;
 
 
@@ -30,7 +31,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
-  console.log('language choice: ', languageChoice);
+
   
 
   return (
@@ -44,13 +45,13 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
         <LargeOrangeShape customClass='shape-orange' />
       </ShapeContainer>
 
-      <Container>
+  
 
         <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
 
     
         <Services aboutData={homePage.homeAbout} serviceData={homePage.homeServices} languageChoice={languageChoice} />
-      </Container>
+
     </PageWrapper>
   )
 }

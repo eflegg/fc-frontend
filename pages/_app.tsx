@@ -35,13 +35,13 @@ type CustomPageProps = {
           large={false}
           link={false}
         ></Button>
-           <div
+           {/* <div
             className={
               language == "English" ? "in-english" : "in-french"
             }
-          >
+          > */}
   <Component {...pageProps} languageChoice={language} />
-  </div> 
+  {/* </div>  */}
     </>
 )}
 

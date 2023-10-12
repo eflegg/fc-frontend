@@ -65,7 +65,7 @@ const LeadMagnet = ({ status, message, onValidated, text, buttonText, languageCh
   
 
   const handleSubmit = (e: any) => {
-    console.log('lead magnet submit clicked');
+    
     e.preventDefault();
     testEmail();
     testName();
