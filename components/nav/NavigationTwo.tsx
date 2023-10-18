@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from '../../components/Theme'
+import theme from '../Theme'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import uniqid from 'uniqid';
@@ -8,7 +8,7 @@ import SubMenuItem from '../../Submenu';
 import Submenu from '../../Submenu';
 import { useOutsideClick } from './useClickOutside';
 
-const DesktopNav = styled.nav`
+const Nav = styled.nav`
 &.mobile-nav {
     .menu {
       z-index: 10;
@@ -93,6 +93,16 @@ const items = [
   }
 
 export default function Navigation(){
+  const [subnav, setSubnav] = useState(null);
+  const [subnavIndex, setSubnavIndex] = useState(null);
+  function handleSubnavClick(menuId: any){
+    if (subnav != menuId) {
+      setSubnav(menuId);
+   
+    } else if (subnav === menuId)  {
+      setSubnav(null);
+    } 
+  };
 
     function useWindowSpecs() {
         // Initialize state with undefined width/height so server and client renders match
@@ -131,22 +141,6 @@ export default function Navigation(){
     
       //updates when the client loads so you can use it
       const size = useWindowSpecs();
-
-      const [subnav, setSubnav] = useState(null);
-      function handleSubnavClick(menuId: any){
-        if (subnav != menuId) {
-          setSubnav(menuId);
-       
-        } else if (subnav === menuId)  {
-          setSubnav(null);
-        } 
-      };
-      const ref = useOutsideClick(() => {
-        setSubnav(null);
-       });
-       console.log('ref: ', ref);
-      
-     
       useEffect(() => {
         const keyDownHandler = (event: any) => {
           if (event.key === "Escape") {
@@ -163,10 +157,59 @@ export default function Navigation(){
         };
       }, []);
 
+      useEffect(()=>{
+        const shiftPressHander = (event: any)=>{
+          if(shiftHeld && subnavIndex === 0){
+            console.log('shift pressed');
+            setSubnav(null);
+          }
+        };
+        document.addEventListener("keydown", shiftPressHander);
+        // clean up event listener
+        return () => {
+          document.removeEventListener("keydown", shiftPressHander);
+        };
+      })
 
-    
+      const buttonRef = useOutsideClick(() => {
+        setSubnav(null);
+       });
+       const subRef = useRef(null);
+
+       const [shiftHeld, setShiftHeld] = useState(false);
+
+
+       function downHandler({key}) {
+         if (key === 'Shift') {
+           setShiftHeld(true);
+         }
+       }
      
+       function upHandler({key}) {
+         if (key === 'Shift') {
+           setShiftHeld(false);
+         }
+       }
      
+       useEffect(() => {
+         window.addEventListener('keydown', downHandler);
+         window.addEventListener('keyup', upHandler);
+         return () => {
+           window.removeEventListener('keydown', downHandler);
+           window.removeEventListener('keyup', upHandler);
+         };
+       }, []);
+
+
+function handleSubmenuBlur(length:number, position:number, event:any){
+  console.log('length + position: ', length, position+1);
+  console.log('event: ', event.shiftKey);
+  if(!shiftHeld && length === position + 1 ){
+    setSubnav(null);
+  }
+
+}
+console.log('subnav index: ', subnavIndex);
 
     return (
         <>
@@ -180,32 +223,41 @@ export default function Navigation(){
     <span>Menu</span>
 </div>
 ):null}
-<DesktopNav className={size.width < 1000 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
+<Nav className={size.width < 1000 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
     <ul id="menu1" className="menu">
-        {items.map((item, index)=>{
-            return (
-                <>
-                {item.submenu ? (
-                    <li   key={uniqid()}>
-                      <a  href={item.link}>{item.title}</a>
-                      <button ref={ref} onClick={()=> handleSubnavClick(item.title)} className="item-with-submenu" aria-expanded={subnav === item.title ? "true" : "false"} aria-label={`Submenu of ${item.title}`}>
-                      <NavCarete />
-                    </button>	
-                    <Submenu callback={setSubnav}submenuItems={item.submenu} title={item.title} subnav={subnav} />
-                   
-                
-                    </li>
-                   
-                ):(
-                <li key={uniqid()}><Link href={`/${item.link}`}>{item.title}
-               </Link>
-                </li>
-                )}
-                </>
-            )
-        })}
+ 
+      {items && items.map((item, index)=>{
+        return(
+          <>
+          {item.submenu ? (
+            <li>
+            <a href={item.link}>{item.title}</a>
+            <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} >btn</button>
+            <ul ref={subRef} aria-hidden={subnav === item.title ? "false" : "true"} className="submenu">
+              {item.submenu.map((subItem, index)=>{
+                return(
+                  <>
+               <li>
+                <a onFocus={()=>setSubnavIndex(index)}onBlur={(event)=> handleSubmenuBlur(item.submenu.length, index, event)} href={subItem.link}>{subItem.title}</a>
+              </li>
+                  </>
+                )
+              })}
+            
+           
+            </ul>
+           </li>
+          ):(
+            <li>
+            <a href={item.link}>{item.title}</a>
+           </li>
+          )}
+          </>
+        )
+        
+      })}
     </ul>
-</DesktopNav>
+</Nav>
 </>
     )
 }

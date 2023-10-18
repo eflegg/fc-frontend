@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 import Navigation from './nav/Navigation'
+import NavigationTwo from './nav/NavigationTwo'
 
 const HeaderContainer = styled.header`
 position: absolute;
@@ -80,7 +81,8 @@ export default function Header() {
       </h1>
       </a>
 </div>
-      <Navigation />
+      {/* <Navigation /> */}
+      <NavigationTwo />
       </div>
   </HeaderContainer>
   )
