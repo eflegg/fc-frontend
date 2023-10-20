@@ -5,6 +5,7 @@ declare module 'styled-components'
 declare module 'react-mailchimp-subscribe'
 
 declare module 'isomorphic-fetch'
+declare module 'uniqid'
 
 declare module "*.png";
 declare module "*.jpg";
