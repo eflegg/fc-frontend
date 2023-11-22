@@ -4,6 +4,8 @@ import Meta from './meta'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 import Header from './header'
+import Button from './buttons/Button'
+
 
 const OuterContainer = styled.div`
 background: ${theme.colours.green};
@@ -15,9 +17,9 @@ overflow: hidden;
   /* button, input, li {
   &:focus-within {
     border: 4px dotted #18172B;
-  } */
+  } 
 }
-
+*/
 
 `
 

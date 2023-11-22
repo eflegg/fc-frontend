@@ -22,9 +22,9 @@ const Nav = styled.nav`
     width: 100vw;
     height: 100vh;
   }
-  @media ${theme.devices.medium}{
+  /* @media ${theme.devices.medium}{
     display: none;
-  }
+  } */
 }
 .submenu {
   position: relative;
@@ -32,20 +32,32 @@ const Nav = styled.nav`
   left: 20px;
 }
 &.desktop-nav {
-  background: springgreen;
-  display: none;
-   @media ${theme.devices.medium}{
-    display: flex;
-  }
+  display: flex;
   .menu {
      
       display: flex;
       align-items: center;
       li {
           margin: 0px 15px;
+          color: ${theme.colours.blue};
+          font-size: 2.4rem;
           display: flex;
           flex-direction: column;
          position: relative;
+         &:hover {
+            width: 100%;
+            &::after {
+              width: 80%;
+              transition: all 0.25s ease-in;
+            }
+          }
+         &::after {
+          content: "";
+          height: 4px;
+          background: ${theme.colours.blue};
+          width: 0%;
+         transition: all 0.25s ease-in;
+         }
       
       }
   }
@@ -80,11 +92,26 @@ top: 30px;
 
 `
 
+interface Items {
+  title: string;
+  link: string;
+  submenu?: any;
+}
+
+// const items = [
+//     {title: "About", link: "about"}, 
+//     {title: "Contact", link: "contact"}, 
+//     {title: "Case Studies", link: "case-studies", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
+//      {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
+// ]
+
 const items = [
-    {title: "About", link: "about"}, 
-    {title: "Contact", link: "contact"}, 
-    {title: "Case Studies", link: "case-studies", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
-     {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
+  {
+    title: "Blog", link: "blog"
+  },
+  {
+    title: "Home", link: ""
+  }
 ]
 
   interface WindowSpecs {
@@ -235,11 +262,11 @@ function handleSubmenuBlur(length:number, position:number){
   }
 
 }
-console.log('subnav index: ', subnavIndex);
+
 
     return (
         <>
-      {size.width < 1000 ?  (
+      {size.width < 0 ?  (
 <div>
     <button 
       aria-label="menu" 
@@ -249,7 +276,7 @@ console.log('subnav index: ', subnavIndex);
     <span>Menu</span>
 </div>
 ):null}
-<Nav className={size.width < 1000 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
+<Nav className={size.width < 0 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
     <ul id="menu1" className="menu">
  
       {items && items.map((item, index)=>{

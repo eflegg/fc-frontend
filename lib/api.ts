@@ -123,6 +123,7 @@ export async function getAllPostsForHome(preview) {
             excerpt
             slug
             date
+            content
             featuredImage {
               node {
                 sourceUrl

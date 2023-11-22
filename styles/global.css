@@ -6,6 +6,38 @@ html {
     font-size: 62.5%;
 }
 
+li {
+    font-family: "Source Sans Pro";
+    
+}
+p{
+    font-family: Source Sans Pro;
+    color: #FFF0DD;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    font-weight: 300;
+    margin: 15px 0px;
+}
+h2{
+    font-family: "Source Sans Pro";
+    font-size: 3.6rem;
+    text-align: left;
+    line-height: 110%;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFF0DD;
+}
+
+h1 {
+
+font-family: "Source Sans Pro";
+font-size: 5.4rem;
+text-align: left;
+line-height: 110%;
+font-weight: 700;
+margin-bottom: 20px;
+color: #18172B;
+}
 h3 {
 
     font-family: "Source Sans Pro";

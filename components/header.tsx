@@ -38,6 +38,7 @@ left: 0;
 }
 .header--inner{
   display: flex;
+  justify-content: space-between;
 }
 `
 const SkipLink = styled.a`
