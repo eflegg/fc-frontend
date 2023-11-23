@@ -33,12 +33,24 @@ width: 100%;
    background: ${theme.colours.blue};
    background: rgba(24,23,43, .9);
    border-radius: 20px;
-    width: 90%;
-    margin: 100px auto 75px;
-    padding: 50px;
+    width: 95%;
+    margin: 150px auto 75px;
+    padding: 20px;
    max-width: 1000px;
+   @media ${theme.devices.small}{
+    width: 90%;
+    padding: 50px;
+   }
 h1 {
   color: ${theme.colours.cream};
+ 
+}
+p{
+  font-size: 2rem;
+  line-height: 120%;
+  @media ${theme.devices.small}{
+    font-size: 2.4rem;
+   }
 }
 .back-btn {
   display: table;

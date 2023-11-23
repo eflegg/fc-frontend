@@ -18,10 +18,13 @@ left: 0;
  display: table;
   line-height: 1;
   background: ${theme.colours.pink};
-  margin-left: 60px;
+  margin-left: 25px;
   position: relative;
   top: 15px;
   border-radius: 60%;
+  @media ${theme.devices.extraSmall} {
+    margin-left: 60px;
+  }
   a{
     display: table;
   }

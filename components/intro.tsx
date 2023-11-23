@@ -15,7 +15,7 @@ h2 {
   text-align: center;
   line-height: 105%;
   width: 80%;
-  margin: 80px auto 0;
+  margin: 120px auto 0;
   @media ${theme.devices.small} {
   font-size: 6rem;
   font-weight: 900;

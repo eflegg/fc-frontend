@@ -66,7 +66,7 @@ p{
 .label {
     // border: solid 1px purple;
     border-radius: 40px;
-    width: 300px;
+    max-width: 300px;
     text-align: center;
     h4 {
         font-family: ${theme.type.body};

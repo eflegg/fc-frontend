@@ -109,9 +109,7 @@ const items = [
   {
     title: "Blog", link: "/blog"
   },
-  {
-    title: "Home", link: "/"
-  }
+ 
 ]
 
   interface WindowSpecs {
