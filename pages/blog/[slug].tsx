@@ -96,7 +96,7 @@ export default function Post({ post, posts, preview, languageChoice }) {
           <>
             <BlogContainer>
            
-            <h1>{post.title ? post.title : "Loading..."}</h1>
+            <h1>{post.title}</h1>
             <div
         className="blog-excerpt"
         dangerouslySetInnerHTML={{ __html: post.content }}
@@ -140,6 +140,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: allPosts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
-    fallback: true,
+    fallback: false,
   }
 }
