@@ -34,7 +34,7 @@ width: 100%;
        grid-column-gap: 30px;
        justify-content: center;
        width: 90%;
-       margin: 100px auto 75px;
+       margin: 125px auto 75px;
        list-style: none;
        max-width: 1000px;
 

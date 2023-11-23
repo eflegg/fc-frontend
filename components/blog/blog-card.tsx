@@ -103,13 +103,13 @@ export default function BlogCard({ title, excerpt, slug }) {
                  
                 </div>
                 <div className="excerpt">
-                <p
+                <span
         className="blog-excerpt"
         dangerouslySetInnerHTML={{ __html: excerpt }}
       />
                 </div>
 
-                
+                <p className="logotype">Read the story</p>
 
             </div>
         </BlogCardContainer>

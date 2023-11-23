@@ -5,7 +5,9 @@
 html {
     font-size: 62.5%;
 }
-
+.logotype {
+    font-family: "Abril Fatface", serif;
+}
 li {
     font-family: "Source Sans Pro";
     
