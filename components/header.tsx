@@ -43,6 +43,7 @@ left: 0;
   display: flex;
   justify-content: space-between;
 }
+
 `
 const SkipLink = styled.a`
 transform: translate(200%);
@@ -85,8 +86,10 @@ export default function Header() {
       </h1>
       </a>
 </div>
-     
+  
+
       <Navigation />
+
       </div>
   </HeaderContainer>
   )

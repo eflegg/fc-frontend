@@ -22,7 +22,7 @@ import BlogCard from '../components/blog/blog-card'
 
 const ShapeContainer = styled.div`
 background: transparent;
-border: .25px solid transparent;
+
 width: 100%;
 
 `

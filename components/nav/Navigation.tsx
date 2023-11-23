@@ -40,7 +40,9 @@ const Nav = styled.nav`
       li {
           margin: 0px 15px;
           color: ${theme.colours.blue};
-          font-size: 2.4rem;
+          font-weight: 600;
+          font-size: 2.8rem;
+          top: -10px;
           display: flex;
           flex-direction: column;
          position: relative;

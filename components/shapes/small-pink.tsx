@@ -7,6 +7,7 @@ const ShapeBackground = styled.div`
 	background: transparent;
 	position: absolute;
 	left: 0;
+	top: 0;
 	z-index: -1;
 	img {
 		position: relative;
