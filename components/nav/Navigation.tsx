@@ -107,10 +107,10 @@ interface Items {
 
 const items = [
   {
-    title: "Blog", link: "blog"
+    title: "Blog", link: "/blog"
   },
   {
-    title: "Home", link: ""
+    title: "Home", link: "/"
   }
 ]
 

@@ -31,7 +31,7 @@ width: 100%;
  `
  const BlogContainer = styled.article`
    background: ${theme.colours.blue};
-  
+   background: rgba(24,23,43, .9);
    border-radius: 20px;
     width: 90%;
     margin: 100px auto 75px;

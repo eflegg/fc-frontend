@@ -19,7 +19,7 @@ h2{
     color: ${theme.colours.cream};
 }
 p{
-    line-height: 105%;
+    line-height: 110%;
     color: ${theme.colours.cream};
     text-align: center;
     font-size: 1.8rem;
