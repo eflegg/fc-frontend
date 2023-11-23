@@ -282,7 +282,7 @@ function handleSubmenuBlur(length:number, position:number){
       {items && items.map((item, index)=>{
         return(
           <>
-          {item.submenu ? (
+          {/* {item.submenu ? (
             <li>
             <a href={item.link}>{item.title}</a>
             <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} >btn</button>
@@ -300,11 +300,11 @@ function handleSubmenuBlur(length:number, position:number){
            
             </ul>
            </li>
-          ):(
+          ):( */}
             <li>
             <a href={item.link}>{item.title}</a>
            </li>
-          )}
+          {/* )} */}
           </>
         )
         
