@@ -99,7 +99,7 @@ export default function BlogCard({ title, excerpt, slug }) {
             <div className='outercard'>
             
                 <div className='label'>
-                    <h2>{title}</h2>
+                    <h2>{title ? title : "Loading..."}</h2>
                  
                 </div>
                 <div className="excerpt">
