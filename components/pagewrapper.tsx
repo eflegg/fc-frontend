@@ -3,8 +3,11 @@ import Footer from './footer'
 import Meta from './meta'
 import styled from 'styled-components'
 import theme from '../components/Theme'
-import Navigation from './nav/Navigation'
+
 import Link from 'next/link'
+
+import Button from './buttons/Button'
+
 
 const OuterContainer = styled.div`
 background: ${theme.colours.green};
@@ -13,27 +16,13 @@ position: relative;
 z-index: 1;
 overflow: hidden;
 
-  button, input {
+
+  /* button, input, li {
   &:focus-within {
     border: 4px dotted #18172B;
-  }
-
+  } 
 }
-h1 {
- 
-  font-family: 'Abril fatface', cursive;
-  font-size: 3.8rem;
-  color: ${theme.colours.blue};
-  display: table;
-  line-height: 1;
-  background: ${theme.colours.pink};
-  margin-left: 60px;
-  position: relative;
-  
-  border-radius: 60%;
-  @media ${theme.devices.ipad} {
-  font-size: 4rem;
-margin-left: 45px;
+*/
 
   }
   @media ${theme.devices.medium} {
@@ -63,18 +52,11 @@ export default function PageWrapper({ preview, children, languageChoice }) {
     <>
       <Meta />
       <OuterContainer>
-        <div className="pagewrapper">
-          <Header>
-
-      <h1 className="logo">
-        <Link href="/">
-        Flegg Creative
-        </Link>
-      </h1>
-         <Navigation />
-          </Header>
+    
+<Header />
+         
           <main id="main-content">{children}</main>
-        </div>
+
         <Footer languageChoice={languageChoice} />
       </OuterContainer>
     </>

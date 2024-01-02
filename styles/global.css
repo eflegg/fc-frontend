@@ -5,7 +5,41 @@
 html {
     font-size: 62.5%;
 }
+.logotype {
+    font-family: "Abril Fatface", serif;
+}
+li {
+    font-family: "Source Sans Pro";
+    
+}
+p{
+    font-family: Source Sans Pro;
+    color: #FFF0DD;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    font-weight: 300;
+    margin: 15px 0px;
+}
+h2{
+    font-family: "Source Sans Pro";
+    font-size: 3.6rem;
+    text-align: left;
+    line-height: 110%;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFF0DD;
+}
 
+h1 {
+
+font-family: "Source Sans Pro";
+font-size: 5.4rem;
+text-align: left;
+line-height: 110%;
+font-weight: 700;
+margin-bottom: 20px;
+color: #18172B;
+}
 h3 {
 
     font-family: "Source Sans Pro";
@@ -30,4 +64,16 @@ h3 {
     right: 10px;
     top: 60px;
     z-index: 10;
+}
+.sr-only {
+   border: 0;
+   clip: rect(1px, 1px, 1px, 1px);
+   clip-path: inset(50%);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   width: 1px;
+   word-wrap: normal !important;
 }

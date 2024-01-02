@@ -6,6 +6,7 @@ import LeadMagnetContainer from './forms/LeadMagnetContainer'
 
 
 const StyledIntro = styled.section`
+position: relative;
 h2 {
   font-family: 'Source Sans Pro', sans-serif;
   color: ${theme.colours.cream};
@@ -14,7 +15,7 @@ h2 {
   text-align: center;
   line-height: 105%;
   width: 80%;
-  margin: 80px auto 0;
+  margin: 120px auto 0;
   @media ${theme.devices.small} {
   font-size: 6rem;
   font-weight: 900;
@@ -25,29 +26,6 @@ h2 {
     }
 }
 
-h1 {
-  /* border: 1px solid yellow; */
-  font-family: 'Abril fatface', cursive;
-  font-size: 3.8rem;
-  color: ${theme.colours.blue};
-  display: table;
-  line-height: 1;
-  background: ${theme.colours.pink};
-  margin-left: 60px;
-  position: relative;
-  top: 15px;
-  border-radius: 60%;
-  @media ${theme.devices.ipad} {
-  font-size: 4rem;
-margin-left: 45px;
-  top: 15px;
-  }
-  @media ${theme.devices.medium} {
-  font-size: 5.6rem;
-  margin-left: 60px;
-  top: 20px;
-  }
-}
 
 .cta {
   margin: 50px;
@@ -112,10 +90,8 @@ margin-left: 45px;
 export default function Intro({ languageChoice, heroText }) {
  
   return (
-    <StyledIntro className="flex-col">
-      {/* <h1 className="logo">
-        Flegg Creative
-      </h1> */}
+    <StyledIntro className="styled-intro">
+  
       {languageChoice === "English" ? (
         <h2 className="tagline">
           {heroText.heroTextEnglish}
