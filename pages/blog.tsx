@@ -50,7 +50,7 @@ console.log('all posts: ', edges);
   
 
   return (
-    <PageWrapper languageChoice={languageChoice} preview={preview}>
+    <PageWrapper languageChoice={languageChoice} >
       <Head>
         <title>Flegg Creative</title>
       </Head>

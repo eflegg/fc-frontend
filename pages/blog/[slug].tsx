@@ -86,7 +86,7 @@ export default function Post({ post, posts, preview, languageChoice }) {
   }
 
   return (
-    <PageWrapper  preview={preview} languageChoice={languageChoice}>
+    <PageWrapper   languageChoice={languageChoice}>
         <Head>
                 <title>
                   {post.title} | Flegg Creative

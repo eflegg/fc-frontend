@@ -149,6 +149,34 @@ export async function getAllCaseStudiesWithSlug() {
   return data?.caseStudies
 }
 
+export async function getStudy(slug){
+  const data = await fetchAPI(`
+  fragment PostFields on CaseStudy {
+    title
+    slug
+    featuredImage {
+      node {
+        sourceUrl
+      }
+    }
+  }
+  query PostBySlug($id: ID!, $idType: CaseStudyIdType!) {
+  
+    caseStudy(id: $id, idType: $idType) {
+         ...PostFields
+         content
+       }
+ }
+  `,
+  {
+    variables: {
+      id: slug,
+      idType: 'SLUG',
+    },
+  }
+  )
+  return data?.caseStudy
+}
 
 
 export async function getAllPostsForHome(preview) {
@@ -194,29 +222,7 @@ export async function getAllPostsForHome(preview) {
   return data?.posts
 }
 
-export async function getStudy(slug, preview, previewData) {
-const data = await fetchAPI(`
-query SingleStudy($id: ID! $idType: CaseStudyIdType!) {
-  caseStudy(id: $id, idType: $idType) {
-    content
-    featuredImage {
-      node {
-        altText
-        sourceUrl
-      }
-    }
-    categories {
-      edges {
-        node {
-          name
-        }
-      }
-    }
-  }
-}
-`)
-return data?.caseStudy
-}
+
 
 export async function getPostAndMorePosts(slug, preview, previewData) {
   const postPreview = preview && previewData?.post
@@ -324,6 +330,69 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug)
   // If there are still 3 posts, remove the last one
   if (data.posts.edges.length > 2) data.posts.edges.pop()
+
+  return data
+}
+
+
+export async function getStudyAndMoreStudies(slug, preview, previewData) {
+ 
+  const data = await fetchAPI(
+    `
+    fragment AuthorFields on User {
+      name
+      firstName
+      lastName
+      avatar {
+        url
+      }
+    }
+    fragment PostFields on caseStudy {
+      title
+      excerpt
+      slug
+      date
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      author {
+        node {
+          ...AuthorFields
+        }
+      }
+      categories {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      tags {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+    query PostBySlug($id: ID!, $idType: CaseStudyIdType!) {
+      caseStudy(id: $id, idType: $idType) {
+        ...PostFields
+        content
+      }
+      caseStudies(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            ...PostFields
+          }
+        }
+      }
+    }
+  `,
+   
+  )
 
   return data
 }
