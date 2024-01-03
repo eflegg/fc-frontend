@@ -77,7 +77,7 @@ p{
   
  `
 
-export default function Post({ post, posts, preview, languageChoice }) {
+export default function Post({ post, posts, languageChoice }) {
   const router = useRouter()
   const morePosts = posts?.edges
 
@@ -97,10 +97,7 @@ export default function Post({ post, posts, preview, languageChoice }) {
                 />
               </Head>
    
-              <ShapeContainer className="shape-container">
-        <SmallPinkShape customClass="shape-pink" />
-        <LargeOrangeShape customClass='shape-orange' />
-      </ShapeContainer>
+     
        
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>

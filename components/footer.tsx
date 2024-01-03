@@ -6,116 +6,138 @@ import theme from '../components/Theme'
 import Image from 'next/image';
 import SignUpContainer from './forms/SignUpContainer';
 
-const OuterContainer = styled.div`
-display: flex;
-flex-direction: column;
-@media ${theme.devices.medium}{
-
-flex-direction: row;
-}
-position: relative;
-  .copyright {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 2.4rem;
-    font-family: ${theme.type.body};
-    color: ${theme.colours.cream};
+const FooterContainer = styled.footer`
+ background-color: rgb(201, 82, 60);
+  padding: 1rem;
   @media ${theme.devices.small}{
-    position: absolute;
-    left: 80px;
-    bottom: 10px;
-  }
-  }
-background: ${theme.colours.orange};
-
-.insta {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 250px;
-  bottom: 10px;
-  z-index: 10;
-  
+    figure.insta {
+        margin-right: 0;
+    }
+    figure.logo-footer {
+        height: 3rem;
+        margin: 1rem;
+    }
+    display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        align-items: flex-end;
 }
-
-
-.footer-container {
-
-  padding: 40px;
-  @media ${theme.devices.medium} {
-    padding: 80px;
-  }
-  
+label {
+    font-family: "brother-1816", sans-serif;
+    font-weight: 400;
+    margin-top: 2.5rem;
 }
-
-.hire-us {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // text-align: center;
-  padding: 40px;
-
-  /* border: 3px solid yellow; */
-  @media ${theme.devices.small}{
- 
-  align-items: flex-end;
-  justify-content: flex-end;
-  }
-  @media ${theme.devices.medium}{
-  // padding: 80px 60px;
-  max-width: 60%;
- 
-  }
- 
-
-  .h1 {
-    font-family: ${theme.type.logoType};
-    font-size: 4.6rem;
-    margin: 80px 0;
-    color: ${theme.colours.cream};
-    line-height: 100%;
-    text-align: right;
+  section.newsletter {
+    flex-direction: column;
+    justify-content: space-between;
+    color: #F7F5EE;
+    padding-right: 2rem;
     @media ${theme.devices.small}{
-      font-size: 5.4rem;
+      width: 60%;
     }
     @media ${theme.devices.medium}{
-      font-size: 6rem;
+      width: 40%;
     }
-  }
+}
 
-  h3 {
-    font-family: ${theme.type.body};
-    font-size: 3.4rem;
-    line-height: 110%;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: ${theme.colours.cream};
+section.contact {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     @media ${theme.devices.small}{
-    font-weight: 700;
-    font-size: 4.4rem;
-    text-align: right;
+      flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 40%;
     }
-  }
-
-  button {
-    :hover {
-      background: ${theme.colours.green};
-      color: ${theme.colours.cream};
+    @media ${theme.devices.medium}{
+      justify-content: space-between;
+      width: 40%;
+        height: 100%;
     }
-    width: fit-content;
-    background: ${theme.colours.pink};
-    font-family: ${theme.type.body};
-    color: ${theme.colours.blue};
-    font-size: 2.4rem;
-    padding: 10px 40px;
-    border-radius: 60px;
-    @media ${theme.devices.small}{
-    }
-  }
 
 }
+
+h3.create-inclusive {
+    font-family: "brother-1816", sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    font-style: italic;
+    /* width: 70%; */
+    text-transform: capitalize;
+    @media ${theme.devices.medium}{
+      width: 80%;
+    }
+}
+
+h4 {
+    font-family: "brother-1816", sans-serif;
+    font-weight: 400;
+    margin: 1rem 0 2rem 0;
+    color: var(--background);
+}
+input#signup_name,
+input#signup_email {
+    font-size: 1rem;
+    margin: .5rem 0 1rem 0;
+    width: 100%;
+    background-color: var(--background);
+    outline: none;
+    border: none;
+    padding: 1rem;
+    @media ${theme.devices.medium}{
+      width: 80%;
+    }
+}
+
+label.footer {
+    margin-top: 1rem;
+}
+
+button.get-newsletter {
+    width: 30%;
+}
+
+h1.good-fit {
+    text-align: left;
+    color: #F7F5EE;
+    width: 100%;
+    font-size: 2.5rem;
+    @media ${theme.devices.medium}{
+      font-size: 4rem;
+        width: 90%;
+    }
+}
+
+figure.insta {
+    height: 2rem;
+    width: 2rem;
+    margin: 0 1rem;
+    border-radius: 0px;
+}
+
+div.contact-insta {
+    align-items: center;
+}
+
+h2.in-touch {
+    color: #F7F5EE;
+    font-size: 2rem;
+    font-weight: 100;
+    margin: 0 0 1rem 0;
+}
+
+figure.logo-footer {
+    height: 3rem;
+    margin: 0;
+}
+
+figure.logo-footer img {
+    border-radius: 0px;
+}
+
+
+
 
 
 
@@ -125,40 +147,51 @@ background: ${theme.colours.orange};
 
 export default function Footer(props) {
   return (
-    <footer className="">
-      <OuterContainer>
+    <FooterContainer className="">
+          <section className="contact flex">
+                    <h1 className="good-fit">wondering if we're a good fit?</h1>
+                    <h2 className="in-touch">get in touch</h2>
+                    <div className="contact-insta flex">
+                        <a href="/contact.html">
+                            <span className="btn-green">contact</span>
+                        </a>
+                        <a href="https://www.instagram.com/fleggcreative/">
+                            <figure className="insta"><Image src="/images/instagram-brands.svg" alt="Instagram link" width={40} height={40} /></figure>
+                        </a>
+                        <figure className="logo-footer">
+                            <img src="/images/asset-2.svg" alt="" />
+                        </figure>
+                    </div>
+                </section>
 
+                <section className="newsletter flex">
+                    <h3 className="create-inclusive">create truly inclusive digital spaces with us</h3>
+                    <h4>get our newsletter and find out why we put accessibility first</h4>
 
-        <div className="copyright">
+                    <SignUpContainer languageChoice={props.languageChoice} text={`${props.languageChoice === "English" ? "Get our newsletter" : "Recevoir notre infolettre" }`} buttonText={`${props.languageChoice === "English" ? "Sign up" : "Abonnez-vous" }`} />
 
-          <a className="insta" aria-label="Link to Flegg Creative Instgram account" href="https://www.instagram.com/fleggcreative/" target='_blank'>
-            <Image src="/instagram.svg" alt="Instagram link" width={40} height={40} />
+                   
+                </section>
 
-          </a>
-          <p>hello@fleggcreative.ca</p>
-          &copy; Flegg Creative {(new Date().getFullYear())}
-        </div>
-        <div className="footer-container">
-          <SignUpContainer languageChoice={props.languageChoice} text={`${props.languageChoice === "English" ? "Get our newsletter" : "Recevoir notre infolettre" }`} buttonText={`${props.languageChoice === "English" ? "Sign up" : "Abonnez-vous" }`} />
-        </div>
-        <div className='hire-us flex flex-col'>
-
+       
+       
       
-
-
-          <h3>
-          {`${props.languageChoice === "English" ? " Got questions? Wondering if we're a good fit? Just give us a shout." : " Avez-vous des questions? Vous vous demandez si nous sommes le duo qu'il vous faut? Ecrivez-nous." }`}
-           
-          </h3>
-          <a href="mailto:hello@fleggcreative.ca">
-            <button>
-              Contact
-            </button>
-          </a>
-          <h4 className="h1">Flegg Creative</h4>
-        </div>
-
-      </OuterContainer>
-    </footer>
+      
+    </FooterContainer>
   )
 }
+
+
+
+ {/* <form class="footer-form flex" action="mailto:hello@fleggcreative.ca subject=hello!" method="post"
+                        enctype="text/plain" validate>
+                        <label for="fname" class="footer">First Name</label>
+                        <input type="text" id="footer-fname" placeholder="Your Name" name="firstname" required>
+                        <label for="mail" class="footer">E-mail</label>
+                        <input type="email" id="footer-mail" placeholder="yourname@example.com" name="email" required>
+                        <input type="submit" id="submit" value="Submit">
+                    </form> */}
+
+
+
+          {/* &copy; Flegg Creative {(new Date().getFullYear())} */}

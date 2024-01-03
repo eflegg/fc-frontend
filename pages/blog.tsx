@@ -55,10 +55,7 @@ console.log('all posts: ', edges);
         <title>Flegg Creative</title>
       </Head>
   
-      <ShapeContainer className="shape-container">
-        <SmallPinkShape customClass="shape-pink" />
-        <LargeOrangeShape customClass='shape-orange' />
-      </ShapeContainer>
+   
       <BlogListContainer>
 
     

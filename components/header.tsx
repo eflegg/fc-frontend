@@ -5,7 +5,7 @@ import Navigation from './nav/Navigation'
 
 
 const HeaderContainer = styled.header`
-position: absolute;
+/* position: absolute; */
 width: 100%;
 top: 0;
 left: 0;
@@ -17,7 +17,6 @@ left: 0;
   color: ${theme.colours.blue};
  display: table;
   line-height: 1;
-  background: ${theme.colours.pink};
   margin-left: 25px;
   position: relative;
   top: 15px;

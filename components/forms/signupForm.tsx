@@ -5,7 +5,7 @@ import InputField from "./InputField";
 import { event } from "nextjs-google-analytics";
 
 const SubmitButton = styled.button`
-    color: ${theme.colours.blue};
+    /* color: ${theme.colours.blue};
     font-family: ${theme.type.body};
     font-size: 2.2rem;
     background-color: ${theme.colours.pink};
@@ -19,7 +19,7 @@ const SubmitButton = styled.button`
       background: ${theme.colours.blue};
       color: ${theme.colours.cream};
     }
-   }
+   } */
 
 `
 const CustomFormContainer = styled.form`
@@ -83,16 +83,16 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
 
   return (
     <CustomFormContainer onSubmit={(e: any) => handleSubmit(e)} className="mc__form">
-      <h3 className="mc__title">
+      {/* <p className="mc__title">
         {status === "success"
           ? "Success!"
           : text
         }
-      </h3>
+      </p> */}
       {status === "sending" && (
-        <h3 className="mc__alert mc__alert--sending">
+        <p className="mc__alert mc__alert--sending">
           sending...
-        </h3>
+        </p>
       )}
    
      {status === "error" && ( 
@@ -148,7 +148,8 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
 {
         status === 'success' ? <SubmitButton
 
-          className="g__justify-self-center btn-sign-up">{`${languageChoice === "English"? "Check your inbox!" : "vérifier votre boîte de réception!"}`}</SubmitButton> : <SubmitButton
+          className="g__justify-self-center btn-sign-up btn-green">{`${languageChoice === "English"? "Check your inbox!" : "vérifier votre boîte de réception!"}`}</SubmitButton> : <SubmitButton
+          className="btn-green"
             type="submit"
             onClick={handleSubmit}
           >{buttonText}</SubmitButton>
