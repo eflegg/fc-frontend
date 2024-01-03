@@ -42,7 +42,7 @@ width: 100%;
  `
 
 
-export default function Index({ allPosts: { edges }, preview, languageChoice }) {
+export default function Blog({ allPosts: { edges }, preview, languageChoice }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
@@ -78,10 +78,10 @@ console.log('all posts: ', edges);
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview)
- const homePage = await getHomeData()
+    
 
   return {
-    props: { allPosts, preview, homePage },
+    props: { allPosts, preview },
     revalidate: 10,
   }
 }

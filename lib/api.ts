@@ -79,6 +79,29 @@ export async function getHomeData(){
   return data.page
   
 }
+export async function getCaseStudies(){
+  const data = await fetchAPI (`
+  query CaseStudiesQuery {
+    caseStudies {
+      edges {
+        node {
+          title
+          content
+          slug
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+            }
+          }
+        }
+      }
+    }
+  }`,
+  
+  )
+  return data?.caseStudies
+}
 
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {
   const data = await fetchAPI(
@@ -111,6 +134,22 @@ export async function getAllPostsWithSlug() {
   `)
   return data?.posts
 }
+export async function getAllCaseStudiesWithSlug() {
+  const data = await fetchAPI(`
+    {
+      caseStudies {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  return data?.caseStudies
+}
+
+
 
 export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
@@ -153,6 +192,30 @@ export async function getAllPostsForHome(preview) {
   )
 
   return data?.posts
+}
+
+export async function getStudy(slug, preview, previewData) {
+const data = await fetchAPI(`
+query SingleStudy($id: ID! $idType: CaseStudyIdType!) {
+  caseStudy(id: $id, idType: $idType) {
+    content
+    featuredImage {
+      node {
+        altText
+        sourceUrl
+      }
+    }
+    categories {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+`)
+return data?.caseStudy
 }
 
 export async function getPostAndMorePosts(slug, preview, previewData) {

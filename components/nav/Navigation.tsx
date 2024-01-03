@@ -3,7 +3,7 @@ import theme from '../Theme'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import uniqid from 'uniqid';
-import NavCarete from '../../NavCarete';
+import NavCarete from './NavCarete';
 import SubMenuItem from '../../Submenu';
 import Submenu from '../../Submenu';
 import { useClickOutside } from './useClickOutside';
@@ -100,19 +100,16 @@ interface Items {
   submenu?: any;
 }
 
-// const items = [
-//     {title: "About", link: "about"}, 
-//     {title: "Contact", link: "contact"}, 
-//     {title: "Case Studies", link: "case-studies", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
-//      {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
-// ]
-
 const items = [
-  {
-    title: "Blog", link: "/blog"
-  },
- 
+    {title: "About", link: "about"}, 
+    {title: "Work", link: "work", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
+    {title: "Blog", link: "blog"}, 
+    {title: "Contact", link: "contact"}, 
+  
+    //  {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
 ]
+
+
 
   interface WindowSpecs {
     width: any;
@@ -260,7 +257,6 @@ function handleSubmenuBlur(length:number, position:number){
   if(!shiftHeld && length === position + 1 ){
     setSubnav(null);
   }
-
 }
 
 
@@ -276,16 +272,17 @@ function handleSubmenuBlur(length:number, position:number){
     <span>Menu</span>
 </div>
 ):null}
+
 <Nav className={size.width < 0 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
     <ul id="menu1" className="menu">
  
       {items && items.map((item, index)=>{
         return(
           <>
-          {/* {item.submenu ? (
+          {item.submenu ? (
             <li>
             <a href={item.link}>{item.title}</a>
-            <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} >btn</button>
+            <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} ><NavCarete /></button>
             <ul ref={subRef} aria-hidden={subnav === item.title ? "false" : "true"} className="submenu">
               {item.submenu.map((subItem, index)=>{
                 return(
@@ -300,15 +297,19 @@ function handleSubmenuBlur(length:number, position:number){
            
             </ul>
            </li>
-          ):( */}
+          ):(
+            <>
             <li>
             <a href={item.link}>{item.title}</a>
            </li>
-          {/* )} */}
+     
           </>
         )
         
-      })}
+      }
+     
+      </>
+      )})}
     </ul>
 </Nav>
 </>
