@@ -18,39 +18,42 @@ import SmallPinkShape from '../../components/shapes/small-pink'
 import theme from '../../components/Theme'
 import Link from 'next/link'
 
-const ShapeContainer = styled.div`
-background: seagreen;
-width: 100%;
-.shape-pink {
-    top: 0px;
-   }
-   .shape-orange {
-    top: 0px;
-   }
 
- `
- const BlogContainer = styled.article`
-   background: ${theme.colours.blue};
-   background: rgba(24,23,43, .9);
+const BlogContainer = styled.article`
+ 
    border-radius: 20px;
     width: 95%;
-    margin: 150px auto 75px;
-    padding: 20px;
+    margin: 150px auto;
+    padding: 1rem;
    max-width: 1000px;
    @media ${theme.devices.small}{
     width: 90%;
-    padding: 50px;
+    padding: 2rem;
    }
 h1 {
-  color: ${theme.colours.cream};
+  color: ${theme.colours.orange};
+  font-size: 2.5rem;
  
 }
-p{
+h2 {
+  color: ${theme.colours.orange};
+  font-family: ${theme.type.body};
   font-size: 2rem;
+}
+p{
+  
   line-height: 120%;
+  color: black;
   @media ${theme.devices.small}{
-    font-size: 2.4rem;
+    font-size: 1.8rem;
    }
+   figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+  
 }
 .back-btn {
   display: table;
@@ -86,46 +89,43 @@ export default function Post({ post, posts, preview, languageChoice }) {
   }
 
   return (
-    <PageWrapper  preview={preview} languageChoice={languageChoice}>
-        <Head>
-                <title>
-                  {post.title} | Flegg Creative
-                </title>
-                <meta
-                  property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
-                />
-              </Head>
-   
-              <ShapeContainer className="shape-container">
-        <SmallPinkShape customClass="shape-pink" />
-        <LargeOrangeShape customClass='shape-orange' />
-      </ShapeContainer>
-       
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <BlogContainer>
-           
+    <PageWrapper preview={preview} languageChoice={languageChoice}>
+      <Head>
+        <title>
+          {post.title} | Flegg Creative
+        </title>
+        <meta
+          property="og:image"
+          content={post.featuredImage?.node.sourceUrl}
+        />
+      </Head>
+
+
+
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <BlogContainer>
+
             <h1>{post.title}</h1>
             <div
-        className="blog-excerpt"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+              className="blog-excerpt"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
-           
-<Link href="/blog">
-    <p className="back-btn">Back to Blog</p>
 
-</Link>
-            </BlogContainer>
+            <Link href="/blog">
+              <p className="back-btn">Back to Blog</p>
 
-            {/* <SectionSeparator />
+            </Link>
+          </BlogContainer>
+
+          {/* <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
-          </>
-        )}
- 
+        </>
+      )}
+
     </PageWrapper>
   )
 }

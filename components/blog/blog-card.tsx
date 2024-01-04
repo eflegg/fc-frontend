@@ -10,68 +10,45 @@ h1 {
     color: ${theme.colours.cream};
 }
 h2{
-    font-family: "Source Sans Pro";
-    font-size: 3.6rem;
-    text-align: center;
+    font-family: ${theme.type.body};
+    font-size: 1.8rem;
+    
     line-height: 110%;
     font-weight: 700;
-    margin-bottom: 20px;
-    color: ${theme.colours.cream};
+    margin-bottom: 1rem;
+    color: ${theme.colours.black};
 }
 p{
     line-height: 110%;
-    color: ${theme.colours.cream};
-    text-align: center;
-    font-size: 1.8rem;
+    color: ${theme.colours.black};
+    
+    font-size: 1.2rem;
 }
   @media ${theme.devices.medium} {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    /* height: 500px; */
-    }
+   
 
-.outercard {
-    margin: 10px;
-   padding: 12px;
-   border-radius: 20px;
-   /* background: rgba(231, 165, 186, .7); */
-   background: rgba(24,23,43, .7);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: space-around;
-   @media ${theme.devices.medium} {
-    min-height: 200px;
-    }
-    &:hover {
-        box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.2);
-    
-      transition: all 0.25s ease-in;
-    }
-    transition: all 0.25s ease-in;
-.image-container {
-    width: 95%;
-    height: 73%;
-    border-radius: 20px;
-    img {
-        height: 100%;
-        width: 100%;
-        border-radius: 20px;
-        object-fit: cover;
-    }
 
+div.outercard {
+    border-bottom: 2px solid ${theme.colours.orange};
+    padding: 2rem 0 0 0;
+}    
+
+.read-now {
+    font-weight: 400;
+    color: ${theme.colours.orange};
 }
+
 .label {
     // border: solid 1px purple;
     border-radius: 40px;
-    max-width: 300px;
-    text-align: center;
+    max-width: 900px;
+    
     h4 {
         font-family: ${theme.type.body};
         color: ${theme.colours.blue};
-        font-size: 2.8rem;
+        font-size: 1rem;
         font-weight: 500;
     }
 }
@@ -80,8 +57,8 @@ p{
     p {
         font-family: ${theme.type.body};
         color: ${theme.colours.blue};
-        font-size: 2rem;
-        text-align: center;
+        font-size: 1.4rem;
+        text-align: left;
         line-height: 115%;
         font-weight: 500;
     }
@@ -92,27 +69,27 @@ p{
 `
 
 export default function BlogCard({ title, excerpt, slug }) {
-  
+
     return (
         <Link href={"/blog/[slug]"} as={`/blog/${slug}`}>
-        <BlogCardContainer>
-            <div className='outercard'>
-            
-                <div className='label'>
-                    <h2>{title ? title : "Loading..."}</h2>
-                 
-                </div>
-                <div className="excerpt">
-                <span
-        className="blog-excerpt"
-        dangerouslySetInnerHTML={{ __html: excerpt }}
-      />
-                </div>
+            <BlogCardContainer>
+                <div className='outercard'>
 
-                <p className="logotype">Read the story</p>
+                    <div className='label'>
+                        <h2>{title ? title : "Loading..."}</h2>
 
-            </div>
-        </BlogCardContainer>
+                    </div>
+                    <div className="excerpt">
+                        <span
+                            className="blog-excerpt"
+                            dangerouslySetInnerHTML={{ __html: excerpt }}
+                        />
+                    </div>
+
+                    <p className="logotype read-now">Read the story</p>
+
+                </div>
+            </BlogCardContainer>
         </Link>
     )
 }

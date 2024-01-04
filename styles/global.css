@@ -2,25 +2,51 @@
     background: yellow!important;
 } */
 
-html {
+/* html {
     font-size: 62.5%;
+} */
+
+:root {
+    --blue: #1D76FC;
+    --background: #F7F5EE;
+    --orange: rgb(201, 82, 60);
+    --green: #427265;
+    --pink: #E7A5BA;
+    --purple: #AA7DAE;
+    --brother: "brother-1816", sans-serif;
 }
+
+body {
+    font-size: calc(16px + 0.390625vw);
+    margin: 0;
+    background-color: var(--background);
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
 .logotype {
-    font-family: "Abril Fatface", serif;
+    font-family: "brother-1816", serif;
+
 }
+
 li {
     font-family: "Source Sans Pro";
-    
+
 }
-p{
-    font-family: Source Sans Pro;
+
+p {
+
     color: #FFF0DD;
-    font-size: 2.8rem;
+    /* font-size: 2.8rem; */
     line-height: 3.8rem;
     font-weight: 300;
     margin: 15px 0px;
 }
-h2{
+
+h2 {
     font-family: "Source Sans Pro";
     font-size: 3.6rem;
     text-align: left;
@@ -32,14 +58,15 @@ h2{
 
 h1 {
 
-font-family: "Source Sans Pro";
-font-size: 5.4rem;
-text-align: left;
-line-height: 110%;
-font-weight: 700;
-margin-bottom: 20px;
-color: #18172B;
+    font-family: "brother-1816";
+    font-size: 5.4rem;
+    text-align: left;
+    line-height: 110%;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #18172B;
 }
+
 h3 {
 
     font-family: "Source Sans Pro";
@@ -65,15 +92,16 @@ h3 {
     top: 60px;
     z-index: 10;
 }
+
 .sr-only {
-   border: 0;
-   clip: rect(1px, 1px, 1px, 1px);
-   clip-path: inset(50%);
-   height: 1px;
-   margin: -1px;
-   overflow: hidden;
-   padding: 0;
-   position: absolute;
-   width: 1px;
-   word-wrap: normal !important;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
 }
