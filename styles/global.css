@@ -153,19 +153,22 @@ a {
 .logo {
     font-family: "brother-1816", sans-serif!important;
 }
+
 li {
     font-family: "Source Sans Pro";
-    
+
 }
-p{
-    font-family: Source Sans Pro;
+
+p {
+
     color: #FFF0DD;
-    font-size: 2.8rem;
+    /* font-size: 2.8rem; */
     line-height: 3.8rem;
     font-weight: 300;
     margin: 15px 0px;
 }
-h2{
+
+h2 {
     font-family: "Source Sans Pro";
     font-size: 3.6rem;
     text-align: left;
@@ -185,6 +188,7 @@ h1 {
     margin: 0.3rem 0 0.6rem 0;
 color:var(--orange);
 }
+
 h3 {
 
     font-family: "Source Sans Pro";
@@ -210,15 +214,16 @@ h3 {
     top: 60px;
     z-index: 10;
 }
+
 .sr-only {
-   border: 0;
-   clip: rect(1px, 1px, 1px, 1px);
-   clip-path: inset(50%);
-   height: 1px;
-   margin: -1px;
-   overflow: hidden;
-   padding: 0;
-   position: absolute;
-   width: 1px;
-   word-wrap: normal !important;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
 }

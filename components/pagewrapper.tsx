@@ -8,7 +8,7 @@ import Button from './buttons/Button'
 
 
 const OuterContainer = styled.div`
-
+background: ${theme.colours.cream};
 position: relative;
 z-index: 1;
 overflow: hidden;
@@ -29,10 +29,10 @@ export default function PageWrapper({ children, languageChoice }) {
     <>
       <Meta />
       <OuterContainer>
-    
-<Header />
-         
-          <main id="main-content">{children}</main>
+
+        <Header />
+
+        <main id="main-content">{children}</main>
 
         <Footer languageChoice={languageChoice} />
       </OuterContainer>

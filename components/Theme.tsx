@@ -5,8 +5,8 @@ import { css } from 'styled-components'
 
 
 export const type = {
-  logoType: 'Abril fatface',
-  body: "Source Sans Pro",
+  logoType: "brother-1816",
+  body: "brother-1816",
 
 
 }
@@ -43,11 +43,13 @@ export const mediaQuery = Object.keys(breakpoints).reduce(
 )
 
 export const colours = {
-  orange: '#C9523C',
-  green: ' #425143',
-  cream: '#FFF0DD',
+  orange: 'rgb(201, 82, 60)',
+  green: '#427265',
+  cream: '#F7F5EE',
   pink: '#E7A5BA',
-  blue: '#18172B',
+  blue: '#1D76FC',
+  purple: '#AA7DAE',
+
   gusYellow: '#f8dd8b',
   gusBlue: '#D2EDF2',
   gusPink: '#D91A5D',
