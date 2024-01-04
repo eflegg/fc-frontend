@@ -8,7 +8,7 @@ import Button from './buttons/Button'
 
 
 const OuterContainer = styled.div`
-background: ${theme.colours.green};
+
 position: relative;
 z-index: 1;
 overflow: hidden;

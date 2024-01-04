@@ -44,7 +44,7 @@ a {
     flex-direction: column;
     top: 0;
     left: 0;
-    background: hotpink;
+   
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -63,59 +63,59 @@ a {
   .menu {
      
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       li {
           margin: 0px 15px;
           color: ${theme.colours.blue};
           font-weight: 600;
-          font-size: 2.8rem;
-          top: -10px;
           display: flex;
           flex-direction: column;
          position: relative;
          &:hover {
             width: 100%;
-            &::after {
-              width: 80%;
-              transition: all 0.25s ease-in;
-            }
+           
           }
-         &::after {
-          content: "";
-          height: 4px;
-          background: ${theme.colours.blue};
-          width: 0%;
-         transition: all 0.25s ease-in;
-         }
+       
       
       }
   }
   .submenu {
     display: flex;
     flex-direction: column;
-/* position: absolute; */
-left: 0;
-top: 30px;
-}
-}
- .item-with-submenu {
-  position: relative;
-    display: flex;
-    align-items: flex-start;
-    svg {
-      width: 15px;
-       /* transform: rotate(0deg); */
-    }
+    position: absolute;
   
+    top: 35px;
+    left: 0px;
+    background: ${theme.colours.cream};
+    padding: 10px;
+    li{
+      margin-left: 0px;
+      line-height: 110%;
+      margin-bottom: 10px;
+    }
 }
-.item-with-submenu[aria-expanded="true"]{
+}
+button{
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  width: 50px;
+  transform: rotate(0deg);
+  transition: all .25s ease-in;
+  svg {
+    width: 30px;
+  }
+}
+button[aria-expanded="true"]{
   svg {
     transform: rotate(180deg);
+    transition: all .25s ease-in;
   }
 }
 .submenu[aria-hidden="true"] {
    display: none;
    position: relative;
+  
   
 }
 
@@ -307,7 +307,8 @@ function handleSubmenuBlur(length:number, position:number){
         return(
           <>
           {item.submenu ? (
-            <li>
+            <li className="item-with-submenu">
+             
             <a href={item.link}>{item.title}</a>
             <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} ><NavCarete /></button>
             <ul ref={subRef} aria-hidden={subnav === item.title ? "false" : "true"} className="submenu">

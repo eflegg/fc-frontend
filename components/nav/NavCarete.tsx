@@ -7,7 +7,7 @@ export default function NavCarete(){
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
-                    stroke="currentColor"
+                    stroke="rgb(201, 82, 60)"
                     fill="none"
                     strokeLinecap="round" 
                     strokeLinejoin="round"

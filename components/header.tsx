@@ -6,53 +6,33 @@ import Navigation from './nav/Navigation'
 
 const HeaderContainer = styled.header`
 /* position: absolute; */
-#top-nav {
+
 transform: translate3d(0, 0, 0);
 transition: all .5s ease-in-out;
 padding: 1rem;
+@media ${theme.devices.small}{
+  padding: 0 2rem 0 2rem;
+}
 position: fixed;
 top: 0;
 width: 100%;
 background-color: var(--background);
 z-index: 99;
-}
 width: 100%;
 top: 0;
 left: 0;
 
-  h1 {
-  
-  font-family: 'Abril fatface', cursive;
-  font-size: 3.8rem;
-  color: ${theme.colours.blue};
- display: table;
-  line-height: 1;
-  margin-left: 25px;
-  position: relative;
-  top: 15px;
-  border-radius: 60%;
-  @media ${theme.devices.extraSmall} {
-    margin-left: 60px;
-  }
-  a{
-    display: table;
-  }
-  @media ${theme.devices.ipad} {
-  font-size: 4rem;
-  margin-left: 45px;
-  top: 15px;
-  }
-  @media ${theme.devices.medium} {
-  font-size: 5.6rem;
-  margin-left: 60px;
-  top: 20px;
-  }
-}
-hgroup {
-  display: flex;
-  justify-content: space-between;
-}
 
+
+hgroup {
+
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        h1 {
+          font-size: 2rem;
+        }
+    }
 `
 const SkipLink = styled.a`
 transform: translate(200%);
