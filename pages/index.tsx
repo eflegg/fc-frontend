@@ -40,10 +40,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
         <title>Flegg Creative</title>
       </Head>
   
-      <ShapeContainer className="shape-container">
-        <SmallPinkShape customClass="shape-pink" />
-        <LargeOrangeShape customClass='shape-orange' />
-      </ShapeContainer>
+    
 
   
 

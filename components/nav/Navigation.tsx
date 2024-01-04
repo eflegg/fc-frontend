@@ -10,6 +10,33 @@ import { useClickOutside } from './useClickOutside';
 import {useKeyPress} from './useKeyPress'
 
 const Nav = styled.nav`
+a {
+  font-family: "brother-1816", sans-serif;
+    font-weight: 400;
+    color: rgb(201, 82, 60);
+    text-decoration: none;
+    margin-right: 3rem;
+    &:visited {
+      color: rgb(201, 82, 60);
+    text-decoration: underline;
+    }
+    &:hover {
+      color: #1D76FC;
+    font-style: italic;
+    }
+    &:focus {
+      color: #1D76FC;
+    font-style: italic;
+    }
+    &:active {
+      color: #1D76FC;
+    font-style: italic;
+    text-decoration: underline;
+    }
+    &:last-child {
+      margin: 0;
+    }
+}
 &.mobile-nav {
     .menu {
       z-index: 10;
@@ -17,7 +44,7 @@ const Nav = styled.nav`
     flex-direction: column;
     top: 0;
     left: 0;
-    background: hotpink;
+   
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -36,59 +63,59 @@ const Nav = styled.nav`
   .menu {
      
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       li {
           margin: 0px 15px;
           color: ${theme.colours.blue};
           font-weight: 600;
-          font-size: 2.8rem;
-          top: -10px;
           display: flex;
           flex-direction: column;
          position: relative;
          &:hover {
             width: 100%;
-            &::after {
-              width: 80%;
-              transition: all 0.25s ease-in;
-            }
+           
           }
-         &::after {
-          content: "";
-          height: 4px;
-          background: ${theme.colours.blue};
-          width: 0%;
-         transition: all 0.25s ease-in;
-         }
+       
       
       }
   }
   .submenu {
     display: flex;
     flex-direction: column;
-/* position: absolute; */
-left: 0;
-top: 30px;
-}
-}
- .item-with-submenu {
-  position: relative;
-    display: flex;
-    align-items: flex-start;
-    svg {
-      width: 15px;
-       /* transform: rotate(0deg); */
-    }
+    position: absolute;
   
+    top: 35px;
+    left: 0px;
+    background: ${theme.colours.cream};
+    padding: 10px;
+    li{
+      margin-left: 0px;
+      line-height: 110%;
+      margin-bottom: 10px;
+    }
 }
-.item-with-submenu[aria-expanded="true"]{
+}
+button{
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  width: 50px;
+  transform: rotate(0deg);
+  transition: all .25s ease-in;
+  svg {
+    width: 30px;
+  }
+}
+button[aria-expanded="true"]{
   svg {
     transform: rotate(180deg);
+    transition: all .25s ease-in;
   }
 }
 .submenu[aria-hidden="true"] {
    display: none;
    position: relative;
+  
   
 }
 
@@ -101,10 +128,10 @@ interface Items {
 }
 
 const items = [
-    {title: "About", link: "about"}, 
-    {title: "Work", link: "work", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
-    {title: "Blog", link: "blog"}, 
-    {title: "Contact", link: "contact"}, 
+    {title: "about", link: "about"}, 
+    {title: "work", link: "work", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
+    {title: "blog", link: "blog"}, 
+    {title: "contact", link: "contact"}, 
   
     //  {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
 ]
@@ -280,7 +307,8 @@ function handleSubmenuBlur(length:number, position:number){
         return(
           <>
           {item.submenu ? (
-            <li>
+            <li className="item-with-submenu">
+             
             <a href={item.link}>{item.title}</a>
             <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} ><NavCarete /></button>
             <ul ref={subRef} aria-hidden={subnav === item.title ? "false" : "true"} className="submenu">

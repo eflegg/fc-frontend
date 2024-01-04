@@ -80,7 +80,7 @@ p{
   
  `
 
-export default function Post({ post, posts, preview, languageChoice }) {
+export default function Post({ post, posts, languageChoice }) {
   const router = useRouter()
   const morePosts = posts?.edges
 
@@ -89,7 +89,7 @@ export default function Post({ post, posts, preview, languageChoice }) {
   }
 
   return (
-    <PageWrapper preview={preview} languageChoice={languageChoice}>
+    <PageWrapper languageChoice={languageChoice}>
       <Head>
         <title>
           {post.title} | Flegg Creative

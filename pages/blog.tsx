@@ -55,9 +55,6 @@ export default function Blog({ allPosts: { edges }, preview, languageChoice }) {
       </Head>
 
 
-      {/* <SmallPinkShape customClass="shape-pink" />
-      <LargeOrangeShape customClass='shape-orange' /> */}
-
       <BlogListContainer>
 
         <h1>Articles</h1>
@@ -78,7 +75,7 @@ export default function Blog({ allPosts: { edges }, preview, languageChoice }) {
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview)
-  const homePage = await getHomeData()
+
 
   return {
     props: { allPosts, preview },

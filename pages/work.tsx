@@ -12,7 +12,7 @@ import CaseStudyCard from '../components/caseStudies/case-study-card'
   console.log('case studies data: ', caseStudies.edges);
     return (
         <>
-  <PageWrapper languageChoice={languageChoice} preview={preview}>
+  <PageWrapper languageChoice={languageChoice} >
 
              <Head>
         <title>Case Studies</title>

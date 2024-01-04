@@ -2,9 +2,7 @@
     background: yellow!important;
 } */
 
-/* html {
-    font-size: 62.5%;
-} */
+@import url("https://use.typekit.net/tna6krh.css");
 
 :root {
     --blue: #1D76FC;
@@ -16,20 +14,144 @@
     --brother: "brother-1816", sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+    /* cursor: none; */
+}
+
 body {
     font-size: calc(16px + 0.390625vw);
     margin: 0;
     background-color: var(--background);
-}
-
-* {
-    box-sizing: border-box;
 
 }
 
-.logotype {
-    font-family: "brother-1816", serif;
+.flex {
+    display: flex;
+}
 
+
+h2,
+h3 {
+    font-family: var(--brother);
+
+}
+
+h4,
+h5,
+h6 {
+    font-family: var(--brother);
+}
+
+hgroup.into h1 {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+h1 {
+    font-family: "brother-1816", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 110%;
+    color: var(--blue);
+    margin: .3rem 0 .6rem 0;
+}
+
+
+h2 {
+    font-family: "brother-1816", sans-serif;
+    font-weight: 400;
+    margin: 3rem 0 .5rem 0;
+}
+
+
+p {
+    font-family: "brother-1816", sans-serif;
+    font-weight: 400;
+
+}
+
+
+
+.btn-green {
+    background-color: var(--green);
+    border: none;
+    height: 2.5rem;
+    padding: 0 1.8rem;
+    font-family: var(--brother);
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--background);
+    transition: all .3s ease-in-out;
+    display: table;
+}
+
+.btn-green:hover {
+    background-color: var(--blue);
+}
+
+.btn-basic {
+    background-color: var(--orange);
+    border: none;
+    width: 18rem;
+    height: 4rem;
+    font-family: var(--brother);
+    font-size: 2rem;
+    border-radius: 10px;
+    color: var(--background);
+    transform: all .3s ease-in-out;
+}
+
+.btn-basic:hover {
+    background-color: var(--green);
+}
+
+.btn-transparent {
+    border: solid 1px var(--green);
+    background-color: transparent;
+    color: var(--green);
+    height: 2.5rem;
+    padding: 0 1.8rem;
+    font-family: var(--brother);
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 20px;
+    display: table;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+}
+
+hr {
+    border: 1px solid rgb(201, 82, 60);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+hr.top {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+hr.bottom {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* html {
+    font-size: 62.5%;
+} */
+.logo {
+    font-family: "brother-1816", sans-serif!important;
 }
 
 li {
@@ -57,14 +179,14 @@ h2 {
 }
 
 h1 {
-
-    font-family: "brother-1816";
-    font-size: 5.4rem;
-    text-align: left;
-    line-height: 110%;
+    margin: 0.3rem 0 0.6rem 0;
+    font-family: var(--brother);
     font-weight: 700;
-    margin-bottom: 20px;
-    color: #18172B;
+    font-size: 3rem;
+    line-height: 110%;
+    color: var(--blue);
+    margin: 0.3rem 0 0.6rem 0;
+color:var(--orange);
 }
 
 h3 {

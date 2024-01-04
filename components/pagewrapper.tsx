@@ -23,7 +23,7 @@ overflow: hidden;
 
 `
 
-export default function PageWrapper({ preview, children, languageChoice }) {
+export default function PageWrapper({ children, languageChoice }) {
 
   return (
     <>
