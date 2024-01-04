@@ -10,6 +10,33 @@ import { useClickOutside } from './useClickOutside';
 import {useKeyPress} from './useKeyPress'
 
 const Nav = styled.nav`
+a {
+  font-family: "brother-1816", sans-serif;
+    font-weight: 400;
+    color: rgb(201, 82, 60);
+    text-decoration: none;
+    margin-right: 3rem;
+    &:visited {
+      color: rgb(201, 82, 60);
+    text-decoration: underline;
+    }
+    &:hover {
+      color: #1D76FC;
+    font-style: italic;
+    }
+    &:focus {
+      color: #1D76FC;
+    font-style: italic;
+    }
+    &:active {
+      color: #1D76FC;
+    font-style: italic;
+    text-decoration: underline;
+    }
+    &:last-child {
+      margin: 0;
+    }
+}
 &.mobile-nav {
     .menu {
       z-index: 10;
@@ -101,10 +128,10 @@ interface Items {
 }
 
 const items = [
-    {title: "About", link: "about"}, 
-    {title: "Work", link: "work", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
-    {title: "Blog", link: "blog"}, 
-    {title: "Contact", link: "contact"}, 
+    {title: "about", link: "about"}, 
+    {title: "work", link: "work", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
+    {title: "blog", link: "blog"}, 
+    {title: "contact", link: "contact"}, 
   
     //  {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
 ]

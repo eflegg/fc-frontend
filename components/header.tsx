@@ -6,6 +6,16 @@ import Navigation from './nav/Navigation'
 
 const HeaderContainer = styled.header`
 /* position: absolute; */
+#top-nav {
+transform: translate3d(0, 0, 0);
+transition: all .5s ease-in-out;
+padding: 1rem;
+position: fixed;
+top: 0;
+width: 100%;
+background-color: var(--background);
+z-index: 99;
+}
 width: 100%;
 top: 0;
 left: 0;
@@ -38,7 +48,7 @@ left: 0;
   top: 20px;
   }
 }
-.header--inner{
+hgroup {
   display: flex;
   justify-content: space-between;
 }
@@ -74,22 +84,26 @@ transition: all .25s ease-in;
 
 export default function Header() {
   return (
-  <HeaderContainer>
+  <HeaderContainer id="top-nav">
+    <hr className="top" />
       <SkipLink tabIndex={0} className="language--btn" href="#main-content">Skip to main content</SkipLink>
-      <div className="header--inner">
-<div>
+
+      <hgroup>
+   
 
       <a tabIndex={0} href="/">
-      <h1 className="logo">
+      <h1 className="logo home fade">
         Flegg Creative
       </h1>
       </a>
-</div>
+
   
 
       <Navigation />
 
-      </div>
+     
+      </hgroup>
+      <hr className="bottom" />
   </HeaderContainer>
   )
 }
