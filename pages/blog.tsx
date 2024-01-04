@@ -20,25 +20,24 @@ import BlogCard from '../components/blog/blog-card'
 
 
 
-const ShapeContainer = styled.div`
-background: transparent;
+// const ShapeContainer = styled.div`
+// background: transparent;
 
-width: 100%;
+// width: 100%;
 
-`
- const BlogListContainer = styled.div`
-        
-       display: grid;
-       grid-template-columns: repeat(auto-fill, minmax(min(38.5rem, 100%), 1fr));
-       grid-row-gap: 30px;
-       grid-column-gap: 30px;
-       justify-content: center;
-       width: 90%;
-       margin: 125px auto 75px;
-       list-style: none;
-       max-width: 1000px;
+// `
 
-  
+
+
+const BlogListContainer = styled.div`
+
+      background-color: ${theme.colours.cream};
+      padding: 2rem;
+      margin: 12rem 0 4rem 0;
+
+      h1 {
+        color: ${theme.colours.blue};
+      }
  `
 
 
@@ -46,27 +45,28 @@ export default function Blog({ allPosts: { edges }, preview, languageChoice }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
-console.log('all posts: ', edges);
-  
+  console.log('all posts: ', edges);
+
 
   return (
     <PageWrapper languageChoice={languageChoice} >
       <Head>
         <title>Flegg Creative</title>
       </Head>
-  
-      <ShapeContainer className="shape-container">
-        <SmallPinkShape customClass="shape-pink" />
-        <LargeOrangeShape customClass='shape-orange' />
-      </ShapeContainer>
+
+
+      {/* <SmallPinkShape customClass="shape-pink" />
+      <LargeOrangeShape customClass='shape-orange' /> */}
+
       <BlogListContainer>
 
-    
-      {edges && edges.map((blog, index)=> {
-        return (
-            <BlogCard  title={blog.node.title} excerpt={blog.node.excerpt} slug={blog.node.slug}  />
-        )
-      })}
+        <h1>Articles</h1>
+
+        {edges && edges.map((blog, index) => {
+          return (
+            <BlogCard title={blog.node.title} excerpt={blog.node.excerpt} slug={blog.node.slug} />
+          )
+        })}
 
 
       </BlogListContainer>
@@ -78,7 +78,7 @@ console.log('all posts: ', edges);
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview)
-    
+  const homePage = await getHomeData()
 
   return {
     props: { allPosts, preview },
