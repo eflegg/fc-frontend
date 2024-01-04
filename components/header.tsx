@@ -6,7 +6,10 @@ import Navigation from './nav/Navigation'
 
 const HeaderContainer = styled.header`
 /* position: absolute; */
-
+.home, hr {
+  z-index: 30;
+  position: relative;
+}
 transform: translate3d(0, 0, 0);
 transition: all .5s ease-in-out;
 padding: 1rem;
@@ -17,13 +20,10 @@ position: fixed;
 top: 0;
 width: 100%;
 background-color: var(--background);
-z-index: 99;
+z-index: 30;
 width: 100%;
 top: 0;
 left: 0;
-
-
-
 hgroup {
 
         display: flex;

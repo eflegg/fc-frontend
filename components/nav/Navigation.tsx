@@ -9,13 +9,20 @@ import Submenu from '../../Submenu';
 import { useClickOutside } from './useClickOutside';
 import {useKeyPress} from './useKeyPress'
 
+const NavContainer = styled.section`
+  .mobile-menu--toggle{
+  z-index: 30;
+  position: relative;
+}
+`
+
 const Nav = styled.nav`
 a {
   font-family: "brother-1816", sans-serif;
     font-weight: 400;
     color: rgb(201, 82, 60);
     text-decoration: none;
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
     &:visited {
       color: rgb(201, 82, 60);
     text-decoration: underline;
@@ -33,35 +40,77 @@ a {
     font-style: italic;
     text-decoration: underline;
     }
-    &:last-child {
-      margin: 0;
-    }
+  
 }
+.submenu {
+  position: relative;
+}
+
 &.mobile-nav {
     .menu {
+      transition: all .25s ease-in;
+      opacity: 0;
+      width: 0vw;
+      height: 0vh;
+      &.nav-open {
+        transition: all .25s ease-in;
+        opacity: 1;
+        width: 100vw;
+    height: 100vh;
+      }
+   
+      background: peachpuff;
       z-index: 10;
     display: flex;
     flex-direction: column;
     top: 0;
     left: 0;
-   
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    justify-content: flex-start;
+   padding-top: 100px;
+    align-items: flex-start;
+    padding-left: 20px;
+    li {
+      position: relative;
+    }
+    a {
+      text-align: left;
+      font-size: 4rem;
+    }
   }
-  /* @media ${theme.devices.medium}{
-    display: none;
-  } */
+  .submenu {
+    position: relative;
+    top: 3px;
+    left: 10px;
+    a {
+      font-size: 1.5rem;
+    }
+  }
+
 }
-.submenu {
-  position: relative;
-  top: 10px;
-  left: 20px;
-}
+
 &.desktop-nav {
+    .item-with-submenu {
+  a {
+    margin-right: 2rem;
+  }
   display: flex;
+  .submenu {
+    top: 10px;
+  left: 20px;
+  position: absolute;
+  top: 35px;
+    left: 0px;
+    background: ${theme.colours.cream};
+    padding: 10px;
+    li{
+      margin-left: 0px;
+      line-height: 110%;
+      margin-bottom: 10px;
+    }
+  }
+  }
   .menu {
-     
       display: flex;
       align-items: flex-end;
       li {
@@ -75,35 +124,29 @@ a {
             width: 100%;
            
           }
-       
-      
       }
   }
-  .submenu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-  
-    top: 35px;
-    left: 0px;
-    background: ${theme.colours.cream};
-    padding: 10px;
-    li{
-      margin-left: 0px;
-      line-height: 110%;
-      margin-bottom: 10px;
-    }
-}
+
 }
 button{
   position: absolute;
-  right: 0px;
+  left: 155px;
+  top: 14px;
+  @media (min-width: 500px){
+    left: 50px;
+    right: 0px;
+    
   top: 3px;
+  }
   width: 50px;
-  transform: rotate(0deg);
-  transition: all .25s ease-in;
   svg {
-    width: 30px;
+    transform: rotate(0deg);
+    transition: all .25s ease-in;
+    width: 80px;
+    @media (min-width: 500px){
+
+      width: 30px;
+    }
   }
 }
 button[aria-expanded="true"]{
@@ -145,8 +188,16 @@ const items = [
   }
 
 export default function Navigation(){
+  const [navOpen, setNavOpen]= useState(false);
   const [subnav, setSubnav] = useState(null);
   const [subnavIndex, setSubnavIndex] = useState(null);
+
+  console.log('nav open? ', navOpen);
+  function handleNavClick(){
+    navOpen ? setNavOpen(false) : setNavOpen(true);
+    console.log('i am clicked');
+  }
+
   function handleSubnavClick(menuId: any){
     if (subnav != menuId) {
       setSubnav(menuId);
@@ -288,20 +339,21 @@ function handleSubmenuBlur(length:number, position:number){
 
 
     return (
-        <>
-      {size.width < 0 ?  (
-<div>
+        <NavContainer>
+      {size.width < 500 ?  (
+<div className="mobile-menu--toggle">
     <button 
+    onClick={()=>handleNavClick()}
       aria-label="menu" 
-      aria-expanded="false" 
-      className="mobile-menu--toggle">
+      aria-expanded={navOpen ? "true" : "false"} 
+      >Menu
     </button>
-    <span>Menu</span>
+    {/* <span>Menu</span> */}
 </div>
 ):null}
 
-<Nav className={size.width < 0 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
-    <ul id="menu1" className="menu">
+<Nav className={size.width < 500 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
+    <ul id="menu1" className={`${navOpen ? "nav-open" : "" } menu`}>
  
       {items && items.map((item, index)=>{
         return(
@@ -340,7 +392,7 @@ function handleSubmenuBlur(length:number, position:number){
       )})}
     </ul>
 </Nav>
-</>
+</NavContainer>
     )
 }
 
