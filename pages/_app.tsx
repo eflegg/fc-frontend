@@ -26,7 +26,7 @@ type CustomPageProps = {
   return (
     <>
     <GoogleAnalytics trackPageViews />
-  <Button
+  {/* <Button
           colour={`${theme.colours.blue}`}
           value={language == "English" ? "Français" : "English"}
           className="language--btn"
@@ -34,12 +34,8 @@ type CustomPageProps = {
           dark
           large={false}
           link={false}
-        ></Button>
-           {/* <div
-            className={
-              language == "English" ? "in-english" : "in-french"
-            }
-          > */}
+        ></Button> */}
+        
   <Component {...pageProps} languageChoice={language} />
   {/* </div>  */}
     </>
