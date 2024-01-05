@@ -147,9 +147,7 @@ a {
 }
 
 
-/* html {
-    font-size: 62.5%;
-} */
+
 .logo {
     font-family: "brother-1816", sans-serif!important;
 }
@@ -200,6 +198,8 @@ h3 {
     color: #FFF0DD;
 }
 
+
+
 .error-message {
     color: #CC9900 !important;
     font-family: "Source Sans Pro";
@@ -226,4 +226,14 @@ h3 {
     position: absolute;
     width: 1px;
     word-wrap: normal !important;
+}
+
+.bg-green {
+    background-color: var(--green);
+    height: 300px;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
 }

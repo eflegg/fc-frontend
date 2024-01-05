@@ -6,112 +6,81 @@ import LeadMagnetContainer from './forms/LeadMagnetContainer'
 
 
 const StyledIntro = styled.section`
-position: relative;
-h2 {
-  font-family: 'Source sans', sans-serif;
-  color: ${theme.colours.cream};
-  font-size: 4.2rem;
-  font-weight: 800;
-  text-align: center;
-  line-height: 105%;
-  width: 80%;
-  margin: 120px auto 0;
-  @media ${theme.devices.small} {
-  font-size: 6rem;
-  font-weight: 900;
-  }
-  @media ${theme.devices.medium} {
-    font-size: 8rem;
-    margin: 140px auto 0;
-    }
-}
-
-
-.cta {
-  margin: 50px;
-  @media ${theme.devices.small}{ 
-     display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 50px 80px 150px 80px;
-    }
-  }
- 
-.hire-us {
-  margin-top: 40px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media ${theme.devices.small} {
-    margin-top: 0px;
-  }
-  h3 {
-    text-align: center;
-  }
+    flex-direction: column;
+    h2 {
+    font-size: 1.2rem;
 }
-  p {
-    font-family: ${theme.type.body};;
-    color: ${theme.colours.cream};
-    font-size: 3.8rem;
-    font-weight: 700;
-    @media ${theme.devices.small}{
-       font-weight: 900;
-      font-size: 4.8rem;
-    }
-  }
-.newscontainer{
-  @media ${theme.devices.small} {
-    max-width: 60%;
-    }
-  
+
+.case-study-home-links {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
 }
-  .btn-contact {
-    background: ${theme.colours.pink};
-    color: ${theme.colours.blue};
-    font-family: ${theme.type.body};
-    font-size: 2.2rem;
-    padding: 10px 20px;
-    border-radius: 40px;
-    @media ${theme.devices.small} {
-      font-size: 2.4rem;
-      padding: 10px 40px;
-      border-radius: 60px;
+p.asp-link {
+    color: var(--green);
+}
+
+figure.arrow-icon {
+    width: 1rem;
+    transform: rotateY(0) rotate(-45deg);
+    margin: 0;
+    img {
+    object-fit: fill;
+}
+}
+.home-mobile-mockup {
+    margin: 0 1rem;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    img {
+      border-radius: 30px;
     }
-    :hover {
-      background: ${theme.colours.orange};
-      color: ${theme.colours.cream};
-    }
-  }
+}
+
+
+
 
 `
 
 
 
-export default function Intro({ languageChoice, heroText }) {
+export default function Intro({  }:{}) {
  
   return (
-    <StyledIntro className="styled-intro">
-  
-      {languageChoice === "English" ? (
-        <h2 className="tagline">
-          {heroText.heroTextEnglish}
-        </h2>
-      ) : (
-        <h2>
-          {heroText.heroTextFrench}</h2>
-      )}
+   
 
-      <div className='cta'>
-        <div className='newscontainer'>
-          <LeadMagnetContainer languageChoice={languageChoice} text={`${languageChoice === "English" ? heroText.leadMagnetEnglish : heroText.leadMagnetFrench}`} buttonText={`${languageChoice === "English" ? heroText.buttonTextEnglish : heroText.buttonTextFrench}`} />
+<StyledIntro className="home-case-study" data-scroll-section>
+
+<div className="case-study-home-links" data-scroll data-scroll-class="appear" data-scroll-repeat="true">
+    <a href="work-single-page.html">
+        <button className="btn-transparent">case study</button>
+    </a>
+
+    <a href="https://www.asparagusmagazine.com" target="_blank">
+        <div className="flex">
+            <p className="asp-link" data-scroll data-scroll-class="appear" data-scroll-repeat="true">
+                asparagusmagazine.com</p>
+            <figure className="arrow-icon">
+                <img src="images/arrow-right-solid.svg" alt="arrow icon" />
+            </figure>
         </div>
-        <div className='hire-us'>
-          <h3>{`${languageChoice === "English" ? heroText.hireUsEnglish : heroText.hireUsFrench}`}</h3>
-          <a href="mailto:hello@fleggcreative.ca">
-            <button className='btn-contact'>Contact</button>
-          </a>
-        </div>
-      </div>
-    </StyledIntro>
+    </a>
+</div>
+
+<div className="bg-green flex">
+    <figure className="home-mobile-mockup">
+        <img src="images/asp-mobile-mockups.jpg" alt="mockup of asparagus magazine on mobile" />
+    </figure>
+    <h2 data-scroll data-scroll-class="appear" data-scroll-repeat="true">Award-winning Asparagus
+        Magazine</h2>
+    <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">website design and build</p>
+</div>
+</StyledIntro>
+  
+   
   )
 }

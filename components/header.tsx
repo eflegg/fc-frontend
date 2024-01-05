@@ -19,7 +19,7 @@ padding: 1rem;
 position: fixed;
 top: 0;
 width: 100%;
-background-color: var(--background);
+background-color: ${theme.colours.cream};
 z-index: 30;
 width: 100%;
 top: 0;
