@@ -10,7 +10,7 @@ import { getAllPostsForHome, getHomeData } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
 import LargeOrangeShape from '../components/shapes/large-orange'
-import Services from '../components/services'
+import Services from '../components/home-case-study'
 import SmallPinkShape from '../components/shapes/small-pink'
 import theme from '../components/Theme'
 
@@ -18,7 +18,7 @@ import theme from '../components/Theme'
 
 
 
-const ShapeContainer = styled.div`
+const Main = styled.main`
 background: transparent;
 border: .25px solid transparent;
 width: 100%;
@@ -39,15 +39,17 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
       <Head>
         <title>Flegg Creative</title>
       </Head>
-  
-    
-
-  
-
-        <Intro heroText={homePage.homeHero} languageChoice={languageChoice} />
+  <Main>
 
     
-        <Services aboutData={homePage.homeAbout} serviceData={homePage.homeServices} languageChoice={languageChoice} />
+
+  
+
+        <Intro />
+
+    
+        <Services  />
+  </Main>
 
     </PageWrapper>
   )
