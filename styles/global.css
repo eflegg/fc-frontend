@@ -230,6 +230,11 @@ h3 {
     flex-direction: column;
     justify-content: flex-end;
 }
+.bg-purple {
+    background-color: var(--purple);
+    flex-direction: column;
+    padding: 1rem;
+}
 
 /// Animation Classes ///
 

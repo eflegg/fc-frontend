@@ -18,8 +18,7 @@ const InputContainer = styled.div`
 	flex-direction: column;
 	color: ${theme.colours.blue};
 	font-family: ${theme.type.body};
-	font-size: 2.4rem;
-	
+	font-weight: bold;
 	input, textarea {
 		padding-left: 10px;
 		background: ${theme.colours.cream};
@@ -28,10 +27,9 @@ const InputContainer = styled.div`
 			
 		}
 	}
-	
 	label {
 		color: ${theme.colours.cream};
-		font-weight: 300;
+		
 	}
 `
 

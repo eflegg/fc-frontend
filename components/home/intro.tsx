@@ -1,8 +1,8 @@
-import { CMS_NAME, CMS_URL } from '../lib/constants'
+import { CMS_NAME, CMS_URL } from '../../lib/constants'
 import styled from 'styled-components'
-import theme from '../components/Theme'
-import NewsLetter from '../components/signup'
-import LeadMagnetContainer from './forms/LeadMagnetContainer'
+import theme from '../Theme'
+import NewsLetter from '../signup'
+import LeadMagnetContainer from '../forms/LeadMagnetContainer'
 
 
 const StyledIntro = styled.section`

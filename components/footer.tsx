@@ -25,7 +25,7 @@ const FooterContainer = styled.footer`
 label {
     font-family: "brother-1816", sans-serif;
     font-weight: 400;
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
 }
   section.newsletter {
     flex-direction: column;

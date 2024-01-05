@@ -1,7 +1,7 @@
-import { CMS_NAME, CMS_URL } from '../lib/constants'
+import { CMS_NAME, CMS_URL } from '../../lib/constants'
 import styled from 'styled-components'
-import theme from './Theme'
-import ServiceCard from './service-card'
+import theme from '../Theme'
+import ServiceCard from '../service-card'
 
 
 
