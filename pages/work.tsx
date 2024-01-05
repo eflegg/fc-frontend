@@ -4,40 +4,68 @@ import { getCaseStudies } from '../lib/api'
 import { GetStaticProps } from 'next'
 import styled from 'styled-components'
 import CaseStudyCard from '../components/caseStudies/case-study-card'
+import theme from '../components/Theme'
+
+const TopSection = styled.div`
+padding: 1rem;
+@media ${theme.devices.medium} {
+  padding: 2rem;
+}
+h1 {
+  margin-top: 12rem;
+  color: ${theme.colours.blue};
+  
+}
+`
+
+const CaseStudiesContainer = styled.div`
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-gap: 3rem;
+margin: 6rem 0 4rem 0;
+}
 
 
 
- export default function Test({ caseStudies, preview, languageChoice }){
+`
+
+export default function Test({ caseStudies, preview, languageChoice }) {
 
   console.log('case studies data: ', caseStudies.edges);
-    return (
-        <>
-  <PageWrapper languageChoice={languageChoice} >
+  return (
+    <>
+      <PageWrapper languageChoice={languageChoice} >
 
-             <Head>
-        <title>Case Studies</title>
-      </Head>
-        <section>
-          {caseStudies.edges.map((study, index)=> {
+        <Head>
+          <title>Case Studies</title>
+        </Head>
+        <TopSection>
+          <h1>
+            check out some of our work
+          </h1>
+        </TopSection>
+        <CaseStudiesContainer>
+
+          {caseStudies.edges.map((study, index) => {
             return (
               <>
-              <CaseStudyCard study={study} />
-            
-            
+                <CaseStudyCard study={study} />
+
+
               </>
             )
           })}
-        
-        </section>
-        </PageWrapper>
-        </> 
-       
-     
-    )
- }
 
- export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
- const caseStudies = await getCaseStudies()
+        </CaseStudiesContainer>
+      </PageWrapper>
+    </>
+
+
+  )
+}
+
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const caseStudies = await getCaseStudies()
 
 
   return {
