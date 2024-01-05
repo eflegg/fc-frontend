@@ -14,13 +14,6 @@ z-index: 1;
 overflow: hidden;
 
 
-  /* button, input, li {
-  &:focus-within {
-    border: 4px dotted #18172B;
-  } 
-}
-*/
-
 `
 
 export default function PageWrapper({ children, languageChoice }) {
@@ -32,7 +25,7 @@ export default function PageWrapper({ children, languageChoice }) {
 
         <Header />
 
-        <main id="main-content">{children}</main>
+        <main className="main-content scroll" data-scroll-container id="main-content">{children}</main>
 
         <Footer languageChoice={languageChoice} />
       </OuterContainer>

@@ -16,7 +16,7 @@ padding: 1rem;
 @media ${theme.devices.small}{
   padding: 0 2rem 0 2rem;
 }
-position: fixed;
+position: relative;
 top: 0;
 width: 100%;
 background-color: ${theme.colours.cream};

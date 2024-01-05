@@ -6,40 +6,57 @@ import LeadMagnetContainer from './forms/LeadMagnetContainer'
 
 
 const StyledIntro = styled.section`
-  display: flex;
-    flex-direction: column;
-    h2 {
-    font-size: 1.2rem;
-}
 
-.case-study-home-links {
+
+  .intro {
     padding: 1rem;
-    display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    h1, .h1 {
+      font-size: 2.5rem;
+    font-weight: 900;
+      @media ${theme.devices.medium}{
+        font-size: 8rem;
+      }
+     }
+  }
+  .flegg {
+    color: ${theme.colours.green};
+  }
+    .hero {
+    position: relative;
+    margin-top: 10rem;
+    @media ${theme.devices.medium}{
 
-}
-p.asp-link {
-    color: var(--green);
-}
-
-figure.arrow-icon {
-    width: 1rem;
-    transform: rotateY(0) rotate(-45deg);
-    margin: 0;
-    img {
-    object-fit: fill;
-}
-}
-.home-mobile-mockup {
-    margin: 0 1rem;
-    position: absolute;
-    top: -10px;
-    left: 0;
-    img {
-      border-radius: 30px;
     }
 }
+    .audience {
+      justify-content: flex-end;
+        top: 400px;
+        p {
+          text-align: right;
+          width: 60%;
+          color: black;
+        }
+        @media ${theme.devices.medium}{
+
+        }
+    }
+
+    .focused {
+      @media ${theme.devices.medium}{
+
+        align-self: center;
+      }
+        color: ${theme.colours.blue};
+    }
+
+    .designs {
+      color: ${theme.colours.purple};
+      @media ${theme.devices.medium}{
+          margin-left: 14rem;
+        }
+    }
+
 
 
 
@@ -53,33 +70,31 @@ export default function Intro({  }:{}) {
   return (
    
 
-<StyledIntro className="home-case-study" data-scroll-section>
 
-<div className="case-study-home-links" data-scroll data-scroll-class="appear" data-scroll-repeat="true">
-    <a href="work-single-page.html">
-        <button className="btn-transparent">case study</button>
-    </a>
 
-    <a href="https://www.asparagusmagazine.com" target="_blank">
-        <div className="flex">
-            <p className="asp-link" data-scroll data-scroll-class="appear" data-scroll-repeat="true">
-                asparagusmagazine.com</p>
-            <figure className="arrow-icon">
-                <img src="images/arrow-right-solid.svg" alt="arrow icon" />
-            </figure>
-        </div>
-    </a>
-</div>
+    <StyledIntro class="hero" data-scroll-section>
+                <hgroup className="intro flex">
+                    <h1 className="flegg" data-scroll data-scroll-speed="3" data-scroll-class="appear"
+                        data-scroll-repeat="true">Flegg Creative</h1>
+                    <h2 className="focused h1" data-scroll data-scroll-speed="2" data-scroll-class="appear"
+                        data-scroll-repeat="true">Accessibly <br />Focused
+                        <h2 className="designs h1" data-scroll data-scroll-speed="1" data-scroll-class="appear"
+                            data-scroll-repeat="true">Designs</h2>
+                    </h2>
+                    <div className="audience flex">
+                        <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">Your audience is larger than
+                            you
+                            think. Our approach will help you reach all of your people,
+                            regardless
+                            of ability</p>
+                    </div>
+                </hgroup>
+                <figure className="home-graphic para" data-scroll data-scroll-speed="2">
+                    <img src="images/graphic.svg" alt="decorative element" />
+                </figure>
 
-<div className="bg-green flex">
-    <figure className="home-mobile-mockup">
-        <img src="images/asp-mobile-mockups.jpg" alt="mockup of asparagus magazine on mobile" />
-    </figure>
-    <h2 data-scroll data-scroll-class="appear" data-scroll-repeat="true">Award-winning Asparagus
-        Magazine</h2>
-    <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">website design and build</p>
-</div>
-</StyledIntro>
+        </StyledIntro>
+
   
    
   )

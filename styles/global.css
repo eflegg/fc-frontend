@@ -157,14 +157,7 @@ li {
 
 }
 
-p {
 
-    color: #FFF0DD;
-    /* font-size: 2.8rem; */
-    line-height: 3.8rem;
-    font-weight: 300;
-    margin: 15px 0px;
-}
 
 h2 {
     font-family: "Source Sans Pro";
@@ -176,14 +169,14 @@ h2 {
     color: #FFF0DD;
 }
 
-h1 {
+h1, .h1 {
     margin: 0.3rem 0 0.6rem 0;
     font-family: var(--brother);
     font-weight: 700;
     font-size: 3rem;
     line-height: 110%;
     color: var(--blue);
-    margin: 0.3rem 0 0.6rem 0;
+  
 color:var(--orange);
 }
 
@@ -236,4 +229,10 @@ h3 {
     position: relative;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+/// Animation Classes ///
+
+.appear {
+    opacity: 1;
 }

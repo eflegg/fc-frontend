@@ -39,7 +39,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
       <Head>
         <title>Flegg Creative</title>
       </Head>
-  <Main>
+
 
     
 
@@ -49,7 +49,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
 
     
         <Services  />
-  </Main>
+
 
     </PageWrapper>
   )
