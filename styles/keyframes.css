@@ -1,0 +1,88 @@
+.main-content {
+    animation: fade-in 1s forwards;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.main-content.fade-out {
+    animation: fade-out 1s forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    position: relative;
+}
+
+.next-project.slide-up {
+    animation: slide-up 1s forwards;
+    /* background-color: var(--background); */
+}
+
+@keyframes slide-up {
+    0% {
+        height: 30vh;
+
+    }
+
+    100% {
+        bottom: 0;
+        height: 100vh;
+        padding: 6rem 2rem;
+    }
+}
+
+.main-content hr.grow {
+    animation: grow 1s forwards;
+}
+
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.track.tracking-in-expand {
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

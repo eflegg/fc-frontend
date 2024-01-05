@@ -3,9 +3,9 @@ import { GetStaticProps } from 'next'
 
 import Intro from '../components/home/intro'
 import PageWrapper from '../components/pagewrapper'
-import SignUp from '../components/signup'
+
 import { getAllPostsForHome, getHomeData } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
+
 import styled from 'styled-components'
 
 import HomeCaseStudy from '../components/home/home-case-study'
@@ -26,7 +26,6 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
   const morePosts = edges.slice(1)
 
 
-  
 
   return (
     <PageWrapper languageChoice={languageChoice} >

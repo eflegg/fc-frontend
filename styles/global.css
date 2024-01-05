@@ -159,15 +159,7 @@ li {
 
 
 
-h2 {
-    font-family: "Source Sans Pro";
-    font-size: 3.6rem;
-    text-align: left;
-    line-height: 110%;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #FFF0DD;
-}
+
 
 h1, .h1 {
     margin: 0.3rem 0 0.6rem 0;
@@ -201,12 +193,12 @@ h3 {
     line-height: 105% !important;
 }
 
-.language--btn {
+/* .language--btn {
     position: fixed;
     right: 10px;
     top: 60px;
     z-index: 10;
-}
+} */
 
 .sr-only {
     border: 0;
@@ -229,6 +221,12 @@ h3 {
     position: relative;
     flex-direction: column;
     justify-content: flex-end;
+    @media (min-width: 768px){
+        height: 600px;
+    }
+    @media (min-width: 1000px){
+        height: 900px;
+    }
 }
 .bg-purple {
     background-color: var(--purple);

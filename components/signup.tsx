@@ -4,11 +4,9 @@ import theme from '../components/Theme'
 import LeadMagnetContainer from '../components/forms/LeadMagnetContainer'
 
 const NewsLetter = styled.div`
-// width: 30%;
-// margin: 80px;
 display: flex;
 flex-direction: column;
-// align-items: center;
+
 
 .input {
     display: flex;
@@ -46,9 +44,7 @@ h3 {
     
 }
 button, input {
-  /* &:focus-within {
-    border: 4px dotted #18172B;
-  } */
+
 }
 `
 

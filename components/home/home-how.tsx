@@ -63,7 +63,7 @@ button {
 
 export default function HomeHow({}:{}){
     return (
-        <StyledHow class="home-services" data-scroll-section>
+        <StyledHow className="home-services" data-scroll-section>
 
             <p>how can we help?</p>
                 <hr />

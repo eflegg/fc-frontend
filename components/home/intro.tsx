@@ -72,7 +72,7 @@ export default function Intro({  }:{}) {
 
 
 
-    <StyledIntro class="hero" data-scroll-section>
+    <StyledIntro className="hero" data-scroll-section>
                 <hgroup className="intro flex">
                     <h1 className="flegg" data-scroll data-scroll-speed="3" data-scroll-class="appear"
                         data-scroll-repeat="true">Flegg Creative</h1>

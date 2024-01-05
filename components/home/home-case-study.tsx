@@ -19,8 +19,12 @@ const StyledServices = styled.section`
     align-items: flex-end;
 
 }
-p.asp-link {
-    color: var(--green);
+p, h2 {
+    color: ${theme.colours.cream};
+    font-weight: 400;
+}
+.asp-link {
+    color: ${theme.colours.green};
 }
 
 figure.arrow-icon {

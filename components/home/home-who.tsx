@@ -66,7 +66,7 @@ const StyledWho = styled.section`
 
 export default function HomeWho({}:{}){
     return (
-        <StyledWho class="home-who-are-we" data-scroll-section>
+        <StyledWho className="home-who-are-we" data-scroll-section>
              <div className="bg-purple flex">
                     <h5 data-scroll-class="appear" data-scroll-repeat="true">Who are we?</h5>
                     <h6>1 full-stack developer</h6>
