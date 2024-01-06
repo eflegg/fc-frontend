@@ -1,15 +1,13 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/home/intro'
+
 import PageWrapper from '../components/pagewrapper'
 import SignUp from '../components/signup'
 import { getAllPostsForHome, getHomeData } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
+
 import styled from 'styled-components'
 import theme from '../components/Theme'
+import { useEffect, useState } from 'react'
 
 
 const AboutContainer = styled.div`
@@ -189,6 +187,25 @@ figure {
 
 
 export default function About({ languageChoice }) {
+
+    const [spinOffset, setSpinOffset] = useState(null);
+
+    useEffect(()=>{
+        const spinHandler=()=>{
+            const spin = document.querySelectorAll('.about-para');
+            let offset = window.scrollY;
+            console.log(offset);
+            spin.forEach(element => {
+                setSpinOffset(offset);
+            // element.style.transform = `rotate(${offset * 0.08}deg)`;
+            
+            });
+        }
+        window.addEventListener('scroll', spinHandler);
+        return()=>{
+          window.removeEventListener('scroll', spinHandler);
+        }
+    })
     return (
 
         <PageWrapper languageChoice={languageChoice}>
@@ -226,7 +243,7 @@ export default function About({ languageChoice }) {
 
                 <AboutUs>
                     <figure>
-                        <img className="about-para" src="images/home-graphic-2.svg" alt="photo of elizabeth in front of a lake" />
+                        <img style={{transform:`rotate(${spinOffset * 0.08}deg)` }}className="about-para" src="images/home-graphic-2.svg" alt="photo of elizabeth in front of a lake" />
                     </figure>
                     <article className="about-eliz">
                         <p>I'm Elizabeth Flegg and I began my creative career in digital photography at Algonquin College, but

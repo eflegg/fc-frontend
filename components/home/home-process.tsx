@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import theme from '../Theme'
+import { useEffect, useState } from 'react'
 
 const StyledProcess = styled.section`
     position: relative;
@@ -102,6 +103,24 @@ const StyledProcess = styled.section`
 `
 
 export default function HomeProcess({}:{}){
+    const [spinOffset, setSpinOffset] = useState(null);
+
+    useEffect(()=>{
+        const graphicHandler = ()=>{
+            const graphic = document.querySelectorAll('.para');
+            let offset = window.scrollY;
+            console.log(offset);
+            graphic.forEach(element => {
+                setSpinOffset(offset);
+            // element.style.transform = `translateY(-${offset * 0.9}px) rotate(${offset * 0.04}deg)`;
+            
+            });
+        }
+        window.addEventListener('scroll', graphicHandler);
+        return()=>{
+          window.removeEventListener('scroll', graphicHandler);
+        }
+    })
 
     return (
         <>
@@ -119,13 +138,13 @@ export default function HomeProcess({}:{}){
                         limitations and push ourselves to create in new ways.</p>
                 </div>
                 <div className="flex graphic-container">
-                    <figure className="home-graphic-2 para">
+                    <figure style={{transform: `translateY(-${spinOffset * 0.9}px) rotate(${spinOffset * 0.04}deg)`}} className="home-graphic-2 para">
                         <img src="images/home-graphic-2.svg" alt="colourful decorative element" />
                     </figure>
-                    <figure className="home-graphic-2-b para">
+                    <figure style={{transform: `translateY(-${spinOffset * 0.9}px) rotate(${spinOffset * 0.04}deg)`}} className="home-graphic-2-b para">
                         <img src="images/home-graphic-2.svg" alt="colourful decorative element" />
                     </figure>
-                    <figure className="home-graphic-2-c para">
+                    <figure style={{transform: `translateY(-${spinOffset * 0.9}px) rotate(${spinOffset * 0.04}deg)`}} className="home-graphic-2-c para">
                         <img src="images/home-graphic-2.svg" alt="colourful decorative element" />
                     </figure>
                 </div>

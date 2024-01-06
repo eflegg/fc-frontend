@@ -1,8 +1,7 @@
 import { CMS_NAME, CMS_URL } from '../../lib/constants'
 import styled from 'styled-components'
 import theme from '../Theme'
-import NewsLetter from '../signup'
-import LeadMagnetContainer from '../forms/LeadMagnetContainer'
+import { useEffect, useState } from 'react'
 
 
 const StyledIntro = styled.section`
@@ -56,6 +55,26 @@ const StyledIntro = styled.section`
           margin-left: 14rem;
         }
     }
+    figure.home-graphic {
+    margin: 0;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 110%;
+    height: auto;
+    z-index: -10;
+    @media ${theme.devices.small}{
+      width: 100%;
+        top: 180px;
+        right: 200px;
+    }
+    @media ${theme.devices.medium}{
+      right: 600px;
+    }
+    img{
+      object-fit: fill;
+    }
+}
 
 
 
@@ -66,6 +85,24 @@ const StyledIntro = styled.section`
 
 
 export default function Intro({  }:{}) {
+  const [spinOffset, setSpinOffset] = useState(null);
+
+  useEffect(()=>{
+      const graphicHandler = ()=>{
+          const graphic = document.querySelectorAll('.para');
+          let offset = window.scrollY;
+          console.log(offset);
+          graphic.forEach(element => {
+              setSpinOffset(offset);
+          // element.style.transform = `translateY(-${offset * 0.9}px) rotate(${offset * 0.04}deg)`;
+          
+          });
+      }
+      window.addEventListener('scroll', graphicHandler);
+      return()=>{
+        window.removeEventListener('scroll', graphicHandler);
+      }
+  })
  
   return (
    
@@ -89,7 +126,7 @@ export default function Intro({  }:{}) {
                             of ability</p>
                     </div>
                 </hgroup>
-                <figure className="home-graphic para" data-scroll data-scroll-speed="2">
+                <figure style={{transform: `translateY(-${spinOffset * 0.9}px) rotate(${spinOffset * 0.04}deg)`}} className="home-graphic para" data-scroll data-scroll-speed="2">
                     <img src="images/graphic.svg" alt="decorative element" />
                 </figure>
 
