@@ -1,17 +1,12 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/home/intro'
+
 import PageWrapper from '../components/pagewrapper'
 import SignUp from '../components/signup'
 import { getAllPostsForHome, getHomeData } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import styled from 'styled-components'
-import LargeOrangeShape from '../components/shapes/large-orange'
 
-import SmallPinkShape from '../components/shapes/small-pink'
 import theme from '../components/Theme'
 import BlogCard from '../components/blog/blog-card'
 
@@ -20,12 +15,7 @@ import BlogCard from '../components/blog/blog-card'
 
 
 
-// const ShapeContainer = styled.div`
-// background: transparent;
 
-// width: 100%;
-
-// `
 
 
 

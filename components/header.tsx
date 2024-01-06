@@ -2,28 +2,34 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 import Navigation from './nav/Navigation'
+import { useEffect, useState } from 'react'
 
 
 const HeaderContainer = styled.header`
-/* position: absolute; */
+
+transition: all .5s ease-in-out;
+z-index: 99;
+position: fixed;
+padding: 1rem;
+background-color: ${theme.colours.cream};
+width: 100%;
+left: 0;
+&.header-viz {
+  top: 0;
+  transition: all .5s ease-in-out;
+}
+&.header-not-viz{
+  top: -100px;
+  transition: all .5s ease-in-out;
+}
 .home, hr {
   z-index: 30;
   position: relative;
 }
-transform: translate3d(0, 0, 0);
-transition: all .5s ease-in-out;
-padding: 1rem;
 @media ${theme.devices.small}{
   padding: 0 2rem 0 2rem;
 }
-position: relative;
-top: 0;
-width: 100%;
-background-color: ${theme.colours.cream};
-z-index: 30;
-width: 100%;
-top: 0;
-left: 0;
+
 hgroup {
 
         display: flex;
@@ -63,8 +69,35 @@ transition: all .25s ease-in;
 `
 
 export default function Header() {
+
+  const [headerInView, setHeaderInView]= useState(true);
+
+  useEffect(()=> {
+    var prevScrollPos = window.scrollY;
+  console.log(`the scroll position starts at ${prevScrollPos}px`);
+  const headerScrollHandler =()=>{
+    const currentScrollPos = window.scrollY;
+    console.log(currentScrollPos);
+
+    if (prevScrollPos > currentScrollPos) {
+      setHeaderInView(true);
+        // navBar.style.top = '0';
+    } else {
+      setHeaderInView(false);
+        // navBar.style.top = '-100px';
+    }
+    prevScrollPos = currentScrollPos;
+  }
+
+
+  window.addEventListener('scroll', headerScrollHandler);
+  return()=>{
+    window.removeEventListener('scroll', headerScrollHandler);
+  }
+  })
+
   return (
-  <HeaderContainer id="top-nav">
+  <HeaderContainer className={`${headerInView ? "header-viz": "header-not-viz"}`} id="top-nav">
     <hr className="top" />
       <SkipLink tabIndex={0} className="language--btn" href="#main-content">Skip to main content</SkipLink>
 

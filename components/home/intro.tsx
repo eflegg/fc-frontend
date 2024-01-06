@@ -78,9 +78,9 @@ export default function Intro({  }:{}) {
                         data-scroll-repeat="true">Flegg Creative</h1>
                     <h2 className="focused h1" data-scroll data-scroll-speed="2" data-scroll-class="appear"
                         data-scroll-repeat="true">Accessibly <br />Focused
+                    </h2>
                         <h2 className="designs h1" data-scroll data-scroll-speed="1" data-scroll-class="appear"
                             data-scroll-repeat="true">Designs</h2>
-                    </h2>
                     <div className="audience flex">
                         <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">Your audience is larger than
                             you

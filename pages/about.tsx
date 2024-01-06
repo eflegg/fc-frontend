@@ -50,7 +50,7 @@ article.about-top h1 {
         width: 100%;
     }
 }
-hgroup.tagline h1 {
+hgroup.tagline h1, .h1 {
     font-size: 1.7rem;
     color: ${theme.colours.blue};
     @media ${theme.devices.medium}{
@@ -220,7 +220,7 @@ export default function About({ languageChoice }) {
                 </AboutIntro>
 
                 <hgroup className="tagline">
-                    <h1 className="track">Trust us with your vision.</h1>
+                    <h2 className="track h1">Trust us with your vision.</h2>
                     <h2 className="track">Let us take care of the rest.</h2>
                 </hgroup>
 

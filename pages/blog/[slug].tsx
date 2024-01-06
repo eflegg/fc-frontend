@@ -12,9 +12,9 @@ import PageWrapper from '../../components/pagewrapper'
 import PostTitle from '../../components/post-title'
 import Tags from '../../components/tags'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import LargeOrangeShape from '../../components/shapes/large-orange'
+
 import styled from 'styled-components'
-import SmallPinkShape from '../../components/shapes/small-pink'
+
 import theme from '../../components/Theme'
 import Link from 'next/link'
 
