@@ -21,7 +21,7 @@ h1 {
 const CaseStudiesContainer = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-grid-gap: 3rem;
+grid-gap: 2rem;
 margin: 6rem 0 4rem 0;
 }
 

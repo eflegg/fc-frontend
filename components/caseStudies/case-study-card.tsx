@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const CardContainer = styled.div`
-border: 2px solid blue;
-border-radius: 10px;
+// border: 2px solid blue;
+border-radius: 20px;
 margin: 1rem 1rem 2rem 1rem;
 position: relative;
 @media ${theme.devices.medium} {
@@ -18,7 +18,8 @@ position: relative;
     width: 100%;
     height: 250px;
     border-radius: 20px;
-    background-color: black;
+    background-color: darkslategrey;
+    // background-color: black;
     h2 {
         color: ${theme.colours.cream};
         position: absolute;
@@ -32,15 +33,13 @@ position: relative;
     object-fit: cover;
     width: 100%;
     height: 100;
+    opacity: .4;
     transition: .3s ease-in-out;
-    
-    @media ${theme.devices.medium} {
-        border-radius: 20px;
-    }
+    border-radius: 20px;
 }
 
 .outercard img:hover {
-         opacity: .2;
+         opacity: 1;
 }
 `
 
