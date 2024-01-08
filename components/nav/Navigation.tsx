@@ -192,7 +192,6 @@ export default function Navigation(){
   const [subnav, setSubnav] = useState(null);
   const [subnavIndex, setSubnavIndex] = useState(null);
 
-  console.log('nav open? ', navOpen);
   function handleNavClick(){
     navOpen ? setNavOpen(false) : setNavOpen(true);
     console.log('i am clicked');

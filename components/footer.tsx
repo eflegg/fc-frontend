@@ -34,9 +34,13 @@ label {
     padding-right: 2rem;
     @media ${theme.devices.small}{
       width: 60%;
+      padding-left: 2rem;
+      padding-right: 1rem;
     }
     @media ${theme.devices.medium}{
       width: 40%;
+      padding-left: 0rem;
+      padding-right: 2rem;
     }
 }
 
