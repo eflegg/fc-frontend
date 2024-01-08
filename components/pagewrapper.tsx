@@ -19,7 +19,7 @@ overflow: hidden;
 
 
 
-export default function PageWrapper({ children }) {
+export default function PageWrapper({ children, languageChoice }) {
 
 
 

@@ -168,7 +168,7 @@ export default function Footer(props) {
                     <h3 className="create-inclusive">create truly inclusive digital spaces with us</h3>
                     <h4>get our newsletter and find out why we put accessibility first</h4>
 
-                    <SignUpContainer languageChoice={props.languageChoice} text={`${props.languageChoice === "English" ? "Get our newsletter" : "Recevoir notre infolettre" }`} buttonText={`${props.languageChoice === "English" ? "Sign up" : "Abonnez-vous" }`} />
+                    <SignUpContainer languageChoice={props.languageChoice} text="Get our newsletter"  buttonText="Sign up" />
 
                    
                 </section>

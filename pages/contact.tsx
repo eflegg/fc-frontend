@@ -80,7 +80,7 @@ interface Inputs {
     email: string
   }
 
-export default function Contact({}:{}){
+export default function Contact({languageChoice}:{languageChoice: string}){
     const {
         register,
         handleSubmit,
@@ -90,7 +90,7 @@ export default function Contact({}:{}){
       const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
       const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return (
-    <PageWrapper >
+    <PageWrapper languageChoice={languageChoice} >
         <Head>
         <title>Contact - Flegg Creative</title>
         </Head>
