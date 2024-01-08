@@ -133,6 +133,7 @@ hr {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
 hr.top {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -149,13 +150,19 @@ a {
 
 
 .logo {
-    font-family: "brother-1816", sans-serif!important;
+    font-family: "brother-1816", sans-serif !important;
 }
 
 li {
     font-family: "Source Sans Pro";
 
+    /* color: black;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    font-weight: 300;
+    margin: 15px 0px; */
 }
+
 
 
 
@@ -170,6 +177,8 @@ h1, .h1 {
     color: var(--blue);
   
 color:var(--orange);
+    margin: 0.3rem 0 0.6rem 0;
+    color: var(--orange);
 }
 
 h3 {
