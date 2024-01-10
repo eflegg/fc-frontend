@@ -15,9 +15,10 @@ const CaseStudyContainer = styled.div`
 
 section.hero {
   height: 80vh;
+  min-height: 285px;
   padding: 8rem 1rem 4rem 1rem;
   position: relative;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     padding: 6rem 2rem;
         height: 100vh;
   }
@@ -37,10 +38,10 @@ hgroup.company-name {
     text-align: right;
     color: ${theme.colours.green};
     margin: 0;
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       font-size: 6rem;
     }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
       font-size: 8rem;
     }
   }
@@ -48,11 +49,11 @@ hgroup.company-name {
     text-align: right;
     color: ${theme.colours.green};
     margin: 0;
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       font-size: 2rem;
     }
   }
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     flex-direction: column;
     align-items: flex-end;
     bottom: 6rem;
@@ -75,12 +76,12 @@ hgroup.company-name p.hp {
 
 section.about-project-container {
   padding: 1rem;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     padding: 2rem;
   }
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
     height: 70vh;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -91,10 +92,10 @@ section.about-project-container {
 
 article.about-project {
   margin: 0;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     margin-bottom: 5rem;
   }
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
     width: 50%;
   }
   h2 {
@@ -102,7 +103,7 @@ article.about-project {
     color: ${theme.colours.green};
     font-size: 1.5rem;
     line-height: 120%;
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       font-size: 2rem;
     }
   }
@@ -121,11 +122,11 @@ figure.mobile-mockup-work img {
 section.challenge {
   padding: 1rem;
   flex-direction: column;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     padding: 2rem;
     margin-top: 10rem;
   }
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -135,7 +136,7 @@ section.challenge {
   h3 {
     color: ${theme.colours.green};
     margin: 0;
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       font-size: 2rem;
     }
   }
@@ -144,12 +145,12 @@ section.challenge {
     font-size: 1rem;
   }
   hr {
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       width: 100%;
     }
   }
   article {
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
       width: 50%;
     }
   }
@@ -168,26 +169,26 @@ section.keywords {
   padding: 1rem 1rem 0 1rem;
   position: relative;
   margin-bottom: 10rem;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     padding: 4rem 2rem 0 2rem;
     margin-bottom: 20rem;
   }
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
     display: flex;
     position: relative;
     margin-bottom: 12rem;
     padding-left: 12rem;
   }
   p {
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       font-size: 2.5rem;
     }
   }
   article.design-keywords {
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       width: 70%;
     }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
       width: 60%;
     }
   }
@@ -195,7 +196,7 @@ section.keywords {
 
 figure.icon {
   display: none;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     display: block;
     width: 400px;
     height: auto;
@@ -203,14 +204,14 @@ figure.icon {
     position: absolute;
     right: 4rem;
   }
-  @media ${theme.devices.large}{
+  @media ${theme.devices.medium}{
     right: 6rem;
     bottom: -250px;
   }
 }
 
 figure.icon2 {
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
     width: 500px;
     height: auto;
     position: absolute;
@@ -229,7 +230,7 @@ div.key-btn {
 section.keywords button {
   margin: .3rem 1rem 1rem 0;
   font-size: 1rem;
-  @media ${theme.devices.medium}{
+  @media ${theme.devices.small}{
     font-size: 1.3rem;
   }
 }
@@ -243,12 +244,12 @@ figure.triple-stalk {
   opacity: .4;
   right: 4rem;
   top: 16rem;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     width: 400px;
     right: 8rem;
     top: 25rem;
   }
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
     width: 400px;
     height: auto;
     transform: rotate(45deg);
@@ -277,28 +278,29 @@ figure.lrg-img {
 section.case-study-text {
   padding: 1rem;
   position: relative;
-  height: 100vh;
   margin-bottom: 4rem;
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     padding: 2rem;
   }
-  @media ${theme.devices.large} {
+  @media ${theme.devices.medium} {
+    height: 100vh;
     margin-bottom: 12rem;
   }
   article {
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin: 10rem 8rem;
     }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
       flex-direction: row;
     }
   }
   p {
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
       margin: 1rem;
+      width: 33%;
     }
   }
 }
@@ -314,7 +316,10 @@ figure.single-stalk {
   right: 15rem;
   opacity: .4;
   z-index: -10;
-  @media ${theme.devices.medium} {
+  img {
+      object-fit: fill;
+    }
+  @media ${theme.devices.small} {
     width: 600px;
     opacity: .4;
     right: 20rem;
@@ -331,12 +336,12 @@ section.full-width-img {
     font-size: 3rem;
     color: ${theme.colours.blue};
     margin: 1rem;
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       margin: 2rem;
     }
   }
-  @media ${theme.devices.medium} {
-    margin-bottom: 20rem;
+  @media ${theme.devices.small} {
+    margin-bottom: 15rem;
   }
 }
 
@@ -351,19 +356,26 @@ section.next-project {
   width: 100%;
   z-index: 90;
   h5 {
-    color: ${theme.colours.green});
+    color: ${theme.colours.green};
     margin: 0;
-    @media ${theme.devices.medium} {
+    @media ${theme.devices.small} {
       font-size: 3rem;
     }
   }
-  @media ${theme.devices.medium} {
+  @media ${theme.devices.small} {
     margin: 0;
     padding: 0 2rem;
   }
 }
 
-
+.arrow-icon {
+    width: 1rem;
+    transform: rotateY(0) rotate(-45deg);
+    margin: 0;
+    img {
+      object-fit: fill;
+    }
+}
 
 figure.next-study {
   width: 100%;
@@ -392,7 +404,7 @@ type WorkSingleProps = {
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => {
-  console.log('casestudy: ', postData);
+  console.log('casestudy: ', postData.caseStudy);
 
   return (
     <>
@@ -400,20 +412,20 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
         <Head>
           <title>Flegg Creative</title>
         </Head>
-        <h1>{postData.title}</h1>
+      
 
         <CaseStudyContainer>
 
           <section className="hero">
-            <figure className="hero-img"><img className="position-0" src="images/work-hero.svg"
+            <figure className="hero-img"><img className="position-0" src={postData.featuredImage.node.sourceUrl}
               alt="decorative asparagus stalks" /></figure>
             <hgroup className="company-name">
-              <h1>Asparagus Magazine</h1>
-              <a className="site-link" href="https://www.asparagusmagazine.com/" target="blank">
+              <h1>{postData.title}</h1>
+              <a className="site-link" href={postData.caseStudy.hero.clientWebsiteLink} target="blank">
                 <div className="link flex">
                   <p>asparagusmagazine.com</p>
                   <figure className="arrow-icon">
-                    <img src="images/arrow-right-solid.svg" alt="arrow icon" />
+                    <img src="/images/arrow-right-solid.svg" alt="arrow icon" />
                   </figure>
                 </div>
               </a>
@@ -422,36 +434,21 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
 
           <section className="about-project-container">
             <article className="about-project">
-              <h2>website design and development - 2022</h2>
+              <h2>{postData.caseStudy.theWork.typeOfWork}</h2>
               <p>
-                Asparagus Magazine is an award-winning publication based in Vancouver Canada, dedicated to
-                stories
-                about how we can live sustainably, from an environmental, social, and cultural perspective. They
-                aim
-                to approach these stories in a way that is intersectional, impactful, firmly grounded in
-                science,
-                but also fun.
+              {postData.caseStudy.theWork.clientDescription}
               </p>
             </article>
             <hr />
           </section>
 
-          <figure className="mobile-mockup-work"><img src="images/asp-mobile-mockups.jpg"
-            alt="asparagus magazine mobile mockup" />
+          <figure className="mobile-mockup-work">  <img src={postData.caseStudy.images.mobileMockup.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText} />
           </figure>
 
           <section className="challenge flex">
             <article>
               <h3>The Challenge</h3>
-              <p>After several years of publishing online through Medium, Asparagus Magazine crossed over into
-                print
-                and
-                quickly began to outgrow its online home. Medium presented many challenges including limited
-                control
-                over branding, layout and images, and ineffective search function. Asparagus Magazine was in
-                need of
-                a
-                custom site tailored to their needs and in support of growth.</p>
+              <p>{postData.caseStudy.theWork.theChallenge}</p>
             </article>
             <hr />
           </section>
@@ -459,26 +456,28 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
           <section className="full-width-img">
             <div className="bg-mockup">
               <figure className="lrg-img">
-                <img src="images/asp-tablet-mockups.png" alt="asparagus magazine tablet mockup" />
+                <img src={postData.caseStudy.images.tabletMockup.sourceUrl} alt={postData.caseStudy.images.tabletMockup.altText} />
               </figure>
             </div>
           </section>
 
           <section className="keywords">
             <article className="design-keywords">
-              <p>Asparagus needed a site that clearly communicated their values as an organization. We focused on
-                these keywords in the design phase.
+              <p>{postData.caseStudy.theWork.keywordDescription}
               </p>
-              <div className="key-btn flex">
-                <button className="btn-transparent">hope</button>
-                <button className="btn-transparent">approachability</button>
-                <button className="btn-transparent">calm</button>
-                <button className="btn-transparent">accessibility</button>
-                <button className="btn-transparent">criticality</button>
+              <div className="key-btn ">
+              {postData.caseStudy.theWork.keywords && postData.caseStudy.theWork.keywords.length > 0 ? (
+                postData.caseStudy.theWork.keywords.map((keyword, index)=>{
+                  return (
+                    <button key={index} className="btn-transparent">{keyword.keyword}</button>
+                  )
+                })
+              ):null}
+             
               </div>
             </article>
             <figure className="triple-stalk">
-              <img src="images/triplestalk.svg" alt="triple asparagus stalk logo" />
+              <img src={postData.caseStudy.images.graphic.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText} />
             </figure>
           </section>
 
@@ -486,7 +485,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
           <section className="full-width-img-1">
             <div className="bg-mockup-light">
               <figure className="lrg-img">
-                <img src="images/asp-multi-screen.png" alt="asparagus magazine multi-screen mockup" />
+                <img src={postData.caseStudy.images.multisizeMockup.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText} />
               </figure>
             </div>
           </section>
@@ -513,7 +512,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
               </p>
             </article>
             <figure className="single-stalk">
-              <img src="images/singlestalk.svg" alt="asparagus logo" />
+              <img src={postData.caseStudy.images.logo.sourceUrl} alt={postData.caseStudy.images.logo.altText} />
             </figure>
           </section>
 
@@ -521,7 +520,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
           <section className="full-width-img">
             <div className="bg-mockup">
               <figure className="lrg-img">
-                <img src="images/asp-desktop-mockup.png" alt="asparagus magazine desktop mockup" />
+                <img src={postData.caseStudy.images.desktopMockup.sourceUrl} alt={postData.caseStudy.images.desktopMockup.altText} />
               </figure>
             </div>
             <h5>next project</h5>

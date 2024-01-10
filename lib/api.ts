@@ -154,6 +154,51 @@ export async function getStudy(slug){
   fragment PostFields on CaseStudy {
     title
     slug
+    caseStudy {
+      hero {
+        clientWebsiteLink
+      }
+      images {
+        mobileMockup {
+          altText
+          sourceUrl
+        }
+        multisizeMockup {
+          altText
+          sourceUrl
+        }
+        tabletMockup {
+          altText
+          sourceUrl
+        }
+        graphic {
+          altText
+          sourceUrl
+        }
+        logo {
+          altText
+          sourceUrl
+        }
+        desktopMockup {
+          altText
+          sourceUrl
+        }
+      }
+      theProcess {
+        build
+        launch
+        vision
+      }
+      theWork {
+        clientDescription
+        keywordDescription
+        keywords {
+          keyword
+        }
+        theChallenge
+        typeOfWork
+      }
+    }
     featuredImage {
       node {
         sourceUrl

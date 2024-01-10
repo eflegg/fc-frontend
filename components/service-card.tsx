@@ -70,15 +70,15 @@ export default function ServiceCard({ singleService, languageChoice }) {
         <ServiceCardContainer>
             <div className='outercard'>
                 <div className='image-container'>
-                    <Image src={singleService.image.sourceUrl} alt={languageChoice === "English" ? singleService.altEnglish : singleService.altFrench} width={720} height={1080}/>
+                    <Image src={singleService.image.sourceUrl} alt={languageChoice === "French" ? singleService.altEnglish : singleService.altFrench} width={720} height={1080}/>
                     {/* <img src={image} alt={alt}></img> */}
                 </div>
                 <div className='label'>
-                    <h4> {languageChoice === "English" ? singleService.titleEnglish : singleService.titleFrench}</h4>
+                    <h4> {languageChoice === "French" ? singleService.titleEnglish : singleService.titleFrench}</h4>
                 </div>
 
                 <div className='description'>
-                    <p>{languageChoice === "English" ? singleService.descriptionEnglish : singleService.descriptionFrench}</p>
+                    <p>{languageChoice === "French" ? singleService.descriptionEnglish : singleService.descriptionFrench}</p>
                 </div>
             </div>
         </ServiceCardContainer>
