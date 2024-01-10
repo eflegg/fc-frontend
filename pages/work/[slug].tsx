@@ -291,10 +291,11 @@ section.case-study-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 10rem 8rem;
+      margin: 9rem 6rem;
     }
     @media ${theme.devices.medium} {
       flex-direction: row;
+      margin: 9rem 6rem;
     }
   }
   p {
