@@ -418,57 +418,78 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
         <CaseStudyContainer>
 
           <section className="hero">
-            <figure className="hero-img"><img className="position-0" src={postData.featuredImage.node.sourceUrl}
-              alt="decorative asparagus stalks" /></figure>
+            <figure className="hero-img">
+              {postData.featuredImage && (
+              <img className="position-0" src={postData.featuredImage.node.sourceUrl}
+              alt={postData.featuredImage.node.altText? postData.featuredImage.node.altText : "featured image"} />
+              )}
+              </figure>
             <hgroup className="company-name">
+              {postData.title && (
               <h1>{postData.title}</h1>
+              )}
+            {postData.caseStudy.hero.clientWebsiteLink && (
               <a className="site-link" href={postData.caseStudy.hero.clientWebsiteLink} target="blank">
                 <div className="link flex">
-                  <p>asparagusmagazine.com</p>
+                  <p>{postData.caseStudy.hero.clientWebsiteLink}</p>
                   <figure className="arrow-icon">
                     <img src="/images/arrow-right-solid.svg" alt="arrow icon" />
                   </figure>
                 </div>
               </a>
+            )}
             </hgroup>
           </section>
 
           <section className="about-project-container">
             <article className="about-project">
+            {postData.caseStudy.theWork.typeOfWork && (
               <h2>{postData.caseStudy.theWork.typeOfWork}</h2>
+            )}
+              {postData.caseStudy.theWork.clientDescription && (
               <p>
               {postData.caseStudy.theWork.clientDescription}
               </p>
+              )}
             </article>
             <hr />
           </section>
 
-          <figure className="mobile-mockup-work">  <img src={postData.caseStudy.images.mobileMockup.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText} />
+
+          {postData.caseStudy.images.mobileMockup && (
+          <figure className="mobile-mockup-work">  <img src={postData.caseStudy.images.mobileMockup.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText ? postData.caseStudy.images.mobileMockup.altText : "mobile mockups"} />
           </figure>
+          )}
 
           <section className="challenge flex">
             <article>
               <h3>The Challenge</h3>
+              {postData.caseStudy.theWork.theChallenge && (
               <p>{postData.caseStudy.theWork.theChallenge}</p>
+              )}
             </article>
             <hr />
           </section>
 
           <section className="full-width-img">
             <div className="bg-mockup">
+              {postData.caseStudy.images.tabletMockup && (
               <figure className="lrg-img">
-                <img src={postData.caseStudy.images.tabletMockup.sourceUrl} alt={postData.caseStudy.images.tabletMockup.altText} />
+                <img src={postData.caseStudy.images.tabletMockup.sourceUrl} alt={postData.caseStudy.images.tabletMockup.altText ? postData.caseStudy.images.tabletMockup.altText : "tablet mockups"} />
               </figure>
+              )}
             </div>
           </section>
 
           <section className="keywords">
             <article className="design-keywords">
+            {postData.caseStudy.theWork.keywordDescription && (  
               <p>{postData.caseStudy.theWork.keywordDescription}
               </p>
+            )}
               <div className="key-btn ">
               {postData.caseStudy.theWork.keywords && postData.caseStudy.theWork.keywords.length > 0 ? (
-                postData.caseStudy.theWork.keywords.map((keyword, index)=>{
+                postData.caseStudy.theWork.keywords.map((keyword:any, index:number)=>{
                   return (
                     <button key={index} className="btn-transparent">{keyword.keyword}</button>
                   )
@@ -485,44 +506,43 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
 
           <section className="full-width-img-1">
             <div className="bg-mockup-light">
+              {postData.caseStudy.images.multisizeMockup && (
               <figure className="lrg-img">
-                <img src={postData.caseStudy.images.multisizeMockup.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText} />
+                <img src={postData.caseStudy.images.multisizeMockup.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText ? postData.caseStudy.images.mobileMockup.altText : "multi-size mockups"} />
               </figure>
+              )}
             </div>
           </section>
 
           <section className="case-study-text">
+            {postData.caseStudy.theProcess && (
             <article>
-              <p>The team at Asparagus needed a tried-and-true backend platform to input new articles and images
-                simply
-                and
-                seamlessly. By creating custom fields we made this process a snap and maintained consistency of
-                style
-                and
-                layout throughout the site.
-              </p>
-              <p>We choose to build within the next.js framework because it offers unparalleled page load speed,
-                accessibility
-                features, improved SEO and a powerful e-commerce option for their online shop.</p>
-              <p>Once the site was ready to launch, we set the team up with google analytics to
-                track user and
-                advertisement data. We provided a training document for the staff to input all of their
-                content
-                in
-                the back end.
-              </p>
+              {postData.caseStudy.theProcess.vision && (
+                <p>{postData.caseStudy.theProcess.vision}</p>
+              )}
+               {postData.caseStudy.theProcess.buid && (
+                <p>{postData.caseStudy.theProcess.build}</p>
+              )}
+               {postData.caseStudy.theProcess.launch && (
+                <p>{postData.caseStudy.theProcess.launch}</p>
+              )}
             </article>
+            )}
+            {postData.caseStudy.images.logo && (
             <figure className="single-stalk">
               <img src={postData.caseStudy.images.logo.sourceUrl} alt={postData.caseStudy.images.logo.altText} />
             </figure>
+            )}
           </section>
 
 
           <section className="full-width-img">
             <div className="bg-mockup">
+              {postData.caseStudy.images.desktopMockup && (
               <figure className="lrg-img">
                 <img src={postData.caseStudy.images.desktopMockup.sourceUrl} alt={postData.caseStudy.images.desktopMockup.altText} />
               </figure>
+              )}
             </div>
             <h5>next project</h5>
           </section>
