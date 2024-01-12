@@ -404,7 +404,8 @@ figure.next-study img {
 type WorkSingleProps = {
   postData: any,
   languageChoice: boolean,
- nextPost: any
+ nextPost: any,
+ fade: boolean;
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextPost }) => {
