@@ -88,6 +88,7 @@ export async function getCaseStudies(){
           title
           content
           slug
+          uri
           featuredImage {
             node {
               sourceUrl
@@ -154,6 +155,7 @@ export async function getStudy(slug){
   fragment PostFields on CaseStudy {
     title
     slug
+    uri
     caseStudy {
       hero {
         clientWebsiteLink
@@ -224,11 +226,11 @@ export async function getStudy(slug){
 
 export async function getNextPrev(slug) {
 
-  const caseStudies = await getCaseStudies();
-const currentPost = caseStudies.find((post) => post.slug === slug);
-const currentPostIndex = caseStudies.findIndex((post) => post.slug === slug);
-const prevPost = caseStudies[currentPostIndex - 1] || caseStudies[caseStudies.length - 1];
-const nextPost = caseStudies[currentPostIndex + 1] || caseStudies[0];
+  const caseStudies = await getAllCaseStudiesWithSlug();
+const currentPost = caseStudies.edges.find((post) => post.slug === slug);
+const currentPostIndex = caseStudies.edges.findIndex((post) => post.slug === slug);
+const prevPost = caseStudies.edges[currentPostIndex - 1] || caseStudies.edges[caseStudies.length - 1];
+const nextPost = caseStudies.edges[currentPostIndex + 1] || caseStudies[0];
 
 
 

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import next, { GetStaticPaths, GetStaticProps } from 'next'
-import { getAllCaseStudiesWithSlug, getAllPostsWithSlug, getNextPrev, getPostAndMorePosts, getStudy, getStudyAndMoreStudies } from '../../lib/api'
+import { getAllCaseStudiesWithSlug, getAllPostsWithSlug, getCaseStudies, getNextPrev, getPostAndMorePosts, getStudy, getStudyAndMoreStudies } from '../../lib/api'
 import PageWrapper from '../../components/pagewrapper'
 import styled from 'styled-components'
 import theme from '../../components/Theme'
@@ -335,6 +335,7 @@ section.full-width-img {
     object-position: 0 36px;
   }
   h5 {
+    font-weight: 700;
     font-size: 3rem;
     color: ${theme.colours.blue};
     margin: 1rem;
@@ -354,7 +355,7 @@ section.next-project {
   margin: 0;
   overflow: hidden;
   position: absolute;
-  bottom: 0;
+  bottom: -14rem;
   width: 100%;
   z-index: 90;
   h5 {
@@ -504,9 +505,11 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
              
               </div>
             </article>
+            {postData.caseStudy.images.graphic && (
             <figure className="triple-stalk">
-              <img src={postData.caseStudy.images.graphic.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText} />
+              <img src={postData.caseStudy.images.graphic.sourceUrl} alt={postData.caseStudy.images.mobileMockup.altText ? postData.caseStudy.images.mobileMockup.altText : "Decorative image from client branding"} />
             </figure>
+            )}
           </section>
 
 
@@ -554,12 +557,15 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
           </section>
 
           <section className="next-project">
-
-            <a className="next-link" href="case-study-2.html">
+          {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
+            <Link className="next-link"href={`/work/${nextPost.node.slug}`}>
+            {/* <a  href={nextPost.node.uri}> */}
               <figure className="next-study">
-                <img src="images/hearth-place.jpg" alt="" />
+                <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
               </figure>
-            </a>
+         
+            </Link>
+          )}
           </section>
 
           <div className="cursor"></div>
@@ -577,13 +583,19 @@ export default WorkSingle;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await getStudy(params.slug);
-const nextPrev = await getNextPrev(params.slug);
+// const nextPrev = await getNextPrev(params.slug);
+const allPosts = await getCaseStudies();
+
+const currentPost = allPosts.edges.find((post) => post.slug === params.slug);
+const currentPostIndex = allPosts.edges.findIndex((post) => post.slug === params.slug);
+const prevPost = allPosts.edges[currentPostIndex - 1] || allPosts.edges[allPosts.length - 1];
+const nextPost = allPosts.edges[currentPostIndex + 1] || allPosts.edges[0];
 
 
   return {
     props: {
+      nextPost: nextPost? nextPost : null,
       postData: data ? data : null,
-      nextPost: nextPrev ? nextPrev : null,
     },
   };
 }
