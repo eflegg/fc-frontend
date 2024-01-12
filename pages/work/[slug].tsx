@@ -10,6 +10,7 @@ import theme from '../../components/Theme'
 import Link from 'next/link'
 import { th } from 'date-fns/locale'
 import UseWaypoint from '../../components/useWaypoint'
+import { useState } from 'react'
 
 
 const CaseStudyContainer = styled.div`
@@ -410,9 +411,24 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
   console.log('casestudy: ', postData.caseStudy);
   console.log('next post: ', nextPost);
 
+  const [faded, setFaded]= useState(false);
+  const [slide, setSlide]= useState(false);
+
+  function handleTransition(event){
+  setFaded(true);
+  setSlide(true);
+  console.log('faded');
+  const href = event.target.getAttribute('href');
+  setTimeout(() => {
+      // window.location.href = href;
+      setFaded(false);
+      setSlide(false);
+  }, 1000);
+  }
+
   return (
     <>
-      <PageWrapper languageChoice={languageChoice} >
+      <PageWrapper  languageChoice={languageChoice}fade={faded} >
         <Head>
           <title>Flegg Creative</title>
         </Head>
@@ -556,10 +572,10 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
             <h5>next project</h5>
           </section>
 
-          <section className="next-project">
+          <section className={`${slide? "slide-up":"" } next-project`}>
           {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
-            <Link className="next-link"href={`/work/${nextPost.node.slug}`}>
-            {/* <a  href={nextPost.node.uri}> */}
+            <Link onClick={()=> handleTransition(event)} className="next-link"href={`/work/${nextPost.node.slug}`}>
+           
               <figure className="next-study">
                 <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
               </figure>
@@ -588,13 +604,15 @@ const allPosts = await getCaseStudies();
 
 const currentPost = allPosts.edges.find((post) => post.slug === params.slug);
 const currentPostIndex = allPosts.edges.findIndex((post) => post.slug === params.slug);
-const prevPost = allPosts.edges[currentPostIndex - 1] || allPosts.edges[allPosts.length - 1];
-const nextPost = allPosts.edges[currentPostIndex + 1] || allPosts.edges[0];
+const prevPost = allPosts.edges[currentPostIndex - 1];
+// || allPosts.edges[allPosts.length - 1];
+const nextPost = allPosts.edges[currentPostIndex + 1];
+// || allPosts.edges[0];
 
 
   return {
     props: {
-      nextPost: nextPost? nextPost : null,
+      nextPost: nextPost? nextPost : prevPost ? prevPost : allPosts.edges[0],
       postData: data ? data : null,
     },
   };
