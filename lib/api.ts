@@ -209,7 +209,6 @@ export async function getStudy(slug){
   
     caseStudy(id: $id, idType: $idType) {
          ...PostFields
-         content
        }
  }
   `,
@@ -221,6 +220,28 @@ export async function getStudy(slug){
   }
   )
   return data?.caseStudy
+}
+
+export async function getNextPrev(slug) {
+
+  const caseStudies = await getCaseStudies();
+const currentPost = caseStudies.find((post) => post.slug === slug);
+const currentPostIndex = caseStudies.findIndex((post) => post.slug === slug);
+const prevPost = caseStudies[currentPostIndex - 1] || caseStudies[caseStudies.length - 1];
+const nextPost = caseStudies[currentPostIndex + 1] || caseStudies[0];
+
+
+
+  if (!currentPost) {
+    return {
+      post: false,
+    };
+  }
+
+  return {
+    post: currentPost,
+    morePosts: [prevPost, nextPost],
+  };
 }
 
 

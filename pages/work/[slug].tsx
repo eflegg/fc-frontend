@@ -2,13 +2,14 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { getAllCaseStudiesWithSlug, getAllPostsWithSlug, getPostAndMorePosts, getStudy, getStudyAndMoreStudies } from '../../lib/api'
+import next, { GetStaticPaths, GetStaticProps } from 'next'
+import { getAllCaseStudiesWithSlug, getAllPostsWithSlug, getNextPrev, getPostAndMorePosts, getStudy, getStudyAndMoreStudies } from '../../lib/api'
 import PageWrapper from '../../components/pagewrapper'
 import styled from 'styled-components'
 import theme from '../../components/Theme'
 import Link from 'next/link'
 import { th } from 'date-fns/locale'
+import UseWaypoint from '../../components/useWaypoint'
 
 
 const CaseStudyContainer = styled.div`
@@ -401,11 +402,12 @@ figure.next-study img {
 type WorkSingleProps = {
   postData: any,
   languageChoice: boolean,
-
+ nextPost: any
 }
 
-const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => {
+const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextPost }) => {
   console.log('casestudy: ', postData.caseStudy);
+  console.log('next post: ', nextPost);
 
   return (
     <>
@@ -452,7 +454,9 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
               </p>
               )}
             </article>
-            <hr />
+            <UseWaypoint animClass="grow">
+                <hr />
+                </UseWaypoint>
           </section>
 
 
@@ -468,7 +472,9 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice }) => 
               <p>{postData.caseStudy.theWork.theChallenge}</p>
               )}
             </article>
-            <hr />
+            <UseWaypoint animClass="grow">
+                <hr />
+                </UseWaypoint>
           </section>
 
           <section className="full-width-img">
@@ -571,12 +577,13 @@ export default WorkSingle;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await getStudy(params.slug);
-
+const nextPrev = await getNextPrev(params.slug);
 
 
   return {
     props: {
       postData: data ? data : null,
+      nextPost: nextPrev ? nextPrev : null,
     },
   };
 }

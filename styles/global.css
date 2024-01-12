@@ -248,3 +248,22 @@ h3 {
 .appear {
     opacity: 1;
 }
+
+.grow {
+    display: inline-block;
+    width: 0%;
+    transition: all 1s ease-in;
+}
+.grow.activated {
+    display: inline-block;
+    width: 100%;
+    transition: all 1s ease-in;
+}
+.appear {
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+.appear.activated {
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}

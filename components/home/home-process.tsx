@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import theme from '../Theme'
 import { useEffect, useState } from 'react'
+import UseWaypoint from '../useWaypoint'
 
 const StyledProcess = styled.section`
     position: relative;
@@ -126,11 +127,15 @@ export default function HomeProcess({}:{}){
         <>
 
 <StyledProcess className="process-statement" data-scroll-section>
+            <UseWaypoint animClass='appear'>
                 <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">
                     From process to final product, accessibility is the driving force behind our work. When you create
                     greater access for more people, you open doors for everyone.
                 </p>
+                </UseWaypoint>
+                <UseWaypoint animClass="grow">
                 <hr />
+                </UseWaypoint>
                 <h3 data-scroll data-scroll-class="appear" data-scroll-repeat="true">This kind of thinking is</h3>
                 <h4 data-scroll-class="appear" data-scroll-repeat="true">transformative</h4>
                 <div className="forget-container">
