@@ -429,7 +429,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
 
   return (
     <>
-      <PageWrapper  languageChoice={languageChoice}fade={faded} >
+      <PageWrapper fade={faded} >
         <Head>
           <title>Flegg Creative</title>
         </Head>

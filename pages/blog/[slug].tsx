@@ -89,7 +89,7 @@ export default function Post({ post, posts, languageChoice }) {
   }
 
   return (
-    <PageWrapper languageChoice={languageChoice}>
+    <PageWrapper >
       <Head>
         <title>
           {post.title} | Flegg Creative

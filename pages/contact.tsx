@@ -129,7 +129,7 @@ export default function Contact({languageChoice}:{languageChoice: string}){
 
 
     return (
-    <PageWrapper languageChoice={languageChoice} >
+    <PageWrapper >
         <Head>
         <title>Contact - Flegg Creative</title>
         </Head>

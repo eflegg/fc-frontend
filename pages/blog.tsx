@@ -39,7 +39,7 @@ export default function Blog({ allPosts: { edges }, preview, languageChoice }) {
 
 
   return (
-    <PageWrapper languageChoice={languageChoice} >
+    <PageWrapper  >
       <Head>
         <title>Flegg Creative</title>
       </Head>

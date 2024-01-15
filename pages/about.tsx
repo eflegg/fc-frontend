@@ -208,7 +208,7 @@ export default function About({ languageChoice }) {
     })
     return (
 
-        <PageWrapper languageChoice={languageChoice}>
+        <PageWrapper >
             <Head>
                 <title>Flegg Creative</title>
             </Head>

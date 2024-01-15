@@ -28,7 +28,7 @@ export default function Index({ allPosts: { edges }, preview, languageChoice, ho
 
 
   return (
-    <PageWrapper languageChoice={languageChoice} >
+    <PageWrapper   >
       <Head>
         <title>Flegg Creative</title>
       </Head>

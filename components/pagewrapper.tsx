@@ -18,7 +18,7 @@ overflow: hidden;
 
 
 
-export default function PageWrapper({ children, languageChoice, fade }) {
+export default function PageWrapper({ children, fade }:{children: any, languageCHoice?:string, fade?:boolean}) {
 
 
   return (
