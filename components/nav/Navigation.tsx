@@ -336,7 +336,7 @@ function handleSubmenuBlur(length:number, position:number){
   }
 }
 
-
+console.log('items: ', items);
 
     return (
         <NavContainer>
@@ -380,7 +380,7 @@ function handleSubmenuBlur(length:number, position:number){
           ):(
             <>
             <li>
-            <a href={item.link}>{item.title}</a>
+            <a href={`/${item.link}`}>{item.title}</a>
            </li>
      
           </>

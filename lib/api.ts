@@ -159,6 +159,7 @@ export async function getStudy(slug){
     caseStudy {
       hero {
         clientWebsiteLink
+        websiteTitle
       }
       images {
         mobileMockup {

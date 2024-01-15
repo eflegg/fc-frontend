@@ -451,7 +451,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
             {postData.caseStudy.hero.clientWebsiteLink && (
               <a className="site-link" href={postData.caseStudy.hero.clientWebsiteLink} target="blank">
                 <div className="link flex">
-                  <p>{postData.caseStudy.hero.clientWebsiteLink}</p>
+                  <p>{postData.caseStudy.hero.websiteTitle}</p>
                   <figure className="arrow-icon">
                     <img src="/images/arrow-right-solid.svg" alt="arrow icon" />
                   </figure>
@@ -546,7 +546,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
               {postData.caseStudy.theProcess.vision && (
                 <p>{postData.caseStudy.theProcess.vision}</p>
               )}
-               {postData.caseStudy.theProcess.buid && (
+               {postData.caseStudy.theProcess.build && (
                 <p>{postData.caseStudy.theProcess.build}</p>
               )}
                {postData.caseStudy.theProcess.launch && (
