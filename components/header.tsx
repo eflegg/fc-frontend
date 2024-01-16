@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import theme from '../components/Theme'
 import Navigation from './nav/Navigation'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 
 const HeaderContainer = styled.header`
@@ -68,7 +69,7 @@ transition: all .25s ease-in;
   
 `
 
-export default function Header() {
+export default function Header({onLinkClick}:{onLinkClick: any}) {
 
   const [headerInView, setHeaderInView]= useState(true);
 
@@ -96,15 +97,30 @@ export default function Header() {
   }
   })
 
+  const [fading, setFading]= useState(false);
+  const router = useRouter()
+
+const handleClick = (e:any, path:any) => {
+ e.preventDefault();
+ setFading(true);
+ console.log('path: ', path);
+ setTimeout(()=>{
+  router.push('/' + path);
+  console.log('default resumed');
+  setFading(false);
+ }, 1000);
+ 
+};
+
   return (
-  <HeaderContainer className={`${headerInView ? "header-viz": "header-not-viz"}`} id="top-nav">
+  <HeaderContainer className={`${headerInView ? "header-viz": "header-not-viz"} ${fading ? "fade-out": "not-fading"}`} id="top-nav">
     <hr className="top" />
       <SkipLink tabIndex={0} className="language--btn" href="#main-content">Skip to main content</SkipLink>
 
       <hgroup>
    
 
-      <a tabIndex={0} href="/">
+      <a onClick={(e)=> onLinkClick(e, "/")} tabIndex={0} href="/">
       <h1 className="logo home fade">
         Flegg Creative
       </h1>
@@ -112,7 +128,7 @@ export default function Header() {
 
   
 
-      <Navigation />
+      <Navigation onLinkClick={onLinkClick}/>
 
      
       </hgroup>

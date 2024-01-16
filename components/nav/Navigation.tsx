@@ -187,7 +187,7 @@ const items = [
     scrollY: any;
   }
 
-export default function Navigation(){
+export default function Navigation({onLinkClick}:{onLinkClick: any}){
   const [navOpen, setNavOpen]= useState(false);
   const [subnav, setSubnav] = useState(null);
   const [subnavIndex, setSubnavIndex] = useState(null);
@@ -338,77 +338,78 @@ function handleSubmenuBlur(length:number, position:number){
 
 console.log('items: ', items);
 
-const router = useRouter()
+// const router = useRouter()
 
-const handleClick = (e:any, path:any) => {
- e.preventDefault()
- console.log('path: ', path);
- setTimeout(()=>{
-  router.push('/' + path);
-  console.log('default resumed');
- }, 1000);
+// const handleClick = (e:any, path:any) => {
+//  e.preventDefault()
+//  console.log('path: ', path);
+//  setTimeout(()=>{
+//   router.push('/' + path);
+//   console.log('default resumed');
+//  }, 1000);
  
-};
+// };
 
 
     return (
         <NavContainer>
-      {size.width < 500 ?  (
-<div className="mobile-menu--toggle">
-    <button 
-    onClick={()=>handleNavClick()}
-      aria-label="menu" 
-      aria-expanded={navOpen ? "true" : "false"} 
-      >Menu
-    </button>
-    {/* <span>Menu</span> */}
-</div>
-):null}
+          {size.width < 500 ?  (
+            <div className="mobile-menu--toggle">
+                <button 
+                onClick={()=>handleNavClick()}
+                  aria-label="menu" 
+                  aria-expanded={navOpen ? "true" : "false"} 
+                  >Menu
+                </button>
+                {/* <span>Menu</span> */}
+            </div>
+          ):null}
 
-<Nav className={size.width < 500 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
-    <ul id="menu1" className={`${navOpen ? "nav-open" : "" } menu`}>
- 
-      {items && items.map((item, index)=>{
-        return(
-          <>
-          {item.submenu && item.submenu.length > 0 ? (
-            <li className="item-with-submenu">
-             
-            <a href={item.link}>{item.title}</a>
-            <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} ><NavCarete /></button>
-            <ul ref={subRef} aria-hidden={subnav === item.title ? "false" : "true"} className="submenu">
-              {item.submenu.map((subItem, index)=>{
-                return(
-                  <>
-               <li>
-                <a onFocus={()=>setSubnavIndex(index)}onBlur={()=> handleSubmenuBlur(item.submenu.length, index)} href={subItem.link}>{subItem.title}</a>
-              </li>
-                  </>
-                )
-              })}
+            <Nav className={size.width < 500 ? "mobile-nav" : "desktop-nav"} aria-label="Flegg Creative navigation">
+                <ul id="menu1" className={`${navOpen ? "nav-open" : "" } menu`}>
             
-           
-            </ul>
-           </li>
-          ):(
-            <>
-            <li key={index}>
-              <Link href="#" onClick={(e) => handleClick(e, item.link)}>
+                  {items && items.map((item, index)=>{
+                    return(
+                      <>
+                      {item.submenu && item.submenu.length > 0 ? (
+                        <li className="item-with-submenu">
+                        
+                        <a href={item.link}>{item.title}</a>
+                        <button ref={buttonRef} onClick={()=> handleSubnavClick(item.title)} aria-expanded={subnav === item.title ? "true" : "false"} ><NavCarete /></button>
+                        <ul ref={subRef} aria-hidden={subnav === item.title ? "false" : "true"} className="submenu">
+                          {item.submenu.map((subItem, index)=>{
+                            return(
+                              <>
+                          <li>
+                            <a onFocus={()=>setSubnavIndex(index)}onBlur={()=> handleSubmenuBlur(item.submenu.length, index)} href={subItem.link}>{subItem.title}</a>
+                          </li>
+                              </>
+                            )
+                          })}
+                        
+                      
+                        </ul>
+                      </li>
+                      ):(
+                        <>
+                        <li key={index}>
+                          {/* <Link href="#" onClick={(e) => handleClick(e, item.link)}> */}
+                          <Link href="#" onClick={(e) => onLinkClick(e, item.link)}>
 
-          {item.title}
-              </Link>
-           </li>
-     
-          </>
-        )
-        
-      }
-     
-      </>
-      )})}
-    </ul>
-</Nav>
-</NavContainer>
+                      {item.title}
+                          </Link>
+                      </li>
+                
+                      </>
+                    )
+                    
+                  }
+                
+                  </>
+                  )})}
+                </ul>
+            </Nav>
+        </NavContainer>
     )
 }
 

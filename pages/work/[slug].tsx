@@ -414,28 +414,18 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
 
 
 
-  //the React state hook is used to store the information of whether the classes
-  // .fade-out and .slide-up are active. true or false.
-  // see keyframes file for what the classes are doing
+ 
   const [faded, setFaded]= useState(false);
   const [slide, setSlide]= useState(false);
 
-  //this is your click event. onClick is added to the new project image so 
-  //the necessary classes are added when you click, because the two pieces of state
-  //above are set to true.
+
   function handleTransition(event){
-  setFaded(true);
+  
   setSlide(true);
   console.log('faded');
   const href = event.target.getAttribute('href'); //unclear what this does, if it's necessary 
   setTimeout(() => {
       window.location.href = href; 
-
-      // this is your timeout, and i'm telling it to set the pieces of state to false
-      // thereby removing the classes so the next page is visible
-
-      // look at pagewrapper below
-
       setFaded(false);
       setSlide(false);
   }, 1000);

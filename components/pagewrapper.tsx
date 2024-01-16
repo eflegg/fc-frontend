@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import theme from '../components/Theme'
 import Header from './header'
 import { useState } from 'react'
-
+import { useRouter } from 'next/router'
 
 
 const OuterContainer = styled.div`
@@ -18,7 +18,22 @@ overflow: hidden;
 
 
 
-export default function PageWrapper({ children, fade }:{children: any, languageCHoice?:string, fade?:boolean}) {
+export default function PageWrapper({ children, fade }:{children: any, fade?:boolean}) {
+
+  const [fading, setFading]= useState(false);
+  const router = useRouter()
+
+  const handleClick = (e:any, path:any) => {
+    e.preventDefault();
+    setFading(true);
+    console.log('path: ', path);
+    setTimeout(()=>{
+     router.push('/' + path);
+     console.log('default resumed');
+    }, 500);
+    router.pathname == path ? setFading(false) : null
+    
+   };
 
 
   return (
@@ -26,21 +41,9 @@ export default function PageWrapper({ children, fade }:{children: any, languageC
       <Meta />
       <OuterContainer>
 
-        <Header />
+        <Header onLinkClick ={handleClick}/>
 
-      {/* main content needs to check for class .faded. it also needs
-      to be attached to a timeout so the class is removed when the
-      next page is loaded
-      
-      since this main element applies to every page via the PageWrapper
-      component, the prop to control it needs to be passed from the
-      page (right now only work single) into that page's PageWrapper 
-      and down here to the main element
-
-      Go to slug.tsx in the work folder
-      */}
-
-        <main  className={`${fade ? "fade-out" :""} main-content scroll `} data-scroll-container id="main-content">{children}</main>
+        <main  className={`${fading ? "fade-out" :""} main-content scroll `} data-scroll-container id="main-content">{children}</main>
 
         <Footer />
       </OuterContainer>
