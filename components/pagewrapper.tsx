@@ -18,7 +18,7 @@ overflow: hidden;
 
 
 
-export default function PageWrapper({ children, fade }:{children: any, fade?:boolean}) {
+export default function PageWrapper({ children, fade, noFooter }:{children: any, fade?:boolean, noFooter?:boolean}) {
 
   const [fading, setFading]= useState(false);
   const router = useRouter()
@@ -43,9 +43,9 @@ export default function PageWrapper({ children, fade }:{children: any, fade?:boo
 
         <Header onLinkClick ={handleClick}/>
 
-        <main  className={`${fading ? "fade-out" :""} main-content scroll `} data-scroll-container id="main-content">{children}</main>
+        <main  className={`${fading ? "fade-out" :""} ${fade ? "fade-out" :""} main-content scroll `} data-scroll-container id="main-content">{children}</main>
 
-        <Footer />
+        <Footer noFooter={noFooter}/>
       </OuterContainer>
     </>
   )

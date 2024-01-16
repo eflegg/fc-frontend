@@ -13,6 +13,7 @@ import UseWaypoint from '../../components/useWaypoint'
 import { useState } from 'react'
 
 
+
 const CaseStudyContainer = styled.div`
 
 section.hero {
@@ -350,15 +351,44 @@ section.full-width-img {
 }
 
 
-section.next-project {
+
+
+.arrow-icon {
+    width: 1rem;
+    transform: rotateY(0) rotate(-45deg);
+    margin: 0;
+    img {
+      object-fit: fill;
+    }
+}
+
+
+
+.position-zero {
+  object-position: 0 0;
+}
+
+
+
+
+`
+const NextProject = styled.section`
   padding: 1rem;
   height: 30vh;
   margin: 0;
   overflow: hidden;
   position: absolute;
-  bottom: -14rem;
+  bottom: 0;
   width: 100%;
-  z-index: 90;
+  z-index: 190;
+  .next-study {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  img{
+    object-position: 0 0;
+  }
+}
   h5 {
     color: ${theme.colours.green};
     margin: 0;
@@ -370,34 +400,6 @@ section.next-project {
     margin: 0;
     padding: 0 2rem;
   }
-}
-
-.arrow-icon {
-    width: 1rem;
-    transform: rotateY(0) rotate(-45deg);
-    margin: 0;
-    img {
-      object-fit: fill;
-    }
-}
-
-figure.next-study {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-
-}
-
-.position-zero {
-  object-position: 0 0;
-}
-
-figure.next-study img {
-  object-position: 0 0;
-}
-
-
-
 `
 
 
@@ -409,8 +411,8 @@ type WorkSingleProps = {
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextPost }) => {
-  console.log('casestudy: ', postData.caseStudy);
-  console.log('next post: ', nextPost);
+  // console.log('casestudy: ', postData.caseStudy);
+  // console.log('next post: ', nextPost);
 
 
 
@@ -419,27 +421,30 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
   const [slide, setSlide]= useState(false);
 
 
-  function handleTransition(event){
+  const router = useRouter()
+  const handleClick = (e:any, path:any) => {
+    console.log('router path:', router.pathname);
+    e.preventDefault();
+    setFaded(true);
+    setSlide(true);
+
+    console.log('path: ', path);
+    setTimeout(()=>{
+      router.push('/work/' + path);
+    }, 500);
+    setTimeout(()=>{
+     setSlide(false);
+     setFaded(false);
+    }, 2000);
   
-  setSlide(true);
-  console.log('faded');
-  const href = event.target.getAttribute('href'); //unclear what this does, if it's necessary 
-  setTimeout(() => {
-      window.location.href = href; 
-      setFaded(false);
-      setSlide(false);
-  }, 1000);
-  }
+ 
+    
+   };
 
   return (
     <>
-    {/* here I'm passing down the piece of state that controls the fade class to 
-    pagewrapper so that pagewrapper can tell main-content whether or not it 
-    has the .fade-out class 
-    
-    go down to next project
-    */}
-      <PageWrapper fade={faded} >
+  
+      <PageWrapper noFooter fade={faded} >
         <Head>
           <title>Flegg Creative</title>
         </Head>
@@ -450,8 +455,8 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
           <section className="hero">
             <figure className="hero-img">
               {postData.featuredImage && (
-              <img className="position-0" src={postData.featuredImage.node.sourceUrl}
-              alt={postData.featuredImage.node.altText? postData.featuredImage.node.altText : "featured image"} />
+              <img className="position-zero" src={postData.featuredImage.node.sourceUrl}
+              alt={postData.featuredImage.node.altText? postData.featuredImage.node.altText : "case study featured image"} />
               )}
               </figure>
             <hgroup className="company-name">
@@ -583,14 +588,10 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
             <h5>next project</h5>
           </section>
 
-            {/* here is the slide piece of state controlling whether or not the 
-            section has .slide-up class. times out after */}
-          <section className={`${slide? "slide-up":"" } next-project`}>
+          {/* <section className={`${slide? "slide-up" : "" } next-project`}>
           {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
 
-            // here is the onClick event that fires the function above
-
-            <Link onClick={()=> handleTransition(event)} className="next-link"href={`/work/${nextPost.node.slug}`}>
+            <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
            
               <figure className="next-study">
                 <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
@@ -598,12 +599,24 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
          
             </Link>
           )}
-          </section>
+          </section> */}
 
           <div className="cursor"></div>
           <div className="cursor-2"></div>
         </CaseStudyContainer>
       </PageWrapper>
+      <NextProject className={`${slide? "slide-up" : "" } next-project`}>
+          {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
+
+            <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
+           
+              <figure className="next-study">
+                <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
+              </figure>
+         
+            </Link>
+          )}
+          </NextProject>
     </>
   )
 

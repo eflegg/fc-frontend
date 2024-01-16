@@ -75,17 +75,15 @@ export default function Header({onLinkClick}:{onLinkClick: any}) {
 
   useEffect(()=> {
     var prevScrollPos = window.scrollY;
-  // console.log(`the scroll position starts at ${prevScrollPos}px`);
+  console.log(`the scroll position starts at ${prevScrollPos}px`);
   const headerScrollHandler =()=>{
     const currentScrollPos = window.scrollY;
-    // console.log(currentScrollPos);
+
 
     if (prevScrollPos > currentScrollPos) {
       setHeaderInView(true);
-        // navBar.style.top = '0';
     } else {
       setHeaderInView(false);
-        // navBar.style.top = '-100px';
     }
     prevScrollPos = currentScrollPos;
   }
@@ -100,20 +98,20 @@ export default function Header({onLinkClick}:{onLinkClick: any}) {
   const [fading, setFading]= useState(false);
   const router = useRouter()
 
-const handleClick = (e:any, path:any) => {
- e.preventDefault();
- setFading(true);
- console.log('path: ', path);
- setTimeout(()=>{
-  router.push('/' + path);
-  console.log('default resumed');
-  setFading(false);
- }, 1000);
+// const handleClick = (e:any, path:any) => {
+//  e.preventDefault();
+//  setFading(true);
+//  console.log('path: ', path);
+//  setTimeout(()=>{
+//   router.push('/' + path);
+//   console.log('default resumed');
+//   setFading(false);
+//  }, 1000);
  
-};
+// };
 
   return (
-  <HeaderContainer className={`${headerInView ? "header-viz": "header-not-viz"} ${fading ? "fade-out": "not-fading"}`} id="top-nav">
+  <HeaderContainer className={`${headerInView ? "header-viz": "header-not-viz"} `} id="top-nav">
     <hr className="top" />
       <SkipLink tabIndex={0} className="language--btn" href="#main-content">Skip to main content</SkipLink>
 

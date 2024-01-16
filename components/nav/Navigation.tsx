@@ -336,19 +336,9 @@ function handleSubmenuBlur(length:number, position:number){
   }
 }
 
-console.log('items: ', items);
+// console.log('items: ', items);
 
-// const router = useRouter()
 
-// const handleClick = (e:any, path:any) => {
-//  e.preventDefault()
-//  console.log('path: ', path);
-//  setTimeout(()=>{
-//   router.push('/' + path);
-//   console.log('default resumed');
-//  }, 1000);
- 
-// };
 
 
     return (

@@ -149,9 +149,9 @@ figure.logo-footer img {
 
 
 
-export default function Footer(props) {
+export default function Footer({noFooter}:{noFooter?:boolean}) {
   return (
-    <FooterContainer className="">
+    <FooterContainer className={`${noFooter ? "display-none" : ""}`}>
           <section className="contact flex">
                     <h1 className="good-fit">wondering if we're a good fit?</h1>
                     <h2 className="in-touch">get in touch</h2>
@@ -172,7 +172,7 @@ export default function Footer(props) {
                     <h3 className="create-inclusive">create truly inclusive digital spaces with us</h3>
                     <h4>get our newsletter and find out why we put accessibility first</h4>
 
-                    <SignUpContainer languageChoice={props.languageChoice} text="Get our newsletter"  buttonText="Sign up" />
+                    <SignUpContainer languageChoice={"English"} text="Get our newsletter"  buttonText="Sign up" />
 
                    
                 </section>
