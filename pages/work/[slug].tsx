@@ -18,7 +18,7 @@ const CaseStudyContainer = styled.div`
 
 section.hero {
   height: 80vh;
-  min-height: 285px;
+
   padding: 8rem 1rem 4rem 1rem;
   position: relative;
   @media ${theme.devices.small} {
@@ -411,7 +411,7 @@ type WorkSingleProps = {
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextPost }) => {
-  // console.log('casestudy: ', postData.caseStudy);
+  console.log('casestudy: ', postData.caseStudy);
   // console.log('next post: ', nextPost);
 
 
@@ -423,7 +423,6 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
 
   const router = useRouter()
   const handleClick = (e:any, path:any) => {
-    console.log('router path:', router.pathname);
     e.preventDefault();
     setFaded(true);
     setSlide(true);
@@ -432,14 +431,17 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
     setTimeout(()=>{
       router.push('/work/' + path);
     }, 500);
+
     setTimeout(()=>{
-     setSlide(false);
-     setFaded(false);
-    }, 2000);
+      setSlide(false);
+    }, 3000);
+
+    if(path == postData.slug){
+      setFaded(false);
+    }
   
- 
-    
    };
+   console.log('fade: ', faded);
 
   return (
     <>
@@ -450,7 +452,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
         </Head>
       
 
-        <CaseStudyContainer>
+        <CaseStudyContainer className={`${postData.slug}`}>
 
           <section className="hero">
             <figure className="hero-img">

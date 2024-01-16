@@ -35,7 +35,7 @@ export default function PageWrapper({ children, fade, noFooter }:{children: any,
     
    };
 
-
+console.log('fading: ', fading);
   return (
     <>
       <Meta />

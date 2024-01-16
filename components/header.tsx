@@ -82,7 +82,10 @@ export default function Header({onLinkClick}:{onLinkClick: any}) {
 
     if (prevScrollPos > currentScrollPos) {
       setHeaderInView(true);
-    } else {
+    } else if(prevScrollPos == currentScrollPos){
+      setHeaderInView(true);
+    }
+    else {
       setHeaderInView(false);
     }
     prevScrollPos = currentScrollPos;
@@ -95,20 +98,7 @@ export default function Header({onLinkClick}:{onLinkClick: any}) {
   }
   })
 
-  const [fading, setFading]= useState(false);
-  const router = useRouter()
 
-// const handleClick = (e:any, path:any) => {
-//  e.preventDefault();
-//  setFading(true);
-//  console.log('path: ', path);
-//  setTimeout(()=>{
-//   router.push('/' + path);
-//   console.log('default resumed');
-//   setFading(false);
-//  }, 1000);
- 
-// };
 
   return (
   <HeaderContainer className={`${headerInView ? "header-viz": "header-not-viz"} `} id="top-nav">
