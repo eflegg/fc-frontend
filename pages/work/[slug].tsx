@@ -429,7 +429,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
   console.log('faded');
   const href = event.target.getAttribute('href'); //unclear what this does, if it's necessary 
   setTimeout(() => {
-      // window.location.href = href; same with this
+      window.location.href = href; 
 
       // this is your timeout, and i'm telling it to set the pieces of state to false
       // thereby removing the classes so the next page is visible

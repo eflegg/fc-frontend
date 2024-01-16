@@ -8,6 +8,7 @@ import SubMenuItem from '../../Submenu';
 import Submenu from '../../Submenu';
 import { useClickOutside } from './useClickOutside';
 import {useKeyPress} from './useKeyPress'
+import { useRouter } from 'next/router'
 
 const NavContainer = styled.section`
   .mobile-menu--toggle{
@@ -172,11 +173,10 @@ interface Items {
 
 const items = [
     {title: "about", link: "about"}, 
-    {title: "work", link: "work", submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
+    {title: "work", link: "work", submenu:[]}, 
+    // submenu: [{title: "Aparagus Magazine", srText: "case study", link: "asparagus-magazine"},{title: "Hearth Place Counselling", srText: "case study", link: "hearthplace-counselling"}, {title: "Brendan Bailey", srText: "case study", link: "brendan-bailey"}]}, 
     {title: "blog", link: "blog"}, 
     {title: "contact", link: "contact"}, 
-  
-    //  {title: "Services", link: "services", submenu: [{title: "Websites", srText: "service", link: "websites"},{title: "Marketing Plans", srText: "service", link: "marketing-plans"}, {title: "Brand Design", srText: "service", link: "brand-design"}]}, 
 ]
 
 
@@ -338,6 +338,19 @@ function handleSubmenuBlur(length:number, position:number){
 
 console.log('items: ', items);
 
+const router = useRouter()
+
+const handleClick = (e:any, path:any) => {
+ e.preventDefault()
+ console.log('path: ', path);
+ setTimeout(()=>{
+  router.push('/' + path);
+  console.log('default resumed');
+ }, 1000);
+ 
+};
+
+
     return (
         <NavContainer>
       {size.width < 500 ?  (
@@ -358,7 +371,7 @@ console.log('items: ', items);
       {items && items.map((item, index)=>{
         return(
           <>
-          {item.submenu ? (
+          {item.submenu && item.submenu.length > 0 ? (
             <li className="item-with-submenu">
              
             <a href={item.link}>{item.title}</a>
@@ -379,8 +392,11 @@ console.log('items: ', items);
            </li>
           ):(
             <>
-            <li>
-            <a href={`/${item.link}`}>{item.title}</a>
+            <li key={index}>
+              <Link href="#" onClick={(e) => handleClick(e, item.link)}>
+
+          {item.title}
+              </Link>
            </li>
      
           </>
@@ -396,3 +412,21 @@ console.log('items: ', items);
     )
 }
 
+
+
+// import { useRouter } from 'next/router'
+
+// export default function IndexPage() {
+
+
+//   return (
+//     <div>
+//       Hello World.{" "}
+//       <Link onClick={(e) => handleClick(e, "/about")}>
+//         <a>About</a>
+//       </Link>
+//       <Link onClick={(e) => handleClick(e, "/posts")}>
+//         <a>Posts</a>
+//       </Link>
+//     </div>
+//   );

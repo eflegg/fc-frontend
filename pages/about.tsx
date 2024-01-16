@@ -8,12 +8,11 @@ import { getAllPostsForHome, getHomeData } from '../lib/api'
 import styled from 'styled-components'
 import theme from '../components/Theme'
 import { useEffect, useState } from 'react'
+import UseWaypoint from '../components/useWaypoint'
 
 
 const AboutContainer = styled.div`
-.appear {
-    opacity: 1;
-}
+
 h1, h2 {
     color: ${theme.colours.blue};
 }
@@ -83,10 +82,7 @@ hgroup.tagline h2 {
         text-align: center;
     }
 }
-.track {
-    opacity: 0;
-    transition: opacity 1s;
-}
+
 `
 
 const AboutIntro = styled.div`
@@ -236,10 +232,12 @@ export default function About({ languageChoice }) {
                     </figure>
                 </AboutIntro>
 
-                <hgroup className="tagline">
-                    <h2 className="track h1">Trust us with your vision.</h2>
-                    <h2 className="track">Let us take care of the rest.</h2>
-                </hgroup>
+                <UseWaypoint animClass='appear'>
+                    <hgroup className="tagline">
+                        <h2 className="track h1">Trust us with your vision.</h2>
+                        <h2 className="track">Let us take care of the rest.</h2>
+                    </hgroup>
+                </UseWaypoint>
 
                 <AboutUs>
                     <figure>
