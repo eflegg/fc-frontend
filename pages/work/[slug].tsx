@@ -408,9 +408,12 @@ type WorkSingleProps = {
   languageChoice: boolean,
  nextPost: any,
  fade: boolean;
+ allPosts: any;
+ postArray: any;
+ currentPostIndex: any;
 }
 
-const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextPost }) => {
+const WorkSingle: React.FC<WorkSingleProps> = ({ postData, postArray, nextPost, currentPostIndex, allPosts }) => {
   // console.log('casestudy: ', postData.caseStudy);
   // console.log('next post: ', nextPost);
 
@@ -443,7 +446,12 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
    
   
    };
-   console.log('fade: ', faded);
+  //  console.log('fade: ', faded);
+  console.log('next post: ', nextPost);
+  console.log('all post: ', postArray);
+  console.log('current post: ', postData);
+  console.log('post array first: ', postArray[1]);
+  console.log('current index: ', currentPostIndex);
   
 
   return (
@@ -593,18 +601,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
             <h5>next project</h5>
           </section>
 
-          {/* <section className={`${slide? "slide-up" : "" } next-project`}>
-          {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
-
-            <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
-           
-              <figure className="next-study">
-                <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
-              </figure>
-         
-            </Link>
-          )}
-          </section> */}
+      
 
           <div className="cursor"></div>
           <div className="cursor-2"></div>
@@ -636,7 +633,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 // const nextPrev = await getNextPrev(params.slug);
 const allPosts = await getCaseStudies();
 
+const postArray = allPosts.edges;
+
 const currentPost = allPosts.edges.find((post) => post.slug === params.slug);
+
+//this isn't changing!
 const currentPostIndex = allPosts.edges.findIndex((post) => post.slug === params.slug);
 const prevPost = allPosts.edges[currentPostIndex - 1];
 // || allPosts.edges[allPosts.length - 1];
@@ -644,10 +645,14 @@ const nextPost = allPosts.edges[currentPostIndex + 1];
 // || allPosts.edges[0];
 
 
+
   return {
     props: {
-      nextPost: nextPost? nextPost : prevPost ? prevPost : allPosts.edges[0],
+     
+      nextPost: nextPost != currentPost ? nextPost : postArray[currentPostIndex + 1],
       postData: data ? data : null,
+      postArray: postArray,
+      currentPostIndex: currentPostIndex,
     },
   };
 }
