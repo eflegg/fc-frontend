@@ -75,7 +75,7 @@ export default function Header({onLinkClick}:{onLinkClick: any}) {
 
   useEffect(()=> {
     var prevScrollPos = window.scrollY;
-  console.log(`the scroll position starts at ${prevScrollPos}px`);
+  // console.log(`the scroll position starts at ${prevScrollPos}px`);
   const headerScrollHandler =()=>{
     const currentScrollPos = window.scrollY;
 

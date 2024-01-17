@@ -411,7 +411,7 @@ type WorkSingleProps = {
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextPost }) => {
-  console.log('casestudy: ', postData.caseStudy);
+  // console.log('casestudy: ', postData.caseStudy);
   // console.log('next post: ', nextPost);
 
 
@@ -423,6 +423,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
 
   const router = useRouter()
   const handleClick = (e:any, path:any) => {
+    console.log(path, postData.slug);
     e.preventDefault();
     setFaded(true);
     setSlide(true);
@@ -430,18 +431,20 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, languageChoice, nextP
     console.log('path: ', path);
     setTimeout(()=>{
       router.push('/work/' + path);
+    
     }, 500);
-
+    setTimeout(()=>{
+      setFaded(false);
+    }, 1500)
     setTimeout(()=>{
       setSlide(false);
     }, 3000);
 
-    if(path == postData.slug){
-      setFaded(false);
-    }
+   
   
    };
    console.log('fade: ', faded);
+  
 
   return (
     <>
