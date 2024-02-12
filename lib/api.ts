@@ -225,27 +225,6 @@ export async function getStudy(slug){
   return data?.caseStudy
 }
 
-export async function getNextPrev(slug) {
-
-  const caseStudies = await getAllCaseStudiesWithSlug();
-const currentPost = caseStudies.edges.find((post) => post.slug === slug);
-const currentPostIndex = caseStudies.edges.findIndex((post) => post.slug === slug);
-const prevPost = caseStudies.edges[currentPostIndex - 1] || caseStudies.edges[caseStudies.length - 1];
-const nextPost = caseStudies.edges[currentPostIndex + 1] || caseStudies[0];
-
-
-
-  if (!currentPost) {
-    return {
-      post: false,
-    };
-  }
-
-  return {
-    post: currentPost,
-    morePosts: [prevPost, nextPost],
-  };
-}
 
 
 export async function getAllPostsForHome(preview) {
@@ -395,10 +374,11 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
     delete data.post.revisions
   }
 
+  data
   // Filter out the main post
-  data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug)
-  // If there are still 3 posts, remove the last one
-  if (data.posts.edges.length > 2) data.posts.edges.pop()
+  // data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug)
+  // // If there are still 3 posts, remove the last one
+  // if (data.posts.edges.length > 2) data.posts.edges.pop()
 
   return data
 }
@@ -465,3 +445,19 @@ export async function getStudyAndMoreStudies(slug, preview, previewData) {
 
   return data
 }
+
+
+
+
+// <NextProject className={`${slide? "slide-up" : "" } next-project`}>
+// {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
+
+//   <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
+ 
+//     <figure className="next-study">
+//       <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
+//     </figure>
+
+//   </Link>
+// )}
+// </NextProject>

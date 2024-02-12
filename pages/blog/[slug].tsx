@@ -80,9 +80,11 @@ p{
   
  `
 
-export default function Post({ post, posts, languageChoice }) {
+export default function Post({ post, posts, morePosts }) {
   const router = useRouter()
-  const morePosts = posts?.edges
+  const allMorePosts = posts?.edges
+  console.log('all more posts', allMorePosts);
+  console.log('next prev posts', morePosts);
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -115,14 +117,18 @@ export default function Post({ post, posts, languageChoice }) {
             />
 
 
-            <Link href="/blog">
-              <p className="back-btn">Back to Blog</p>
+            <Link href={`/blog/${morePosts[1].node.slug}`}>
+              <p className="back-btn">previous post</p>
+
+            </Link>
+
+            <Link href={`/blog/${morePosts[0].node.slug}`}>
+              <p className="back-btn">next post</p>
 
             </Link>
           </BlogContainer>
 
-          {/* <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+       
         </>
       )}
 
@@ -137,11 +143,18 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   const data = await getPostAndMorePosts(params?.slug, preview, previewData)
 
+
+  const currentPostIndex = data.posts.edges.findIndex(({ node }) => node.slug === params.slug);
+  const prevPost = data.posts.edges[currentPostIndex - 1] || data.posts.edges[data.posts.edges.length - 1];
+  const nextPost = data.posts.edges[currentPostIndex + 1] || data.posts.edges[0];
+ 
+
   return {
     props: {
       preview,
       post: data.post,
       posts: data.posts,
+      morePosts: [prevPost, nextPost],
     },
     revalidate: 60,
   }

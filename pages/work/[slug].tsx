@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import next, { GetStaticPaths, GetStaticProps } from 'next'
-import { getAllCaseStudiesWithSlug, getAllPostsWithSlug, getCaseStudies, getNextPrev, getPostAndMorePosts, getStudy, getStudyAndMoreStudies } from '../../lib/api'
+import { getAllCaseStudiesWithSlug, getAllPostsWithSlug, getCaseStudies, getPostAndMorePosts, getStudy, getStudyAndMoreStudies } from '../../lib/api'
 import PageWrapper from '../../components/pagewrapper'
 import styled from 'styled-components'
 import theme from '../../components/Theme'
@@ -405,21 +405,16 @@ const NextProject = styled.section`
 
 type WorkSingleProps = {
   postData: any,
-  languageChoice: boolean,
  nextPost: any,
- fade: boolean;
- allPosts: any;
- postArray: any;
- currentPostIndex: any;
+ fade: boolean,
+ allPosts: any,
 }
 
-const WorkSingle: React.FC<WorkSingleProps> = ({ postData, postArray, nextPost, currentPostIndex, allPosts }) => {
-  // console.log('casestudy: ', postData.caseStudy);
-  // console.log('next post: ', nextPost);
-
-
-
+const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost }) => {
+  console.log('all posts: ', allPosts);
+  console.log('next posts: ', nextPost);
  
+
   const [faded, setFaded]= useState(false);
   const [slide, setSlide]= useState(false);
 
@@ -446,12 +441,9 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, postArray, nextPost, 
    
   
    };
-  //  console.log('fade: ', faded);
-  console.log('next post: ', nextPost);
-  console.log('all post: ', postArray);
-  console.log('current post: ', postData);
-  console.log('post array first: ', postArray[1]);
-  console.log('current index: ', currentPostIndex);
+
+
+
   
 
   return (
@@ -601,24 +593,26 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, postArray, nextPost, 
             <h5>next project</h5>
           </section>
 
+          <NextProject className={`${slide? "slide-up" : "" } next-project`}>
+{nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
+
+  <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
+ 
+    <figure className="next-study">
+      <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
+    </figure>
+
+  </Link>
+)}
+</NextProject>
+
       
 
           <div className="cursor"></div>
           <div className="cursor-2"></div>
         </CaseStudyContainer>
       </PageWrapper>
-      <NextProject className={`${slide? "slide-up" : "" } next-project`}>
-          {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
-
-            <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
-           
-              <figure className="next-study">
-                <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
-              </figure>
-         
-            </Link>
-          )}
-          </NextProject>
+  
     </>
   )
 
@@ -630,29 +624,19 @@ export default WorkSingle;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await getStudy(params.slug);
-// const nextPrev = await getNextPrev(params.slug);
+
 const allPosts = await getCaseStudies();
 
-const postArray = allPosts.edges;
-
-const currentPost = allPosts.edges.find((post) => post.slug === params.slug);
-
-//this isn't changing!
-const currentPostIndex = allPosts.edges.findIndex((post) => post.slug === params.slug);
-const prevPost = allPosts.edges[currentPostIndex - 1];
-// || allPosts.edges[allPosts.length - 1];
-const nextPost = allPosts.edges[currentPostIndex + 1];
-// || allPosts.edges[0];
-
-
+const currentPostIndex = allPosts.edges.findIndex(({ node }) => node.slug === params.slug);
+const prevPost = allPosts.edges[currentPostIndex - 1] || allPosts.edges[allPosts.edges.length - 1];
+const nextPost = allPosts.edges[currentPostIndex + 1] || allPosts.edges[0];
 
   return {
     props: {
      
-      nextPost: nextPost != currentPost ? nextPost : postArray[currentPostIndex + 1],
+   allPosts: allPosts,
       postData: data ? data : null,
-      postArray: postArray,
-      currentPostIndex: currentPostIndex,
+      nextPost: nextPost,
     },
   };
 }
