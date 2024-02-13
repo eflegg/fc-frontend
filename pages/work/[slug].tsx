@@ -445,15 +445,15 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
   const router = useRouter()
   const handleClick = (e:any, path:any) => {
   
-    // e.preventDefault();
+    e.preventDefault();
     // setFaded(true);
     setSlide(true);
 
     // console.log('path: ', path);
-    // setTimeout(()=>{
-    //   router.push('/work/' + path);
+    setTimeout(()=>{
+      router.push('/work/' + path);
     
-    // }, 500);
+    }, 500);
     // setTimeout(()=>{
     //   setFaded(false);
     // }, 1500)
