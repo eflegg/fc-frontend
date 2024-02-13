@@ -177,11 +177,15 @@ h1, .h1 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 110%;
-    color: var(--blue);
-  
-color:var(--orange);
-    margin: 0.3rem 0 0.6rem 0;
     color: var(--orange);
+    margin: 0.3rem 0 0.6rem 0;
+    @media (min-width: 600px){
+        font-size: 4.5rem;
+    }
+    @media (min-width: 768px){
+        font-size: 6.5rem;
+    }
+   
 }
 
 h3 {
@@ -233,8 +237,11 @@ h3 {
     position: relative;
     flex-direction: column;
     justify-content: flex-end;
-    @media (min-width: 768px){
+    @media (min-width: 600px){
         height: 600px;
+    }
+    @media (min-width:768px){
+        height: 900px;
     }
     @media (min-width: 1000px){
         height: 900px;

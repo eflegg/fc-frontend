@@ -22,6 +22,7 @@ const StyledServices = styled.section`
 p, h2 {
     color: ${theme.colours.cream};
     font-weight: 400;
+    margin: 0;
 }
 .asp-link {
     color: ${theme.colours.green};

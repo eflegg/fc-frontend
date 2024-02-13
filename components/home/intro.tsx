@@ -17,8 +17,9 @@ const StyledIntro = styled.section`
       padding: 4rem;
     }
     h1, .h1 {
-      font-size: 2.5rem;
-    font-weight: 900;
+      /* font-size: 2.5rem; */
+      font-weight: 900;
+   
       @media ${theme.devices.medium}{
         font-size: 8rem;
       }
@@ -26,37 +27,37 @@ const StyledIntro = styled.section`
   }
   .flegg {
     color: ${theme.colours.green};
-    align-self: center;
+    @media ${theme.devices.small}{    
+      align-self: center;
+    }
   }
-
-    .audience {
-      justify-content: flex-end;
-      p {
-        text-align: right;
-        width: 60%;
-        color: black;
-      }
-      @media ${theme.devices.small}{
-        position: absolute;
-      top: 260px;
-      right: 10.3rem;
+  .audience {
+    justify-content: flex-end;
+    p {
+      text-align: right;
       width: 60%;
-      }
-      @media ${theme.devices.medium}{
-        top: 400px;
-      }
+      color: black;
     }
-
-    .focused {
-      color: ${theme.colours.blue};
+    @media ${theme.devices.small}{
+      position: absolute;
+    top: 260px;
+    right: 6.3rem;
+    width: 60%;
     }
-
-    .designs {
-      color: ${theme.colours.purple};
-      @media ${theme.devices.medium}{
-          margin-left: 14rem;
-        }
+    @media ${theme.devices.medium}{
+      top: 400px;
+      right: 10.3rem;
     }
+  }
+  .focused {
+    color: ${theme.colours.blue};
+  }
+  .designs {
+    color: ${theme.colours.purple};
+    @media ${theme.devices.small}{    
+      align-self: center;
+    }
+  }
     figure.home-graphic {
     margin: 0;
     position: absolute;

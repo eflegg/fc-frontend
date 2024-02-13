@@ -24,6 +24,7 @@ const CaseStudyContainer = styled.div`
   opacity: 0;
   transition: opacity .5s ease-in-out;
   background: ${theme.colours.cream};
+  background: slateblue;
   transition: opacity .5s ease-in-out;
   &.activated {
     opacity: 1;
