@@ -36,10 +36,10 @@ main {
  
 }
 
-.next-project.slide-up {
+/* .next-project.slide-up {
     animation: slide-up 1s forwards;
-    /* background-color: var(--background); */
-}
+  
+} */
 
 @keyframes slide-up {
     0% {

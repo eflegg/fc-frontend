@@ -396,14 +396,20 @@ const NextProject = styled.section`
   bottom: 0;
   width: 100%;
   z-index: 190;
-  .next-study {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  img{
-    object-position: 0 0;
+  transition: all 1s ease-in-out;
+  &.slide-up {
+    height: 100vh;
+    padding: 6rem 2rem;
+    transition: all 1s ease-in-out;
   }
-}
+  .next-study {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    img{
+      object-position: 0 0;
+  }
+  }
   h5 {
     color: ${theme.colours.green};
     margin: 0;
@@ -416,6 +422,7 @@ const NextProject = styled.section`
     padding: 0 2rem;
    
   }
+
 `
 
 
