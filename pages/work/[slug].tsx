@@ -17,30 +17,31 @@ import { useState } from 'react'
 const CaseStudyContainer = styled.div`
 .fade-layer {
   position: absolute;
-  z-index: 20;
+  z-index: 1;
   top: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
   transition: opacity .5s ease-in-out;
   background: ${theme.colours.cream};
-  background: slateblue;
+  /* background: slateblue; */
   transition: opacity .5s ease-in-out;
   &.activated {
     opacity: 1;
+    z-index: 20;
   }
 }
   position: relative;
   z-index: 10;
   section.hero {
-  height: 80vh;
-  min-height: 60rem;
-  padding: 8rem 1rem 4rem 1rem;
-  position: relative;
-  @media ${theme.devices.small} {
-    min-height: 40rem;
-    padding: 6rem 2rem;
-  }
+    height: 100vh;
+    padding: 8rem 1rem 4rem 1rem;
+    position: relative;
+    @media ${theme.devices.small} {
+      height: 80vh;
+      min-height: 40rem;
+      padding: 6rem 2rem;
+    }
 }
 
 figure.hero-img {
@@ -182,6 +183,7 @@ section.challenge {
 div.bg-mockup {
   background-color: ${theme.colours.green};
   margin-bottom: 8rem;
+  padding-bottom: 2rem;
 }
 
 section.keywords {
@@ -350,6 +352,9 @@ figure.single-stalk {
 section.full-width-img {
   /* border: 3px solid orange; */
   padding-bottom: 10rem;
+  &.tablet-mock {
+    padding-bottom: 0;
+  }
   img {
     object-position: 0 36px;
   }
@@ -360,6 +365,7 @@ section.full-width-img {
     margin: 1rem;
     @media ${theme.devices.small} {
       margin: 2rem;
+      padding-bottom: 10rem;
     }
   }
   @media ${theme.devices.small} {
@@ -399,9 +405,12 @@ const NextProject = styled.section`
   z-index: 190;
   transition: all 1s ease-in-out;
   &.slide-up {
-    height: 100vh;
+    height: 95vh;
     padding: 6rem 2rem;
     transition: all 1s ease-in-out;
+    @media ${theme.devices.small}{
+      height: 100vh;
+    }
   }
   .next-study {
     width: 100%;
@@ -454,7 +463,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
     setTimeout(()=>{
       router.push('/work/' + path);
     
-    }, 1500);
+    }, 1000);
     // setTimeout(()=>{
     //   setFaded(false);
     // }, 1500)
@@ -543,7 +552,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
                 </UseWaypoint>
           </section>
 
-          <section className="full-width-img">
+          <section className="full-width-img tablet-mock">
             <div className="bg-mockup">
               {postData.caseStudy.images.tabletMockup && (
               <figure className="lrg-img">

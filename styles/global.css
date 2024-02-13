@@ -127,7 +127,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 0;
 }
 
@@ -157,13 +157,7 @@ a {
 }
 
 li {
-    font-family: "Source Sans Pro";
-
-    /* color: black;
-    font-size: 2.8rem;
-    line-height: 3.8rem;
-    font-weight: 300;
-    margin: 15px 0px; */
+    font-family: "brother-1816", sans-serif;
 }
 
 
@@ -191,12 +185,18 @@ h1, .h1 {
 h3 {
 
     font-family: "Source Sans Pro";
-    font-size: 5.4rem;
+    font-size: 3.6rem;
     text-align: left;
     line-height: 110%;
     font-weight: 700;
     margin-bottom: 20px;
     color: #FFF0DD;
+    @media (min-width: 768px){
+        font-size: 4.4rem;
+    }
+    @media (min-width: 1000px){
+        font-size: 5.4rem;
+    }
 }
 
 

@@ -53,8 +53,10 @@ a {
       opacity: 0;
       width: 0vw;
       height: 0vh;
+      visibility: hidden;
       &.nav-open {
         transition: all .25s ease-in;
+        visibility: visible;
         opacity: 1;
         width: 100vw;
     height: 100vh;
