@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 
 
 const HeaderContainer = styled.header`
-
 transition: all .5s ease-in-out;
 z-index: 99;
 position: fixed;

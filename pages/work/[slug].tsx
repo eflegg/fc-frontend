@@ -453,7 +453,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
     setTimeout(()=>{
       router.push('/work/' + path);
     
-    }, 500);
+    }, 1500);
     // setTimeout(()=>{
     //   setFaded(false);
     // }, 1500)

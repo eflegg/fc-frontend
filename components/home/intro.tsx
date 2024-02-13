@@ -5,11 +5,17 @@ import { useEffect, useState } from 'react'
 
 
 const StyledIntro = styled.section`
-
+    position: relative;
+    margin-top: 10rem;
 
   .intro {
     padding: 1rem;
     flex-direction: column;
+    align-items: flex-start;
+        justify-content: space-between;
+    @media ${theme.devices.small}{
+      padding: 4rem;
+    }
     h1, .h1 {
       font-size: 2.5rem;
     font-weight: 900;
@@ -20,33 +26,29 @@ const StyledIntro = styled.section`
   }
   .flegg {
     color: ${theme.colours.green};
+    align-self: center;
   }
-    .hero {
-    position: relative;
-    margin-top: 10rem;
-    @media ${theme.devices.medium}{
 
-    }
-}
     .audience {
       justify-content: flex-end;
+      p {
+        text-align: right;
+        width: 60%;
+        color: black;
+      }
+      @media ${theme.devices.small}{
+        position: absolute;
+      top: 260px;
+      right: 10.3rem;
+      width: 60%;
+      }
+      @media ${theme.devices.medium}{
         top: 400px;
-        p {
-          text-align: right;
-          width: 60%;
-          color: black;
-        }
-        @media ${theme.devices.medium}{
-
-        }
+      }
     }
 
     .focused {
-      @media ${theme.devices.medium}{
-
-        align-self: center;
-      }
-        color: ${theme.colours.blue};
+      color: ${theme.colours.blue};
     }
 
     .designs {
