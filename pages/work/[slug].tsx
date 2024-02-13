@@ -15,7 +15,22 @@ import { useState } from 'react'
 
 
 const CaseStudyContainer = styled.div`
+.fade-layer {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  background: ${theme.colours.cream};
+  transition: opacity .5s ease-in-out;
+  &.activated {
+    opacity: 1;
+  }
+}
   position: relative;
+  z-index: 10;
   section.hero {
   height: 80vh;
   min-height: 60rem;
@@ -374,18 +389,14 @@ section.full-width-img {
 
 `
 const NextProject = styled.section`
-/* border: 2px solid seagreen; */
   padding: 1rem;
   height: 30vh;
   margin: 0;
-  /* overflow: hidden; */
   position: absolute;
-  /* position: relative; */
   bottom: 0;
   width: 100%;
   z-index: 190;
   .next-study {
-    /* border: 2px solid goldenrod; */
   width: 100%;
   height: 100%;
   margin: 0;
@@ -416,32 +427,32 @@ type WorkSingleProps = {
 }
 
 const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost }) => {
-  console.log('all posts: ', allPosts);
-  console.log('next posts: ', nextPost);
+
  
 
   const [faded, setFaded]= useState(false);
   const [slide, setSlide]= useState(false);
 
+  console.log('slide? ', slide);
 
   const router = useRouter()
   const handleClick = (e:any, path:any) => {
-    console.log(path, postData.slug);
-    e.preventDefault();
-    setFaded(true);
+  
+    // e.preventDefault();
+    // setFaded(true);
     setSlide(true);
 
-    console.log('path: ', path);
-    setTimeout(()=>{
-      router.push('/work/' + path);
+    // console.log('path: ', path);
+    // setTimeout(()=>{
+    //   router.push('/work/' + path);
     
-    }, 500);
-    setTimeout(()=>{
-      setFaded(false);
-    }, 1500)
+    // }, 500);
+    // setTimeout(()=>{
+    //   setFaded(false);
+    // }, 1500)
     setTimeout(()=>{
       setSlide(false);
-    }, 3000);
+    }, 1500);
 
    
   
@@ -461,6 +472,10 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
       
 
         <CaseStudyContainer className={`${postData.slug}`}>
+
+         
+
+       
 
           <section className="hero">
             <figure className="hero-img">
@@ -601,20 +616,22 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
 
           <div className="cursor"></div>
           <div className="cursor-2"></div>
+            <NextProject className={`${slide? "slide-up" : "" } next-project`}>
+                {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
+
+                  <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
+                
+                    <figure className="next-study">
+                      <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
+                    </figure>
+
+                  </Link>
+                )}
+          </NextProject>
+          <div className={`fade-layer ${slide ? "activated" : "" }`}>
+      </div>
         </CaseStudyContainer>
         {/* <h5>next project</h5> */}
-        <NextProject className={`${slide? "slide-up" : "" } next-project`}>
-            {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
-
-              <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
-            
-                <figure className="next-study">
-                  <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
-                </figure>
-
-              </Link>
-            )}
-      </NextProject>
       </PageWrapper>
   
     </>
