@@ -15,15 +15,15 @@ import { useState } from 'react'
 
 
 const CaseStudyContainer = styled.div`
-
-section.hero {
+  position: relative;
+  section.hero {
   height: 80vh;
-
+  min-height: 60rem;
   padding: 8rem 1rem 4rem 1rem;
   position: relative;
   @media ${theme.devices.small} {
+    min-height: 40rem;
     padding: 6rem 2rem;
-        height: 100vh;
   }
 }
 
@@ -83,7 +83,7 @@ section.about-project-container {
     padding: 2rem;
   }
   @media ${theme.devices.medium} {
-    height: 70vh;
+    /* height: 70vh; */
     margin-bottom: 4rem;
     padding: 2rem;
     display: flex;
@@ -286,7 +286,7 @@ section.case-study-text {
     padding: 2rem;
   }
   @media ${theme.devices.medium} {
-    height: 100vh;
+    min-height: 100vh;
     margin-bottom: 12rem;
   }
   article {
@@ -332,7 +332,8 @@ figure.single-stalk {
 }
 
 section.full-width-img {
-  margin-bottom: 10rem;
+  /* border: 3px solid orange; */
+  padding-bottom: 10rem;
   img {
     object-position: 0 36px;
   }
@@ -346,7 +347,7 @@ section.full-width-img {
     }
   }
   @media ${theme.devices.small} {
-    margin-bottom: 15rem;
+    padding-bottom: 15rem;
   }
 }
 
@@ -373,15 +374,18 @@ section.full-width-img {
 
 `
 const NextProject = styled.section`
+/* border: 2px solid seagreen; */
   padding: 1rem;
   height: 30vh;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: absolute;
+  /* position: relative; */
   bottom: 0;
   width: 100%;
   z-index: 190;
   .next-study {
+    /* border: 2px solid goldenrod; */
   width: 100%;
   height: 100%;
   margin: 0;
@@ -399,6 +403,7 @@ const NextProject = styled.section`
   @media ${theme.devices.small} {
     margin: 0;
     padding: 0 2rem;
+   
   }
 `
 
@@ -593,24 +598,23 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
             <h5>next project</h5>
           </section>
 
-          <NextProject className={`${slide? "slide-up" : "" } next-project`}>
-{nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
-
-  <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
- 
-    <figure className="next-study">
-      <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
-    </figure>
-
-  </Link>
-)}
-</NextProject>
-
-      
 
           <div className="cursor"></div>
           <div className="cursor-2"></div>
         </CaseStudyContainer>
+        {/* <h5>next project</h5> */}
+        <NextProject className={`${slide? "slide-up" : "" } next-project`}>
+            {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
+
+              <Link onClick={(e)=> handleClick(e, nextPost.node.slug)} className="next-link" href={`/work/${nextPost.node.slug}`}>
+            
+                <figure className="next-study">
+                  <img src={nextPost.node.featuredImage.node.sourceUrl} alt={nextPost.node.featuredImage.node.altText ? nextPost.node.featuredImage.node.altText: "Decorative image for next case study" } />
+                </figure>
+
+              </Link>
+            )}
+      </NextProject>
       </PageWrapper>
   
     </>

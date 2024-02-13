@@ -13,6 +13,10 @@ background: ${theme.colours.cream};
 position: relative;
 z-index: 1;
 overflow: hidden;
+main {
+  position: relative;
+  height: 100%;
+}
 `
 
 
