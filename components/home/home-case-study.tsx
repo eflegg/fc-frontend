@@ -36,11 +36,26 @@ figure.arrow-icon {
     object-fit: fill;
 }
 }
+.bg-green__home {
+    background-color:${theme.colours.green};
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 2rem;
+    margin-top: 5rem;
+
+}
 .home-mobile-mockup {
-    margin: 0 1rem;
-    position: absolute;
+    position: relative;
+    margin-bottom: 2.5rem;
     top: -10px;
     left: 0;
+    @media ${theme.devices.small}{
+        margin-bottom: 9rem;
+    }
+    @media ${theme.devices.medium}{
+        margin-bottom: 15rem;
+    }
     img {
       border-radius: 30px;
     }
@@ -69,13 +84,13 @@ export default function HomeCaseStudy({}) {
     </a>
 </div>
 
-<div className="bg-green flex">
+<div className="bg-green__home flex">
     <figure className="home-mobile-mockup">
         <img src="images/asp-mobile-mockups.jpg" alt="mockup of asparagus magazine on mobile" />
     </figure>
-    <h2 data-scroll data-scroll-class="appear" data-scroll-repeat="true">Award-winning Asparagus
+    <h2 data-scroll data-scroll-class="appear" className="fade" data-scroll-repeat="true">Award-winning Asparagus
         Magazine</h2>
-    <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">website design and build</p>
+    <p data-scroll data-scroll-class="appear" className="fade" data-scroll-repeat="true">website design and build</p>
 </div>
 
         </StyledServices>

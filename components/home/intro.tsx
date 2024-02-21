@@ -7,7 +7,9 @@ import { useEffect, useState } from 'react'
 const StyledIntro = styled.section`
     position: relative;
     margin-top: 10rem;
-
+    @media ${theme.devices.small}{
+      margin-top: 5rem;
+      }
   .intro {
     padding: 1rem;
     flex-direction: column;

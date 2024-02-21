@@ -38,7 +38,7 @@ const CaseStudyContainer = styled.div`
     padding: 8rem 1rem 4rem 1rem;
     position: relative;
     @media ${theme.devices.small} {
-      height: 80vh;
+      height: 100vh;
       min-height: 40rem;
       padding: 6rem 2rem;
     }
@@ -482,7 +482,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
   return (
     <>
   
-      <PageWrapper noFooter fade={faded} >
+      <PageWrapper noFooter fade={false} >
         <Head>
           <title>Flegg Creative</title>
         </Head>

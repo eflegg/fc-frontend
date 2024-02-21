@@ -36,7 +36,7 @@ export default function Test({ caseStudies, preview, languageChoice }) {
           <title>Case Studies</title>
         </Head>
         <TopSection>
-          <h1>
+          <h1 className="h4">
             check out some of our work
           </h1>
         </TopSection>
