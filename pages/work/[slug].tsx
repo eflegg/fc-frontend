@@ -8,7 +8,6 @@ import PageWrapper from '../../components/pagewrapper'
 import styled from 'styled-components'
 import theme from '../../components/Theme'
 import Link from 'next/link'
-import { th } from 'date-fns/locale'
 import UseWaypoint from '../../components/useWaypoint'
 import { useState } from 'react'
 
@@ -406,7 +405,7 @@ const NextProject = styled.section`
   &.slide-up {
     height: 95vh;
     padding: 6rem 2rem;
-    transition: all 1s ease-in-out;
+    /* transition: all 1s ease-in-out; */
     @media ${theme.devices.small}{
       height: 100vh;
     }
@@ -457,15 +456,13 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
     e.preventDefault();
     setFaded(true);
     setSlide(true);
-    router.push('/work/' + path);
-    // console.log('path: ', path);
-    // setTimeout(()=>{
-    //   router.push('/work/' + path);
+    setTimeout(()=>{
+      router.push('/work/' + path);
     
-    // }, 1000);
+    }, 500);
     setTimeout(()=>{
       setFaded(false);
-    }, 1000)
+    }, 2000)
     setTimeout(()=>{
       setSlide(false);
     }, 2500);
