@@ -1,9 +1,13 @@
-.main-content {
+/* .main-content {
     animation: fade-in 2s forwards;
-}
+} */
 
 .fade-in {
     opacity: 1;
+}
+
+.main-content.fade-in {
+    animation: fade-in 2s forwards;
 }
 
 .main-content.fade-out {

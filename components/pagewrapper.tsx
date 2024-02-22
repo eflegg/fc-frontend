@@ -22,7 +22,7 @@ main {
 
 
 
-export default function PageWrapper({ children, fade, noFooter }:{children: any, fade?:boolean, noFooter?:boolean}) {
+export default function PageWrapper({ children, fade, noFooter, noFade }:{children: any, fade?:boolean, noFooter?:boolean, noFade?:boolean}) {
 
   const [fading, setFading]= useState(false);
   const router = useRouter()
@@ -47,7 +47,7 @@ export default function PageWrapper({ children, fade, noFooter }:{children: any,
 
         <Header onLinkClick ={handleClick}/>
 
-        <main  className={`${fading ? "fade-out" :""} ${fade ? "fade-out" :""} main-content scroll `} data-scroll-container id="main-content">{children}</main>
+        <main  className={`${fading ? "fade-out" :""}  ${fade ? "fade-out" :""} ${!noFade ? "fade-in" :""} main-content scroll `} data-scroll-container id="main-content">{children}</main>
 
         <Footer noFooter={noFooter}/>
       </OuterContainer>

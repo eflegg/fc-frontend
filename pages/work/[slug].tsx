@@ -22,9 +22,8 @@ const CaseStudyContainer = styled.div`
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: opacity .5s ease-in-out;
   background: ${theme.colours.cream};
-  /* background: slateblue; */
+  background: slateblue;
   transition: opacity .5s ease-in-out;
   &.activated {
     opacity: 1;
@@ -40,7 +39,7 @@ const CaseStudyContainer = styled.div`
     @media ${theme.devices.small} {
       height: 100vh;
       min-height: 40rem;
-      padding: 6rem 2rem;
+      padding: 6rem 2rem 4rem;
     }
 }
 
@@ -456,20 +455,20 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
   const handleClick = (e:any, path:any) => {
   
     e.preventDefault();
-    // setFaded(true);
+    setFaded(true);
     setSlide(true);
-
+    router.push('/work/' + path);
     // console.log('path: ', path);
-    setTimeout(()=>{
-      router.push('/work/' + path);
-    
-    }, 1000);
     // setTimeout(()=>{
-    //   setFaded(false);
-    // }, 1500)
+    //   router.push('/work/' + path);
+    
+    // }, 1000);
+    setTimeout(()=>{
+      setFaded(false);
+    }, 1000)
     setTimeout(()=>{
       setSlide(false);
-    }, 2500);
+    }, 2000);
 
    
   
@@ -482,7 +481,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
   return (
     <>
   
-      <PageWrapper noFooter fade={false} >
+      <PageWrapper noFooter fade={false} noFade >
         <Head>
           <title>Flegg Creative</title>
         </Head>
@@ -645,7 +644,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
                   </Link>
                 )}
           </NextProject>
-          <div className={`fade-layer ${slide ? "activated" : "" }`}>
+          <div className={`fade-layer ${faded ? "activated" : "" }`}>
       </div>
         </CaseStudyContainer>
         {/* <h5>next project</h5> */}
