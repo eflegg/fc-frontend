@@ -23,7 +23,7 @@ const CaseStudyContainer = styled.div`
   width: 100%;
   opacity: 0;
   background: ${theme.colours.cream};
-  background: slateblue;
+  /* background: slateblue; */
   transition: opacity .5s ease-in-out;
   &.activated {
     opacity: 1;
@@ -468,7 +468,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
     }, 1000)
     setTimeout(()=>{
       setSlide(false);
-    }, 2000);
+    }, 2500);
 
    
   
