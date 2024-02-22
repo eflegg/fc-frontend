@@ -462,7 +462,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
     }, 1000);
     setTimeout(()=>{
       setFaded(false);
-    }, 2000)
+    }, 1000)
     setTimeout(()=>{
       setSlide(false);
     }, 2500);
