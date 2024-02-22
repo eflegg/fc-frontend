@@ -37,11 +37,11 @@ article.about-top h1 {
     margin-top: 12rem;
     font-size: 2rem;
     color: ${theme.colours.blue};
-    @media ${theme.devices.medium}{
+    @media ${theme.devices.small}{
         font-size: 3rem;
         width: 80%;
     }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
         font-size: 5rem;
         margin: 16rem 5rem 0 0;
         width: 100%;
@@ -50,23 +50,23 @@ article.about-top h1 {
 hgroup.tagline h1, .h1 {
     font-size: 1.7rem;
     color: ${theme.colours.blue};
-    @media ${theme.devices.medium}{
+    @media ${theme.devices.small}{
         font-size: 3.5rem;
     }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
         font-size: 7rem;
         text-align: center;
     }
 }
 hgroup.tagline {
     padding: 2rem;
-    @media ${theme.devices.medium}{
+    @media ${theme.devices.small}{
         padding: 4rem 2rem;
         flex-direction: column;
         justify-content: center;
         margin: 4rem 2rem;
        }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
         margin: 4rem 0 4rem 0;
     }
 }
@@ -74,10 +74,10 @@ hgroup.tagline h2 {
     margin: 0;
     font-size: 1.3rem;
     color: ${theme.colours.orange};
-    @media ${theme.devices.medium}{
+    @media ${theme.devices.small}{
         font-size: 2.5rem;
     }
-    @media ${theme.devices.large} {
+    @media ${theme.devices.medium} {
         font-size: 4rem;
         text-align: center;
     }
@@ -211,7 +211,7 @@ export default function About({ languageChoice }) {
 
             <AboutContainer>
                 <article className="about-top">
-                    <h1>Flegg Creative is a Canada-based design studio led by sisters Erin and Elizabeth Flegg.
+                    <h1>Flegg Creative is a cross-country design studio led by sisters Erin and Elizabeth Flegg.
                     </h1>
                 </article>
 
@@ -279,9 +279,7 @@ export default function About({ languageChoice }) {
                         </p>
                         <p>After completing a degree in English lit and history, I wanted to push my writing skills and explore
                             my
-                            creativity. I got an MFA in creative writing from the University of British Columbia (I had to write
-                            a
-                            novel to get it!) and spent the next years working as a freelance writer, publishing everything from
+                            creativity. I got an MFA in creative writing from the University of British Columbia and spent the next years working as a freelance writer, publishing everything from
                             local news stories to national features with a smattering of fiction and poetry thrown in.</p>
                         <p>A decade later, burnout drove me straight into the arms of my local technical institute (BCIT) where
                             I
@@ -307,7 +305,7 @@ export default function About({ languageChoice }) {
                             life on rural Vancouver Island.</p>
                     </article>
                     <figure>
-                        <img className="about-para" src="images/contact-graphic.svg" alt="colourful graphic" />
+                        <img style={{transform:`rotate(${spinOffset * 0.08}deg)` }} className="about-para" src="images/contact-graphic.svg" alt="colourful graphic" />
                     </figure>
                 </AboutUs>
 

@@ -74,11 +74,11 @@ h3.create-inclusive {
     }
 }
 
-h4 {
-    font-family: "brother-1816", sans-serif;
+p {
+  color: ${theme.colours.cream};
     font-weight: 400;
     margin: 1rem 0 2rem 0;
-    color: var(--background);
+
 }
 input#signup_name,
 input#signup_email {
@@ -170,7 +170,7 @@ export default function Footer({noFooter}:{noFooter?:boolean}) {
 
                 <section className="newsletter flex">
                     <h3 className="create-inclusive">create truly inclusive digital spaces with us</h3>
-                    <h4>get our newsletter and find out why we put accessibility first</h4>
+                    <p>get our newsletter and find out why we put accessibility first</p>
 
                     <SignUpContainer languageChoice={"English"} text="Get our newsletter"  buttonText="Sign up" />
 
