@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import theme from '../Theme'
+import Link from 'next/link'
 
 const StyledWho = styled.section`
     margin-top: 4rem;
@@ -82,9 +83,9 @@ export default function HomeWho({}:{}){
                 </div>
                 <div className="sisters flex">
                     <h6>2 sisters</h6>
-                    <a className="fade" href="about.html">
-                        <button className="btn-transparent">read more about us</button>
-                    </a>
+                    <Link className="fade" href="/about">
+                        <span className="btn-transparent">read more about us</span>
+                    </Link>
                 </div>
         </StyledWho>
     )

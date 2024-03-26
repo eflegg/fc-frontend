@@ -51,6 +51,10 @@ const StyledProcess = styled.section`
     }
     .forget {
     text-align: right;
+    @media ${theme.devices.medium}{
+        width: 50%;
+        margin-left: auto;
+    }
     }
     .home-graphic-2 {
     margin: 0;

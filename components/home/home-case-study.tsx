@@ -1,7 +1,8 @@
-import { CMS_NAME, CMS_URL } from '../../lib/constants'
+
 import styled from 'styled-components'
 import theme from '../Theme'
-import ServiceCard from '../service-card'
+
+import Link from 'next/link'
 
 
 
@@ -43,6 +44,9 @@ figure.arrow-icon {
     flex-direction: column;
     padding: 0 2rem 2rem;
     margin-top: 5rem;
+    @media ${theme.devices.medium}{
+        margin-top: 3rem;
+    }
 
 }
 .home-mobile-mockup {
@@ -69,9 +73,9 @@ export default function HomeCaseStudy({}) {
         <StyledServices className="home-case-study" data-scroll-section>
        
        <div className="case-study-home-links" data-scroll data-scroll-class="appear" data-scroll-repeat="true">
-    <a href="work-single-page.html">
-        <button className="btn-transparent">case study</button>
-    </a>
+    <Link href="/work/asparagus-magazine">
+        <span className="btn-transparent">case study</span>
+    </Link>
 
     <a href="https://www.asparagusmagazine.com" target="_blank">
         <div className="flex">

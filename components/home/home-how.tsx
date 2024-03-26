@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import theme from '../Theme'
 import { useEffect } from 'react'
 import { Waypoint } from 'react-waypoint';
+import Link from 'next/link';
 import UseWaypoint from '../useWaypoint';
 
 const StyledHow = styled.section`
@@ -129,9 +130,9 @@ export default function HomeHow({}:{}){
                 <UseWaypoint animClass="grow">
                 <hr />
                 </UseWaypoint>
-                <a className="fade" href="contact.html">
+                <Link className="fade" href="/contact">
                     <span className="btn-transparent">get in touch</span>
-                </a>
+                </Link>
                 <figure className="home-graphic">
                     <img src="images/graphic.svg" alt="colourful graphic element" />
                 </figure>

@@ -167,7 +167,9 @@ article {
     }
 }
 figure {
-    @media ${theme.devices.large} {
+    width: 100%;
+    margin: 2rem 0;
+    @media ${theme.devices.medium} {
         width: 30%;
         height: 50%;
         position: sticky;
@@ -209,13 +211,13 @@ export default function About({ languageChoice }) {
                 <title>Flegg Creative</title>
             </Head>
 
-            <AboutContainer>
+        <AboutContainer> 
                 <article className="about-top">
                     <h1>Flegg Creative is a cross-country design studio led by sisters Erin and Elizabeth Flegg.
                     </h1>
                 </article>
 
-                <AboutIntro>
+                <AboutIntro className="about-intro">
                     <article>
 
                         <p>Brought together by a vision of combining creativity with modern technology, we offer cutting edge
@@ -269,7 +271,7 @@ export default function About({ languageChoice }) {
                             especially creative people of all kinds.</p>
                     </article>
                 </AboutUs>
-
+ 
                 <AboutUs>
                     <article className="about-erin">
                         <p>I'm Erin Flegg, lead developer and west coast contingent of Flegg Creative. I believe technology
@@ -307,9 +309,9 @@ export default function About({ languageChoice }) {
                     <figure>
                         <img style={{transform:`rotate(${spinOffset * 0.08}deg)` }} className="about-para" src="images/contact-graphic.svg" alt="colourful graphic" />
                     </figure>
-                </AboutUs>
+                </AboutUs> 
 
-            </AboutContainer>
+         </AboutContainer>
 
         </PageWrapper>
     )

@@ -2,13 +2,14 @@
 
 import styled from 'styled-components'
 import theme from '../components/Theme'
-
+import Link from 'next/link';
 import Image from 'next/image';
 import SignUpContainer from './forms/SignUpContainer';
 
 const FooterContainer = styled.footer`
  background-color: rgb(201, 82, 60);
   padding: 1rem;
+  position: relative;
   @media ${theme.devices.small}{
     figure.insta {
         margin-right: 0;
@@ -20,7 +21,7 @@ const FooterContainer = styled.footer`
     display: flex;
         justify-content: space-between;
         padding: 2rem;
-        align-items: flex-end;
+        align-items: flex-start;
 }
 label {
     font-family: "brother-1816", sans-serif;
@@ -117,7 +118,9 @@ figure.insta {
     height: 2rem;
     width: 2rem;
     margin: 0 1rem;
-    border-radius: 0px;
+    img {
+      border-radius: 0px;
+    }
 }
 
 div.contact-insta {
@@ -156,9 +159,9 @@ export default function Footer({noFooter}:{noFooter?:boolean}) {
                     <h1 className="good-fit">wondering if we're a good fit?</h1>
                     <h2 className="in-touch">get in touch</h2>
                     <div className="contact-insta flex">
-                        <a href="/contact.html">
+                        <Link href="/contact">
                             <span className="btn-green">contact</span>
-                        </a>
+                        </Link>
                         <a href="https://www.instagram.com/fleggcreative/">
                             <figure className="insta"><Image src="/images/instagram-brands.svg" alt="Instagram link" width={40} height={40} /></figure>
                         </a>
