@@ -20,14 +20,22 @@ import BlogCard from '../components/blog/blog-card'
 
 
 const BlogListContainer = styled.div`
-
-      background-color: ${theme.colours.cream};
-      padding: 2rem;
-      margin: 12rem 0 4rem 0;
-
-      h1 {
-        color: ${theme.colours.blue};
+    .inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px , 1fr)); 
+      column-gap: 2rem ;
+      @media ${theme.devices.small}{
+           flex-direction: row;
+        }  
       }
+    
+    background-color: ${theme.colours.cream};
+    padding: 2rem;
+    margin: 12rem 0 4rem 0;
+
+    h1 {
+      color: ${theme.colours.blue};
+    }
  `
 
 
@@ -49,13 +57,15 @@ export default function Blog({ allPosts: { edges }, preview, languageChoice }) {
 
         <h1>Articles</h1>
 
+        <div className="inner">
+
         {edges && edges.map((blog, index) => {
           return (
             <BlogCard title={blog.node.title} excerpt={blog.node.excerpt} slug={blog.node.slug} />
           )
         })}
 
-
+</div>
       </BlogListContainer>
 
 

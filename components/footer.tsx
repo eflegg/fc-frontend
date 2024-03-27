@@ -33,7 +33,9 @@ label {
     justify-content: space-between;
     color: #F7F5EE;
     padding-right: 2rem;
+    margin-top: 3rem;
     @media ${theme.devices.small}{
+      margin-top: initial;
       width: 60%;
       padding-left: 2rem;
       padding-right: 1rem;

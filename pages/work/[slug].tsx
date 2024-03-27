@@ -51,6 +51,7 @@ hgroup.company-name {
   position: absolute;
   bottom: 4rem;
   right: 1.5rem;
+  z-index: 10;
   margin-bottom: 1rem;
   h1 {
     text-align: right;
@@ -111,7 +112,7 @@ section.about-project-container {
 article.about-project {
   margin: 0;
   @media ${theme.devices.small} {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
   @media ${theme.devices.medium} {
     width: 50%;
@@ -145,7 +146,7 @@ section.challenge {
     margin-top: 10rem;
   }
   @media ${theme.devices.medium} {
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -154,9 +155,8 @@ section.challenge {
   h3 {
     color: ${theme.colours.green};
     margin: 0;
-    @media ${theme.devices.small} {
-      font-size: 2rem;
-    }
+    font-size: 3rem;
+   
   }
   h4 {
     margin-top: .3rem;
@@ -168,6 +168,7 @@ section.challenge {
     }
   }
   article {
+    margin-bottom: 3rem;
     @media ${theme.devices.medium} {
       width: 50%;
     }
@@ -200,7 +201,7 @@ section.keywords {
   }
   p {
     @media ${theme.devices.small} {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
   article.design-keywords {
@@ -208,7 +209,7 @@ section.keywords {
       width: 70%;
     }
     @media ${theme.devices.medium} {
-      width: 60%;
+      width: 63%;
     }
   }
 }
@@ -242,11 +243,13 @@ figure.icon2 {
 }
 
 
-div.key-btn {
+ul.key-btn {
+  margin-top: 2rem ;
+  display: flex;
   flex-wrap: wrap;
 }
 
-section.keywords button {
+section.keywords li {
   margin: .3rem 1rem 1rem 0;
   font-size: 1rem;
   @media ${theme.devices.small}{
@@ -295,17 +298,19 @@ figure.lrg-img {
 }
 
 section.case-study-text {
+  border: 3px solid orangered;
   padding: 1rem;
   position: relative;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
   @media ${theme.devices.small} {
     padding: 2rem;
   }
   @media ${theme.devices.medium} {
     min-height: 100vh;
-    margin-bottom: 12rem;
+   padding-bottom: 12rem;
   }
   article {
+    margin: 0rem 0rem 5rem 0rem;
     @media ${theme.devices.small} {
       display: flex;
       flex-direction: column;
@@ -326,24 +331,32 @@ section.case-study-text {
 }
 
 figure.single-stalk {
-
+border: 3px solid blue;
   width: 200px;
+  width: 110%;
   height: auto;
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
   margin: 0;
   position: absolute;
-  top: 300px;
-  right: 15rem;
+  bottom: 0;
+  left: -10%;
   opacity: .4;
   z-index: -10;
   img {
       object-fit: fill;
     }
   @media ${theme.devices.small} {
-    width: 600px;
+    /* width: 600px;
     opacity: .4;
-    right: 20rem;
-    bottom: -40rem;
+    right: 20rem; */
+    /* bottom: -40rem; */
+  }
+  @media ${theme.devices.medium}{
+    /* width: 400px;
+    height: auto;
+    right: 30rem;
+    top: -100px; */
+    bottom: 7rem;
   }
 }
 
@@ -564,16 +577,16 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
               <p>{postData.caseStudy.theWork.keywordDescription}
               </p>
             )}
-              <div className="key-btn ">
+              <ul className="key-btn ">
               {postData.caseStudy.theWork.keywords && postData.caseStudy.theWork.keywords.length > 0 ? (
                 postData.caseStudy.theWork.keywords.map((keyword:any, index:number)=>{
                   return (
-                    <button key={index} className="btn-transparent">{keyword.keyword}</button>
+                    <li key={index} className="btn-transparent">{keyword.keyword}</li>
                   )
                 })
               ):null}
              
-              </div>
+              </ul>
             </article>
             {postData.caseStudy.images.graphic && (
             <figure className="triple-stalk">

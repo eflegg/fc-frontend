@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const BlogCardContainer = styled.div`
+height: 100%;
 
 h1 {
     color: ${theme.colours.cream};
@@ -21,23 +22,28 @@ h2{
 p{
     line-height: 110%;
     color: ${theme.colours.black};
-    
+    margin-bottom: 1rem;
     font-size: 1.2rem;
 }
   @media ${theme.devices.medium} {
     display: flex;
     flex-direction: column;
    
-
+}
 
 div.outercard {
+    height: 100%;
     border-bottom: 2px solid ${theme.colours.orange};
     padding: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
 }    
 
 .read-now {
     font-weight: 400;
     color: ${theme.colours.orange};
+    margin-top: auto;
+    margin-bottom: .5rem;
 }
 
 .label {
@@ -65,7 +71,7 @@ div.outercard {
 }
 
    
-}
+
 `
 
 export default function BlogCard({ title, excerpt, slug }) {
