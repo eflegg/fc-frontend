@@ -641,8 +641,7 @@ const WorkSingle: React.FC<WorkSingleProps> = ({ postData, allPosts, nextPost })
           </section>
 
 
-          <div className="cursor"></div>
-          <div className="cursor-2"></div>
+    
             <NextProject className={`${slide? "slide-up" : "" } next-project`}>
                 {nextPost.node.slug && nextPost.node.featuredImage.node.sourceUrl && (
 
