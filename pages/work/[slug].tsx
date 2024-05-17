@@ -298,7 +298,7 @@ figure.lrg-img {
 }
 
 section.case-study-text {
-  border: 3px solid orangered;
+
   padding: 1rem;
   position: relative;
   padding-bottom: 4rem;
@@ -331,15 +331,16 @@ section.case-study-text {
 }
 
 figure.single-stalk {
-border: 3px solid blue;
-  width: 200px;
-  width: 110%;
+
+  width: 300px;
+ 
+ margin: 0 auto;
   height: auto;
   /* transform: rotate(90deg); */
-  margin: 0;
-  position: absolute;
+
+  position: relative;
   bottom: 0;
-  left: -10%;
+  /* left: -10%; */
   opacity: .4;
   z-index: -10;
   img {
@@ -356,7 +357,7 @@ border: 3px solid blue;
     height: auto;
     right: 30rem;
     top: -100px; */
-    bottom: 7rem;
+    /* bottom: 7rem; */
   }
 }
 
