@@ -30,15 +30,30 @@ const BlogContainer = styled.article`
     width: 90%;
     padding: 2rem;
    }
+   ol {
+    list-style-type: decimal;
+    margin: 2.5rem 0 2.5rem 2.5rem;
+    li {
+      font-size: 1.8rem ;
+    }
+
+   }
 h1 {
   color: ${theme.colours.orange};
-  font-size: 2.5rem;
+  font-size: 3.5rem;
  
 }
 h2 {
   color: ${theme.colours.orange};
   font-family: ${theme.type.body};
+  font-size: 2.5rem;
+}
+h3 {
+  color: ${theme.colours.orange};
+  font-family: ${theme.type.body};
   font-size: 2rem;
+  margin-top: 2rem;
+  color: ${theme.colours.blue};
 }
 p{
   
