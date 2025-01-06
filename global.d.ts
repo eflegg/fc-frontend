@@ -3,6 +3,7 @@ declare module 'next-themes'
 
 declare module 'styled-components'
 declare module 'react-mailchimp-subscribe'
+declare module 'react-waypoint'
 
 declare module 'isomorphic-fetch'
 declare module 'uniqid'

@@ -13,7 +13,7 @@ const LeadMagnetContainer = props => {
                 url={postUrl}
                 render={({ subscribe, status, message }) => (
                     <LeadMagnet
-                    languageChoice={props.languageChoice}
+                    languageChoice={"English"}
                         status={status} 
                         message={message}
                         onValidated={formData => subscribe(formData)}

@@ -99,7 +99,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
         <h3
           className="mc__alert mc__alert--error"
           // dangerouslySetInnerHTML={{ __html: message }}
-        >{`${languageChoice === "French" ? "Sorry! It looks like something's gone wrong on our end. Please refresh and try again." : "Désolée! On dirait que quelque chose s'est mal passé de notre côté. Veuillez actualiser et réessayer."}`}</h3>
+        >{`${languageChoice === "English" ? "Sorry! It looks like something's gone wrong on our end. Please refresh and try again." : "Désolée! On dirait que quelque chose s'est mal passé de notre côté. Veuillez actualiser et réessayer."}`}</h3>
       )}
 
       {status !== "success" ? (
@@ -107,7 +107,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
           <InputField
             onBlur={testName}
             className="lead-magnet__input"
-            label={`${languageChoice === "French" ? "Nom" : "Name"}`}
+            label={`${languageChoice === "English" ? "Name" : "Nom"}`}
             id="signup_name"
             onChangeHandler={(e: any) =>
               setFirstName(e.target.value)
@@ -119,7 +119,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
             name="firstName"
           />
            {firstNameError ? (
-            <p className="error-message">{`${languageChoice === "French"? "Please enter your name" : "Veuillez indiquer votre nom"}`}</p>
+            <p className="error-message">{`${languageChoice === "English"? "Please enter your name" : "Veuillez indiquer votre nom"}`}</p>
           ) : null}
 
 
@@ -137,7 +137,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
             name="email"
           />
          {emailError ? (
-            <p className="error-message">{`${languageChoice === "French"? "Please enter a valid email" : "Merci d’entrer un courriel valide"}`}</p>
+            <p className="error-message">{`${languageChoice === "English"? "Please enter a valid email" : "Merci d’entrer un courriel valide"}`}</p>
           ) : null}
         </div>
       ) : null}
@@ -148,7 +148,7 @@ const SignUpForm = ({ status, message, onValidated, text, buttonText, languageCh
 {
         status === 'success' ? <SubmitButton
 
-          className="g__justify-self-center btn-sign-up btn-green">{`${languageChoice === "French"? "Check your inbox!" : "vérifier votre boîte de réception!"}`}</SubmitButton> : <SubmitButton
+          className="g__justify-self-center btn-sign-up btn-green">{`${languageChoice === "English"? "Check your inbox!" : "vérifier votre boîte de réception!"}`}</SubmitButton> : <SubmitButton
           className="btn-green"
             type="submit"
             onClick={handleSubmit}

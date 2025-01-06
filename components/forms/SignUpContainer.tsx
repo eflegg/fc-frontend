@@ -18,7 +18,7 @@ const SignUpContainer = props => {
                         onValidated={formData => subscribe(formData)}
                         text={props.text}
                         buttonText={props.buttonText}
-                        languageChoice={props.languageChoice}
+                        languageChoice={"English"}
                     />
                 )}
             />

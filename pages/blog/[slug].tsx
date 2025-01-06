@@ -57,10 +57,10 @@ h3 {
 }
 p{
   
-  line-height: 120%;
+  line-height: 140%;
   color: black;
   @media ${theme.devices.small}{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
    }
    figure {
     display: flex;
