@@ -287,7 +287,7 @@ export default function About({ languageChoice }) {
                             I
                             received a diploma in new media design and web development. From there I've been lucky to combine my
                             creative tendencies with my tech skills, working as a user experience designer for the Vancouver Art
-                            Gallery, art director for award-winning Asparagus Magazine [link to case study] and finally for
+                            Gallery, art director for award-winning Asparagus Magazine and finally for
                             myself
                             as a full-stack developer bringing to life the digital dreams of a variety of smart people and
                             organizations.</p>
