@@ -34,9 +34,9 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`Supporting small businesses with thoughtful processes and accessible design.`}
+        content={`Supporting small businesses with thoughtful strategy and accessible design.`}
       />
-      <meta property="og:image" content="/meta-image.png" />
+      <meta property="og:image" content="/social-share.png" />
     </Head>
   )
 }
