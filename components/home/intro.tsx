@@ -119,7 +119,7 @@ export default function Intro({  }:{}) {
                     <h1 className="flegg" data-scroll data-scroll-speed="3" data-scroll-class="appear"
                         data-scroll-repeat="true">Flegg Creative</h1>
                     <h2 className="focused h1" data-scroll data-scroll-speed="2" data-scroll-class="appear"
-                        data-scroll-repeat="true">Accessibly <br />Focused
+                        data-scroll-repeat="true">Accessibility <br />Focused
                     </h2>
                         <h2 className="designs h1" data-scroll data-scroll-speed="1" data-scroll-class="appear"
                             data-scroll-repeat="true">Designs</h2>
