@@ -65,7 +65,7 @@ h2 {
     font-family: "brother-1816", sans-serif;
     font-weight: 400;
     margin: 3rem 0 .5rem 0;
-    font-size: 2rem;
+
 }
 
 
@@ -75,7 +75,9 @@ p {
     margin-top: 1rem;
 }
 
-
+.bold {
+    font-weight: 700;
+}
 
 .btn-green {
     background-color: var(--green);

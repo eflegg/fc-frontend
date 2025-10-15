@@ -119,10 +119,10 @@ export default function Intro({  }:{}) {
                 <hgroup className="intro flex">
                     <h1 className="flegg" data-scroll data-scroll-speed="3" data-scroll-class="appear"
                         data-scroll-repeat="true">Flegg Creative</h1>
-                    <h2 className="focused " data-scroll data-scroll-speed="2" data-scroll-class="appear"
+                    <h2 className="focused bold" data-scroll data-scroll-speed="2" data-scroll-class="appear"
                         data-scroll-repeat="true">Approachable<br />strategy <br />
                     </h2>
-                        <h2 className="designs " data-scroll data-scroll-speed="1" data-scroll-class="appear"
+                        <h2 className="designs bold" data-scroll data-scroll-speed="1" data-scroll-class="appear"
                             data-scroll-repeat="true">Accessible<br />Design</h2>
                     <div className="audience flex">
                         <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">Your audience is larger than
