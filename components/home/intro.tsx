@@ -42,7 +42,7 @@ const StyledIntro = styled.section`
     }
     @media ${theme.devices.small}{
       position: absolute;
-    top: 260px;
+    top: 330px;
     right: 6.3rem;
     width: 60%;
     margin-left: auto;
