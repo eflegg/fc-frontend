@@ -45,6 +45,7 @@ const StyledIntro = styled.section`
     top: 260px;
     right: 6.3rem;
     width: 60%;
+    margin-left: auto;
     }
     @media ${theme.devices.medium}{
       top: 400px;
@@ -118,11 +119,11 @@ export default function Intro({  }:{}) {
                 <hgroup className="intro flex">
                     <h1 className="flegg" data-scroll data-scroll-speed="3" data-scroll-class="appear"
                         data-scroll-repeat="true">Flegg Creative</h1>
-                    <h2 className="focused h1" data-scroll data-scroll-speed="2" data-scroll-class="appear"
-                        data-scroll-repeat="true">Accessibility <br />Focused
+                    <h2 className="focused " data-scroll data-scroll-speed="2" data-scroll-class="appear"
+                        data-scroll-repeat="true">Approachable<br />strategy <br />
                     </h2>
-                        <h2 className="designs h1" data-scroll data-scroll-speed="1" data-scroll-class="appear"
-                            data-scroll-repeat="true">Designs</h2>
+                        <h2 className="designs " data-scroll data-scroll-speed="1" data-scroll-class="appear"
+                            data-scroll-repeat="true">Accessible<br />Design</h2>
                     <div className="audience flex">
                         <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">Your audience is larger than
                             you
