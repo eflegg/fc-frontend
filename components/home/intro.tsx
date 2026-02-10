@@ -127,9 +127,8 @@ export default function Intro({  }:{}) {
                     <div className="audience flex">
                         <p data-scroll data-scroll-class="appear" data-scroll-repeat="true">Your audience is larger than
                             you
-                            think. Our approach will help you reach all of your people,
-                            regardless
-                            of ability</p>
+                            think. Our approach will help you meet your people where they are.
+                           </p>
                     </div>
                 </hgroup>
                 <figure style={{transform: `translateY(-${spinOffset * 0.9}px) rotate(${spinOffset * 0.04}deg)`}} className="home-graphic para" data-scroll data-scroll-speed="2">

@@ -30,6 +30,11 @@ const BlogContainer = styled.article`
     width: 90%;
     padding: 2rem;
    }
+    a {
+    text-decoration: none;
+    color: #1D76FC;
+    font-weight: 600;
+}
    ol {
     list-style-type: decimal;
     margin: 2.5rem 0 2.5rem 2.5rem;
