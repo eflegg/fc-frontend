@@ -20,4 +20,14 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+   async rewrites() {
+    return [
+      {
+        source: '/wp-content/:path*',
+        destination: 'https://fleggcreative.ca*',
+      },
+    ];
+  },
 }
+
+
